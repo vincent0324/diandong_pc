@@ -17,6 +17,11 @@
   },
   "homepage": "https://github.com/vincent0324/diandong.com#readme",
   "dependencies": {
-    "jquery": "^1.12.4"
+    "jquery": "^1.12.4",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1"
+  },
+  "devDependencies": {
+    "webpack": "^1.13.3"
   }
 }
