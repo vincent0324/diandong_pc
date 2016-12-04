@@ -1,14 +1,13 @@
 var webpack = require('webpack');
 var path = require('path');
-var Modernizr = path.resolve(__dirname, 'source/lib/modernizr/modernizr.js');
 
 var config = {
     entry: {
-        topbar: path.resolve(__dirname, 'source/components/topbar/app.js')
+        sidebar: path.resolve(__dirname, 'source/components/sidebar/app.js')
     },
 
     output: {
-        path: path.resolve(__dirname, 'source/components/topbar'),
+        path: path.resolve(__dirname, 'source/components/sidebar'),
         filename: '[name].js'
     },
 
@@ -31,21 +30,7 @@ var config = {
         ]
     },
 
-    plugins: [
-        new webpack.optimize.UglifyJsPlugin({
-            output: {
-                comments: false, // remove all comments
-            },
-            compress: {
-                warnings: false
-            }
-        }),
-        new webpack.DefinePlugin({
-            'process.env': {
-                NODE_ENV: JSON.stringify('production')
-            }
-        })
-    ]
+    plugins: []
 };
 
 module.exports = config;
