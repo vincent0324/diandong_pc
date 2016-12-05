@@ -21467,6 +21467,7 @@
 
 	var React = __webpack_require__(1);
 	var $ = __webpack_require__(179);
+	var FreeCallBox = __webpack_require__(180);
 
 	// require('./sidebar.css');
 
@@ -21508,7 +21509,11 @@
 	            React.createElement(
 	                'div',
 	                { className: 'sidebar-list' },
-	                React.createElement('div', { className: 'sidebar-item' }),
+	                React.createElement(
+	                    'div',
+	                    { className: 'sidebar-item' },
+	                    React.createElement(FreeCallBox, null)
+	                ),
 	                React.createElement(
 	                    'div',
 	                    { className: 'sidebar-item' },
@@ -21553,13 +21558,81 @@
 	                        )
 	                    )
 	                ),
-	                React.createElement('div', { className: 'sidebar-item' })
+	                React.createElement(
+	                    'div',
+	                    { className: 'sidebar-item' },
+	                    React.createElement(
+	                        'a',
+	                        { className: 'sidebar-item-btn sidebar-btn-feedback', onMouseEnter: this.showTip, onMouseLeave: this.hideTip, href: 'http://app.diandong.com/?app=guestbook&controller=index' },
+	                        React.createElement(
+	                            'span',
+	                            { className: 'sidebar-btn-icon' },
+	                            React.createElement(
+	                                'i',
+	                                { className: 'icon' },
+	                                '\uE632'
+	                            )
+	                        ),
+	                        React.createElement(
+	                            'span',
+	                            { className: 'sidebar-btn-tip fn-hide' },
+	                            '\u610F\u89C1\u53CD\u9988'
+	                        )
+	                    )
+	                )
 	            ),
 	            React.createElement(
 	                'div',
 	                { className: 'sidebar-footer' },
-	                React.createElement('div', { className: 'sidebar-item' }),
-	                React.createElement('div', { className: 'sidebar-item' })
+	                React.createElement(
+	                    'div',
+	                    { className: 'sidebar-item' },
+	                    React.createElement(
+	                        'a',
+	                        { className: 'sidebar-item-btn sidebar-btn-code', onMouseEnter: this.showTip, onMouseLeave: this.hideTip, href: 'javascript:;' },
+	                        React.createElement(
+	                            'span',
+	                            { className: 'sidebar-btn-icon' },
+	                            React.createElement(
+	                                'i',
+	                                { className: 'icon' },
+	                                '\uE628'
+	                            )
+	                        ),
+	                        React.createElement(
+	                            'span',
+	                            { className: 'sidebar-btn-tip fn-hide' },
+	                            React.createElement('span', { className: 'sidebar-code-image' }),
+	                            React.createElement(
+	                                'em',
+	                                null,
+	                                '\u5173\u6CE8\u7535\u52A8\u90A6\u5B98\u65B9\u5FAE\u4FE1'
+	                            )
+	                        )
+	                    )
+	                ),
+	                React.createElement(
+	                    'div',
+	                    { className: 'sidebar-item' },
+	                    React.createElement(
+	                        'a',
+	                        { className: 'sidebar-item-btn sidebar-btn-top', onMouseEnter: this.showTip, onMouseLeave: this.hideTip, href: 'javascript:;' },
+	                        React.createElement(
+	                            'span',
+	                            { className: 'sidebar-btn-icon' },
+	                            React.createElement(
+	                                'i',
+	                                { className: 'icon' },
+	                                '\uE605'
+	                            )
+	                        ),
+	                        React.createElement(
+	                            'span',
+	                            { className: 'sidebar-btn-tip fn-hide' },
+	                            '\u8FD4\u56DE\u9876\u90E8'
+	                        )
+	                    )
+	                )
 	            )
 	        );
 	    }
@@ -32580,6 +32653,66 @@
 	return jQuery;
 	}));
 
+
+/***/ },
+/* 180 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var React = __webpack_require__(1);
+
+	var FreeCallBox = React.createClass({
+	    displayName: "FreeCallBox",
+
+
+	    render: function render() {
+	        return React.createElement(
+	            "div",
+	            null,
+	            React.createElement(
+	                "a",
+	                { className: "sidebar-item-btn sidebar-btn-tel" },
+	                React.createElement(
+	                    "span",
+	                    { className: "sidebar-btn-icon" },
+	                    React.createElement(
+	                        "i",
+	                        { className: "icon" },
+	                        "\uE612"
+	                    ),
+	                    React.createElement(
+	                        "em",
+	                        null,
+	                        "\u514D\u8D39\u7535\u8BDD"
+	                    )
+	                )
+	            ),
+	            React.createElement(
+	                "div",
+	                { className: "sidebar-tel-box" },
+	                React.createElement("input", { type: "text", className: "tel-box-phone", placeholder: "\u586B\u5199\u624B\u673A\u53F7\uFF0C\u5EA7\u673A\u52A0\u533A\u53F7" }),
+	                React.createElement(
+	                    "a",
+	                    { className: "tel-box-submit", href: "javascript:;" },
+	                    "\u514D\u8D39\u54A8\u8BE2"
+	                ),
+	                React.createElement("i", { className: "tel-box-corner" }),
+	                React.createElement(
+	                    "a",
+	                    { className: "tel-box-close", href: "javascript:;" },
+	                    React.createElement(
+	                        "i",
+	                        { className: "icon" },
+	                        "\uE601"
+	                    )
+	                )
+	            )
+	        );
+	    }
+	});
+
+	module.exports = FreeCallBox;
 
 /***/ }
 /******/ ]);
