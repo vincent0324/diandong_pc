@@ -134,7 +134,7 @@
     text-align: center;
 }
 
-.sidebar-btn-tel:hover {
+.sidebar-btn-tel:hover, .sidebar-btn-tel.open {
     background-color: #bb1010;
 }
 

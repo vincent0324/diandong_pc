@@ -32658,53 +32658,129 @@
 /* 180 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
-	var React = __webpack_require__(1);
+	var _react = __webpack_require__(1);
 
-	var FreeCallBox = React.createClass({
-	    displayName: "FreeCallBox",
+	var _react2 = _interopRequireDefault(_react);
 
+	var _jquery = __webpack_require__(179);
+
+	var _jquery2 = _interopRequireDefault(_jquery);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Tip = __webpack_require__(181);
+
+	var FreeCallBox = _react2.default.createClass({
+	    displayName: 'FreeCallBox',
+
+
+	    getInitialState: function getInitialState() {
+	        return { showBox: false, defaultPhoneValue: '' };
+	    },
+
+	    toggleBox: function toggleBox() {
+	        this.setState({
+	            showBox: !this.state.showBox
+	        });
+	    },
+
+	    handleChange: function handleChange(event) {
+	        this.setState({ defaultPhoneValue: event.target.value });
+	    },
+
+	    handleSubmit: function handleSubmit() {
+	        if (this.phoneInput.value === '') {
+	            console.log('???');
+	        } else {
+	            this.sendFreeCallRequest = _jquery2.default.ajax({
+	                url: 'http://mall.diandong.com/api/autoCall/',
+	                data: {
+	                    mobile: this.phoneInput.value
+	                },
+	                type: 'GET',
+	                dataType: 'jsonp',
+	                success: function (result) {
+	                    Tip.success('成功');
+	                    this.setState({ showBox: false });
+	                }.bind(this)
+	            });
+	        }
+	    },
+
+	    componentWillUnmount: function componentWillUnmount() {
+	        this.sendFreeCallRequest.abort();
+	    },
 
 	    render: function render() {
-	        return React.createElement(
-	            "div",
-	            null,
-	            React.createElement(
-	                "a",
-	                { className: "sidebar-item-btn sidebar-btn-tel" },
-	                React.createElement(
-	                    "span",
-	                    { className: "sidebar-btn-icon" },
-	                    React.createElement(
-	                        "i",
-	                        { className: "icon" },
-	                        "\uE612"
+	        var _this = this;
+
+	        if (this.state.showBox) {
+	            return _react2.default.createElement(
+	                'div',
+	                null,
+	                _react2.default.createElement(
+	                    'a',
+	                    { className: 'sidebar-item-btn sidebar-btn-tel open', onClick: this.toggleBox },
+	                    _react2.default.createElement(
+	                        'span',
+	                        { className: 'sidebar-btn-icon' },
+	                        _react2.default.createElement(
+	                            'i',
+	                            { className: 'icon' },
+	                            '\uE612'
+	                        ),
+	                        _react2.default.createElement(
+	                            'em',
+	                            null,
+	                            '\u514D\u8D39\u7535\u8BDD'
+	                        )
+	                    )
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'sidebar-tel-box' },
+	                    _react2.default.createElement('input', { type: 'text', className: 'tel-box-phone', placeholder: '\u586B\u5199\u624B\u673A\u53F7\uFF0C\u5EA7\u673A\u52A0\u533A\u53F7', ref: function ref(_ref) {
+	                            return _this.phoneInput = _ref;
+	                        }, value: this.state.defaultPhoneValue, onChange: this.handleChange }),
+	                    _react2.default.createElement(
+	                        'a',
+	                        { className: 'tel-box-submit', href: 'javascript:;', onClick: this.handleSubmit },
+	                        '\u514D\u8D39\u54A8\u8BE2'
 	                    ),
-	                    React.createElement(
-	                        "em",
-	                        null,
-	                        "\u514D\u8D39\u7535\u8BDD"
+	                    _react2.default.createElement('i', { className: 'tel-box-corner' }),
+	                    _react2.default.createElement(
+	                        'a',
+	                        { className: 'tel-box-close', href: 'javascript:;', onClick: this.toggleBox },
+	                        _react2.default.createElement(
+	                            'i',
+	                            { className: 'icon' },
+	                            '\uE601'
+	                        )
 	                    )
 	                )
-	            ),
-	            React.createElement(
-	                "div",
-	                { className: "sidebar-tel-box" },
-	                React.createElement("input", { type: "text", className: "tel-box-phone", placeholder: "\u586B\u5199\u624B\u673A\u53F7\uFF0C\u5EA7\u673A\u52A0\u533A\u53F7" }),
-	                React.createElement(
-	                    "a",
-	                    { className: "tel-box-submit", href: "javascript:;" },
-	                    "\u514D\u8D39\u54A8\u8BE2"
-	                ),
-	                React.createElement("i", { className: "tel-box-corner" }),
-	                React.createElement(
-	                    "a",
-	                    { className: "tel-box-close", href: "javascript:;" },
-	                    React.createElement(
-	                        "i",
-	                        { className: "icon" },
-	                        "\uE601"
+	            );
+	        }
+
+	        return _react2.default.createElement(
+	            'div',
+	            null,
+	            _react2.default.createElement(
+	                'a',
+	                { className: 'sidebar-item-btn sidebar-btn-tel', onClick: this.toggleBox },
+	                _react2.default.createElement(
+	                    'span',
+	                    { className: 'sidebar-btn-icon' },
+	                    _react2.default.createElement(
+	                        'i',
+	                        { className: 'icon' },
+	                        '\uE612'
+	                    ),
+	                    _react2.default.createElement(
+	                        'em',
+	                        null,
+	                        '\u514D\u8D39\u7535\u8BDD'
 	                    )
 	                )
 	            )
@@ -32713,6 +32789,408 @@
 	});
 
 	module.exports = FreeCallBox;
+
+/***/ },
+/* 181 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
+
+	!(__WEBPACK_AMD_DEFINE_RESULT__ = function (require, exports, module) {
+
+	    'use strict';
+
+	    var $ = __webpack_require__(179);
+
+	    __webpack_require__(182);
+
+	    var timeId;
+
+	    var icoConfig = {
+	        "widget-tip-success": "&#xe600;",
+	        "widget-tip-error": "&#xe601;",
+	        "widget-tip-info": "&#xe611;"
+	    };
+
+	    function handle(text, time, type) {
+
+	        $('.widget-tip').remove();
+
+	        clearTimeout(timeId);
+
+	        var duration = time ? time : 1500;
+
+	        var tipHtml = ['<div class="widget-tip tip-bounceIn">', '<div class="widget-tip-inner">', '<i class="icon widget-tip-ico">', icoConfig[type], '</i>', '<span class="widget-tip-content">', text, '</span>', '</div>', '</div>'].join('');
+
+	        $(tipHtml).addClass(type).appendTo(document.body);
+
+	        timeId = setTimeout(function () {
+	            $('.widget-tip').fadeOut('600', function () {
+	                $(this).remove();
+	            });
+	        }, duration);
+	    }
+
+	    module.exports = {
+	        success: function success(text, time) {
+	            handle(text, time, 'widget-tip-success');
+	        },
+	        error: function error(text, time) {
+	            handle(text, time, 'widget-tip-error');
+	        },
+	        info: function info(text, time) {
+	            handle(text, time, 'widget-tip-info');
+	        }
+	    };
+	}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+/***/ },
+/* 182 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(183);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(185)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./tip.css", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./tip.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 183 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(184)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "@-webkit-keyframes tip-bounceIn {\n    0%, 20%, 40%, 60%, 80%, 100% {\n        -webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);\n        transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);\n    }\n    0% {\n        opacity: 0;\n        -webkit-transform: scale3d(.3, .3, .3);\n        transform: scale3d(.3, .3, .3);\n    }\n    20% {\n        -webkit-transform: scale3d(1.1, 1.1, 1.1);\n        transform: scale3d(1.1, 1.1, 1.1);\n    }\n    40% {\n        -webkit-transform: scale3d(.9, .9, .9);\n        transform: scale3d(.9, .9, .9);\n    }\n    60% {\n        opacity: 1;\n        -webkit-transform: scale3d(1.03, 1.03, 1.03);\n        transform: scale3d(1.03, 1.03, 1.03);\n    }\n    80% {\n        -webkit-transform: scale3d(.97, .97, .97);\n        transform: scale3d(.97, .97, .97);\n    }\n    100% {\n        opacity: 1;\n        -webkit-transform: scale3d(1, 1, 1);\n        transform: scale3d(1, 1, 1);\n    }\n}\n\n@keyframes tip-bounceIn {\n    0%, 20%, 40%, 60%, 80%, 100% {\n        -webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);\n        transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);\n    }\n    0% {\n        opacity: 0;\n        -webkit-transform: scale3d(.3, .3, .3);\n        transform: scale3d(.3, .3, .3);\n    }\n    20% {\n        -webkit-transform: scale3d(1.1, 1.1, 1.1);\n        transform: scale3d(1.1, 1.1, 1.1);\n    }\n    40% {\n        -webkit-transform: scale3d(.9, .9, .9);\n        transform: scale3d(.9, .9, .9);\n    }\n    60% {\n        opacity: 1;\n        -webkit-transform: scale3d(1.03, 1.03, 1.03);\n        transform: scale3d(1.03, 1.03, 1.03);\n    }\n    80% {\n        -webkit-transform: scale3d(.97, .97, .97);\n        transform: scale3d(.97, .97, .97);\n    }\n    100% {\n        opacity: 1;\n        -webkit-transform: scale3d(1, 1, 1);\n        transform: scale3d(1, 1, 1);\n    }\n}\n\n.tip-bounceIn {\n    -webkit-animation-name: tip-bounceIn;\n    animation-name: tip-bounceIn;\n    -webkit-animation-duration: .75s;\n    animation-duration: .75s;\n}\n\n.widget-tip {\n    text-align: center;\n    z-index: 800;\n    background: none;\n    width: 100%;\n    height: 116px;\n    position: fixed;\n    top: 0;\n    right: 0;\n    bottom: 0;\n    left: 0;\n    margin: auto;\n}\n\n.widget-tip-inner {\n    display: inline-block;\n    text-align: center;\n    background-color: white;\n    border-width: 8px;\n    border-style: solid;\n    border-color: #a5a5a5;\n    border-color: rgba(0, 0, 0, 0.1);\n    font-size: 0;\n}\n\n.widget-tip.animated {\n    display: block;\n}\n\n.widget-tip-ico {\n    width: 100px;\n    height: 100px;\n    line-height: 100px;\n    font-size: 70px;\n    text-align: center;\n    color: white;\n    background-color: #3595e6;\n    display: inline-block;\n    vertical-align: bottom;\n}\n\n.widget-tip-content {\n    height: 100px;\n    line-height: 100px;\n    padding: 0 20px;\n    font-size: 30px;\n    color: #3595e6;\n    display: inline-block;\n    vertical-align: bottom;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 184 */
+/***/ function(module, exports) {
+
+	/*
+		MIT License http://www.opensource.org/licenses/mit-license.php
+		Author Tobias Koppers @sokra
+	*/
+	// css base code, injected by the css-loader
+	module.exports = function() {
+		var list = [];
+
+		// return the list of modules as css string
+		list.toString = function toString() {
+			var result = [];
+			for(var i = 0; i < this.length; i++) {
+				var item = this[i];
+				if(item[2]) {
+					result.push("@media " + item[2] + "{" + item[1] + "}");
+				} else {
+					result.push(item[1]);
+				}
+			}
+			return result.join("");
+		};
+
+		// import a list of modules into the list
+		list.i = function(modules, mediaQuery) {
+			if(typeof modules === "string")
+				modules = [[null, modules, ""]];
+			var alreadyImportedModules = {};
+			for(var i = 0; i < this.length; i++) {
+				var id = this[i][0];
+				if(typeof id === "number")
+					alreadyImportedModules[id] = true;
+			}
+			for(i = 0; i < modules.length; i++) {
+				var item = modules[i];
+				// skip already imported module
+				// this implementation is not 100% perfect for weird media query combinations
+				//  when a module is imported multiple times with different media queries.
+				//  I hope this will never occur (Hey this way we have smaller bundles)
+				if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+					if(mediaQuery && !item[2]) {
+						item[2] = mediaQuery;
+					} else if(mediaQuery) {
+						item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+					}
+					list.push(item);
+				}
+			}
+		};
+		return list;
+	};
+
+
+/***/ },
+/* 185 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/*
+		MIT License http://www.opensource.org/licenses/mit-license.php
+		Author Tobias Koppers @sokra
+	*/
+	var stylesInDom = {},
+		memoize = function(fn) {
+			var memo;
+			return function () {
+				if (typeof memo === "undefined") memo = fn.apply(this, arguments);
+				return memo;
+			};
+		},
+		isOldIE = memoize(function() {
+			return /msie [6-9]\b/.test(window.navigator.userAgent.toLowerCase());
+		}),
+		getHeadElement = memoize(function () {
+			return document.head || document.getElementsByTagName("head")[0];
+		}),
+		singletonElement = null,
+		singletonCounter = 0,
+		styleElementsInsertedAtTop = [];
+
+	module.exports = function(list, options) {
+		if(false) {
+			if(typeof document !== "object") throw new Error("The style-loader cannot be used in a non-browser environment");
+		}
+
+		options = options || {};
+		// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
+		// tags it will allow on a page
+		if (typeof options.singleton === "undefined") options.singleton = isOldIE();
+
+		// By default, add <style> tags to the bottom of <head>.
+		if (typeof options.insertAt === "undefined") options.insertAt = "bottom";
+
+		var styles = listToStyles(list);
+		addStylesToDom(styles, options);
+
+		return function update(newList) {
+			var mayRemove = [];
+			for(var i = 0; i < styles.length; i++) {
+				var item = styles[i];
+				var domStyle = stylesInDom[item.id];
+				domStyle.refs--;
+				mayRemove.push(domStyle);
+			}
+			if(newList) {
+				var newStyles = listToStyles(newList);
+				addStylesToDom(newStyles, options);
+			}
+			for(var i = 0; i < mayRemove.length; i++) {
+				var domStyle = mayRemove[i];
+				if(domStyle.refs === 0) {
+					for(var j = 0; j < domStyle.parts.length; j++)
+						domStyle.parts[j]();
+					delete stylesInDom[domStyle.id];
+				}
+			}
+		};
+	}
+
+	function addStylesToDom(styles, options) {
+		for(var i = 0; i < styles.length; i++) {
+			var item = styles[i];
+			var domStyle = stylesInDom[item.id];
+			if(domStyle) {
+				domStyle.refs++;
+				for(var j = 0; j < domStyle.parts.length; j++) {
+					domStyle.parts[j](item.parts[j]);
+				}
+				for(; j < item.parts.length; j++) {
+					domStyle.parts.push(addStyle(item.parts[j], options));
+				}
+			} else {
+				var parts = [];
+				for(var j = 0; j < item.parts.length; j++) {
+					parts.push(addStyle(item.parts[j], options));
+				}
+				stylesInDom[item.id] = {id: item.id, refs: 1, parts: parts};
+			}
+		}
+	}
+
+	function listToStyles(list) {
+		var styles = [];
+		var newStyles = {};
+		for(var i = 0; i < list.length; i++) {
+			var item = list[i];
+			var id = item[0];
+			var css = item[1];
+			var media = item[2];
+			var sourceMap = item[3];
+			var part = {css: css, media: media, sourceMap: sourceMap};
+			if(!newStyles[id])
+				styles.push(newStyles[id] = {id: id, parts: [part]});
+			else
+				newStyles[id].parts.push(part);
+		}
+		return styles;
+	}
+
+	function insertStyleElement(options, styleElement) {
+		var head = getHeadElement();
+		var lastStyleElementInsertedAtTop = styleElementsInsertedAtTop[styleElementsInsertedAtTop.length - 1];
+		if (options.insertAt === "top") {
+			if(!lastStyleElementInsertedAtTop) {
+				head.insertBefore(styleElement, head.firstChild);
+			} else if(lastStyleElementInsertedAtTop.nextSibling) {
+				head.insertBefore(styleElement, lastStyleElementInsertedAtTop.nextSibling);
+			} else {
+				head.appendChild(styleElement);
+			}
+			styleElementsInsertedAtTop.push(styleElement);
+		} else if (options.insertAt === "bottom") {
+			head.appendChild(styleElement);
+		} else {
+			throw new Error("Invalid value for parameter 'insertAt'. Must be 'top' or 'bottom'.");
+		}
+	}
+
+	function removeStyleElement(styleElement) {
+		styleElement.parentNode.removeChild(styleElement);
+		var idx = styleElementsInsertedAtTop.indexOf(styleElement);
+		if(idx >= 0) {
+			styleElementsInsertedAtTop.splice(idx, 1);
+		}
+	}
+
+	function createStyleElement(options) {
+		var styleElement = document.createElement("style");
+		styleElement.type = "text/css";
+		insertStyleElement(options, styleElement);
+		return styleElement;
+	}
+
+	function createLinkElement(options) {
+		var linkElement = document.createElement("link");
+		linkElement.rel = "stylesheet";
+		insertStyleElement(options, linkElement);
+		return linkElement;
+	}
+
+	function addStyle(obj, options) {
+		var styleElement, update, remove;
+
+		if (options.singleton) {
+			var styleIndex = singletonCounter++;
+			styleElement = singletonElement || (singletonElement = createStyleElement(options));
+			update = applyToSingletonTag.bind(null, styleElement, styleIndex, false);
+			remove = applyToSingletonTag.bind(null, styleElement, styleIndex, true);
+		} else if(obj.sourceMap &&
+			typeof URL === "function" &&
+			typeof URL.createObjectURL === "function" &&
+			typeof URL.revokeObjectURL === "function" &&
+			typeof Blob === "function" &&
+			typeof btoa === "function") {
+			styleElement = createLinkElement(options);
+			update = updateLink.bind(null, styleElement);
+			remove = function() {
+				removeStyleElement(styleElement);
+				if(styleElement.href)
+					URL.revokeObjectURL(styleElement.href);
+			};
+		} else {
+			styleElement = createStyleElement(options);
+			update = applyToTag.bind(null, styleElement);
+			remove = function() {
+				removeStyleElement(styleElement);
+			};
+		}
+
+		update(obj);
+
+		return function updateStyle(newObj) {
+			if(newObj) {
+				if(newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap)
+					return;
+				update(obj = newObj);
+			} else {
+				remove();
+			}
+		};
+	}
+
+	var replaceText = (function () {
+		var textStore = [];
+
+		return function (index, replacement) {
+			textStore[index] = replacement;
+			return textStore.filter(Boolean).join('\n');
+		};
+	})();
+
+	function applyToSingletonTag(styleElement, index, remove, obj) {
+		var css = remove ? "" : obj.css;
+
+		if (styleElement.styleSheet) {
+			styleElement.styleSheet.cssText = replaceText(index, css);
+		} else {
+			var cssNode = document.createTextNode(css);
+			var childNodes = styleElement.childNodes;
+			if (childNodes[index]) styleElement.removeChild(childNodes[index]);
+			if (childNodes.length) {
+				styleElement.insertBefore(cssNode, childNodes[index]);
+			} else {
+				styleElement.appendChild(cssNode);
+			}
+		}
+	}
+
+	function applyToTag(styleElement, obj) {
+		var css = obj.css;
+		var media = obj.media;
+
+		if(media) {
+			styleElement.setAttribute("media", media)
+		}
+
+		if(styleElement.styleSheet) {
+			styleElement.styleSheet.cssText = css;
+		} else {
+			while(styleElement.firstChild) {
+				styleElement.removeChild(styleElement.firstChild);
+			}
+			styleElement.appendChild(document.createTextNode(css));
+		}
+	}
+
+	function updateLink(linkElement, obj) {
+		var css = obj.css;
+		var sourceMap = obj.sourceMap;
+
+		if(sourceMap) {
+			// http://stackoverflow.com/a/26603875
+			css += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + " */";
+		}
+
+		var blob = new Blob([css], { type: "text/css" });
+
+		var oldSrc = linkElement.href;
+
+		linkElement.href = URL.createObjectURL(blob);
+
+		if(oldSrc)
+			URL.revokeObjectURL(oldSrc);
+	}
+
 
 /***/ }
 /******/ ]);

@@ -30,7 +30,14 @@ var config = {
         ]
     },
 
-    plugins: []
+    plugins: [],
+
+    resolve: {
+        extensions: ['', '.js', '.json', '.scss'],
+        alias: {
+            tip: path.resolve(__dirname, 'source/lib/tip/tip')
+        }
+    }
 };
 
 module.exports = config;
