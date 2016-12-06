@@ -1,6 +1,5 @@
-import React from 'react';
-import $ from 'jquery';
-
+var React = require('react');
+var $ = require('jquery');
 var Tip = require('tip');
 
 var FreeCallBox = React.createClass({
@@ -21,7 +20,7 @@ var FreeCallBox = React.createClass({
 
     handleSubmit: function() {
         if (this.phoneInput.value === '') {
-            console.log('???');
+            Tip.info('请输入手机号码或座机号码');
         } else {
             this.sendFreeCallRequest = $.ajax({
                 url: 'http://mall.diandong.com/api/autoCall/',
@@ -31,7 +30,7 @@ var FreeCallBox = React.createClass({
                 type: 'GET',
                 dataType: 'jsonp',
                 success: function(result) {
-                    Tip.success('成功');
+                    Tip.success('客服稍后将电话联系您');
                     this.setState({showBox: false});
                 }.bind(this)
             });

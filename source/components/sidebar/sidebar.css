@@ -108,6 +108,10 @@
     border-bottom-width: 0;
 }
 
+.sidebar-list .sidebar-item:last-child, .sidebar-list .sidebar-item:first-child {
+    border-bottom-width: 0;
+}
+
 .sidebar-btn-tel {
     background-color: #d50d0d;
     height: 115px;
@@ -170,6 +174,10 @@
     color: white;
     font-size: 20px;
     margin: 24px auto 0;
+}
+
+.tel-box-submit:hover {
+    background-color: #197acc;
 }
 
 .tel-box-corner {

@@ -21468,8 +21468,9 @@
 	var React = __webpack_require__(1);
 	var $ = __webpack_require__(179);
 	var FreeCallBox = __webpack_require__(180);
+	var FeatureBox = __webpack_require__(186);
 
-	// require('./sidebar.css');
+	__webpack_require__(189);
 
 	var Sidebar = React.createClass({
 	    displayName: 'Sidebar',
@@ -21477,11 +21478,11 @@
 
 	    showTip: function showTip(event) {
 	        var self = $(event.currentTarget);
-	        var tip = self.find('.sidebar-btn-tip');
+	        var tips = self.find('.sidebar-btn-tip');
 
 	        this.timeId = setTimeout(function () {
 	            self.addClass('current');
-	            tip.removeClass('fn-hide').animate({
+	            tips.removeClass('fn-hide').animate({
 	                "opacity": "1",
 	                "right": "35px"
 	            }, 300);
@@ -21490,15 +21491,15 @@
 
 	    hideTip: function hideTip(event) {
 	        var self = $(event.currentTarget);
-	        var tip = self.find('.sidebar-btn-tip');
+	        var tips = self.find('.sidebar-btn-tip');
 
 	        clearTimeout(this.timeId);
 	        self.removeClass('current');
-	        tip.animate({
+	        tips.animate({
 	            "opacity": "0",
 	            "right": "60px"
 	        }, 300, function () {
-	            tip.addClass('fn-hide');
+	            tips.addClass('fn-hide');
 	        });
 	    },
 
@@ -21509,6 +21510,7 @@
 	            React.createElement(
 	                'div',
 	                { className: 'sidebar-list' },
+	                React.createElement('div', { className: 'sidebar-item' }),
 	                React.createElement(
 	                    'div',
 	                    { className: 'sidebar-item' },
@@ -32660,19 +32662,11 @@
 
 	'use strict';
 
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _jquery = __webpack_require__(179);
-
-	var _jquery2 = _interopRequireDefault(_jquery);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
+	var React = __webpack_require__(1);
+	var $ = __webpack_require__(179);
 	var Tip = __webpack_require__(181);
 
-	var FreeCallBox = _react2.default.createClass({
+	var FreeCallBox = React.createClass({
 	    displayName: 'FreeCallBox',
 
 
@@ -32692,9 +32686,9 @@
 
 	    handleSubmit: function handleSubmit() {
 	        if (this.phoneInput.value === '') {
-	            console.log('???');
+	            Tip.info('请输入手机号码或座机号码');
 	        } else {
-	            this.sendFreeCallRequest = _jquery2.default.ajax({
+	            this.sendFreeCallRequest = $.ajax({
 	                url: 'http://mall.diandong.com/api/autoCall/',
 	                data: {
 	                    mobile: this.phoneInput.value
@@ -32702,7 +32696,7 @@
 	                type: 'GET',
 	                dataType: 'jsonp',
 	                success: function (result) {
-	                    Tip.success('成功');
+	                    Tip.success('客服稍后将电话联系您');
 	                    this.setState({ showBox: false });
 	                }.bind(this)
 	            });
@@ -32717,43 +32711,43 @@
 	        var _this = this;
 
 	        if (this.state.showBox) {
-	            return _react2.default.createElement(
+	            return React.createElement(
 	                'div',
 	                null,
-	                _react2.default.createElement(
+	                React.createElement(
 	                    'a',
 	                    { className: 'sidebar-item-btn sidebar-btn-tel open', onClick: this.toggleBox },
-	                    _react2.default.createElement(
+	                    React.createElement(
 	                        'span',
 	                        { className: 'sidebar-btn-icon' },
-	                        _react2.default.createElement(
+	                        React.createElement(
 	                            'i',
 	                            { className: 'icon' },
 	                            '\uE612'
 	                        ),
-	                        _react2.default.createElement(
+	                        React.createElement(
 	                            'em',
 	                            null,
 	                            '\u514D\u8D39\u7535\u8BDD'
 	                        )
 	                    )
 	                ),
-	                _react2.default.createElement(
+	                React.createElement(
 	                    'div',
 	                    { className: 'sidebar-tel-box' },
-	                    _react2.default.createElement('input', { type: 'text', className: 'tel-box-phone', placeholder: '\u586B\u5199\u624B\u673A\u53F7\uFF0C\u5EA7\u673A\u52A0\u533A\u53F7', ref: function ref(_ref) {
+	                    React.createElement('input', { type: 'text', className: 'tel-box-phone', placeholder: '\u586B\u5199\u624B\u673A\u53F7\uFF0C\u5EA7\u673A\u52A0\u533A\u53F7', ref: function ref(_ref) {
 	                            return _this.phoneInput = _ref;
 	                        }, value: this.state.defaultPhoneValue, onChange: this.handleChange }),
-	                    _react2.default.createElement(
+	                    React.createElement(
 	                        'a',
 	                        { className: 'tel-box-submit', href: 'javascript:;', onClick: this.handleSubmit },
 	                        '\u514D\u8D39\u54A8\u8BE2'
 	                    ),
-	                    _react2.default.createElement('i', { className: 'tel-box-corner' }),
-	                    _react2.default.createElement(
+	                    React.createElement('i', { className: 'tel-box-corner' }),
+	                    React.createElement(
 	                        'a',
 	                        { className: 'tel-box-close', href: 'javascript:;', onClick: this.toggleBox },
-	                        _react2.default.createElement(
+	                        React.createElement(
 	                            'i',
 	                            { className: 'icon' },
 	                            '\uE601'
@@ -32763,21 +32757,21 @@
 	            );
 	        }
 
-	        return _react2.default.createElement(
+	        return React.createElement(
 	            'div',
 	            null,
-	            _react2.default.createElement(
+	            React.createElement(
 	                'a',
 	                { className: 'sidebar-item-btn sidebar-btn-tel', onClick: this.toggleBox },
-	                _react2.default.createElement(
+	                React.createElement(
 	                    'span',
 	                    { className: 'sidebar-btn-icon' },
-	                    _react2.default.createElement(
+	                    React.createElement(
 	                        'i',
 	                        { className: 'icon' },
 	                        '\uE612'
 	                    ),
-	                    _react2.default.createElement(
+	                    React.createElement(
 	                        'em',
 	                        null,
 	                        '\u514D\u8D39\u7535\u8BDD'
@@ -33190,6 +33184,121 @@
 		if(oldSrc)
 			URL.revokeObjectURL(oldSrc);
 	}
+
+
+/***/ },
+/* 186 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(1);
+
+	// 为特殊活动预留的组件
+	__webpack_require__(187);
+
+	var FeatureBox = React.createClass({
+	    displayName: 'FeatureBox',
+
+
+	    getInitialState: function getInitialState() {
+	        return { hasFeature: false };
+	    },
+
+	    render: function render() {
+
+	        if (this.state.hasFeature) {
+	            return React.createElement(
+	                'div',
+	                null,
+	                '// \u8FD9\u91CC\u586B\u5165\u4E34\u65F6\u52A0\u5165\u7684\u5185\u5BB9'
+	            );
+	        }
+
+	        return null;
+	    }
+	});
+
+	module.exports = FeatureBox;
+
+/***/ },
+/* 187 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(188);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(185)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./FeatureBox.css", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./FeatureBox.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 188 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(184)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "/*临时组件的样式*/\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 189 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(190);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(185)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./sidebar.css", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./sidebar.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 190 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(184)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".sidebar {\n    width: 35px;\n    height: 100%;\n    position: fixed;\n    z-index: 100;\n    background-color: #323c44;\n    top: 0;\n    right: 0;\n    -webkit-transition: right 300ms;\n}\n\n.sidebar-list {\n    width: 35px;\n    position: absolute;\n    right: 0;\n    top: 50%;\n    margin-top: -200px;\n}\n\n.sidebar-item {\n    width: 19px;\n    margin: 0 auto;\n    position: relative;\n    padding: 8px 0 7px;\n    border-bottom: 1px solid #606e79;\n}\n\n.sidebar-item-btn {\n    width: 35px;\n    height: 35px;\n    text-align: center;\n    display: block;\n    color: #e4eff9;\n    margin-left: -8px;\n    position: relative;\n}\n\n.sidebar-item-btn:hover {\n    background-color: #3595e7;\n}\n\n.sidebar-item-btn i {\n    display: block;\n    width: 35px;\n    height: 35px;\n    line-height: 35px;\n}\n\n.sidebar-btn-icon {\n    display: block;\n    width: 35px;\n    height: 35px;\n    line-height: 35px;\n    position: absolute;\n    top: 0;\n    right: 0;\n}\n\n.sidebar-btn-icon i {\n    font-size: 20px;\n}\n\n.sidebar-btn-tip {\n    height: 35px;\n    line-height: 35px;\n    color: white;\n    background-color: #5c6b77;\n    position: absolute;\n    bottom: 0;\n    right: 60px;\n    width: auto;\n    padding: 0 16px;\n    white-space: nowrap;\n    font-size: 14px;\n    opacity: 0;\n}\n\n.sidebar-footer {\n    width: 35px;\n    position: absolute;\n    right: 0;\n    bottom: 0;\n}\n\n.sidebar-btn-code .sidebar-btn-tip {\n    width: 142px;\n    height: 182px;\n    padding: 14px 14px 0;\n}\n\n.sidebar-code-image {\n    width: 142px;\n    height: 142px;\n    display: block;\n    background-image: url(http://assets.diandong.com/web/images/common/toolbar_code.jpg);\n    background-repeat: no-repeat;\n}\n\n.sidebar-btn-code .sidebar-btn-tip em {\n    height: 35px;\n    text-align: center;\n    line-height: 35px;\n    font-style: normal;\n    font-weight: normal;\n}\n\n.sidebar-footer .sidebar-item:last-child {\n    border-bottom-width: 0;\n}\n\n.sidebar-list .sidebar-item:last-child, .sidebar-list .sidebar-item:first-child {\n    border-bottom-width: 0;\n}\n\n.sidebar-btn-tel {\n    background-color: #d50d0d;\n    height: 115px;\n    cursor: pointer;\n}\n\n.sidebar-btn-tel i {\n    display: block;\n    width: 35px;\n    height: 35px;\n    line-height: 35px;\n}\n\n.sidebar-btn-tel em {\n    display: block;\n    width: 17px;\n    padding: 5px 9px;\n    height: 70px;\n    line-height: 16px;\n    font-size: 14px;\n    font-style: normal;\n    word-break: break-all;\n    word-wrap: break-word;\n    text-align: center;\n}\n\n.sidebar-btn-tel:hover, .sidebar-btn-tel.open {\n    background-color: #bb1010;\n}\n\n.sidebar-tel-box {\n    width: 332px;\n    height: 126px;\n    position: absolute;\n    top: -20px;\n    right: 65px;\n    background-color: #eee;\n    border-radius: 3px;\n    padding-top: 40px;\n}\n\n.tel-box-phone {\n    display: block;\n    width: 250px;\n    height: 30px;\n    border: 1px solid #d3d3d3;\n    margin: 0 auto;\n    padding-left: 8px;\n    font-size: 14px;\n}\n\n.tel-box-submit {\n    display: block;\n    width: 150px;\n    height: 42px;\n    border-radius: 3px;\n    background-color: #3595e7;\n    text-align: center;\n    line-height: 42px;\n    color: white;\n    font-size: 20px;\n    margin: 24px auto 0;\n}\n\n.tel-box-submit:hover {\n    background-color: #197acc;\n}\n\n.tel-box-corner {\n    position: absolute;\n    width: 0;\n    height: 0;\n    overflow: hidden;\n    border: 13px solid #eee;\n    top: 40px;\n    right: -26px;\n    border-right: 13px solid transparent;\n    border-bottom: 13px solid transparent;\n}\n\n.tel-box-close {\n    position: absolute;\n    width: 30px;\n    height: 30px;\n    color: #666;\n    top: 5px;\n    right: 5px;\n    line-height: 30px;\n    text-align: center;\n}\n\n.tel-box-close i {\n    font-size: 20px;\n}\n", ""]);
+
+	// exports
 
 
 /***/ }

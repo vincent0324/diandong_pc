@@ -1,18 +1,19 @@
 var React = require('react');
 var $ = require('jquery');
 var FreeCallBox = require('./FreeCallBox.react');
+var FeatureBox = require('./FeatureBox.react');
 
-// require('./sidebar.css');
+require('./sidebar.css');
 
 var Sidebar = React.createClass({
 
     showTip: function(event) {
         var self = $(event.currentTarget);
-        var tip = self.find('.sidebar-btn-tip');
+        var tips = self.find('.sidebar-btn-tip');
 
         this.timeId = setTimeout(function() {
             self.addClass('current');
-            tip.removeClass('fn-hide').animate({
+            tips.removeClass('fn-hide').animate({
                 "opacity": "1",
                 "right": "35px"
             }, 300);
@@ -21,15 +22,15 @@ var Sidebar = React.createClass({
 
     hideTip: function(event) {
         var self = $(event.currentTarget);
-        var tip = self.find('.sidebar-btn-tip');
+        var tips = self.find('.sidebar-btn-tip');
 
         clearTimeout(this.timeId);
         self.removeClass('current');
-        tip.animate({
+        tips.animate({
             "opacity": "0",
             "right": "60px"
         }, 300, function() {
-            tip.addClass('fn-hide');
+            tips.addClass('fn-hide');
         });
     },
 
@@ -38,6 +39,7 @@ var Sidebar = React.createClass({
             <aside className="sidebar">
 
                 <div className="sidebar-list">
+                    <div className="sidebar-item"></div>
                     <div className="sidebar-item">
                         <FreeCallBox/>
                     </div>
