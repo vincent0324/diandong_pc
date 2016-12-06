@@ -1,10 +1,17 @@
 var React = require('react');
+var $ = require('jquery');
 
 var Topbar = React.createClass({
 
+    componentDidMount: function() {
+        $('.topbar').slideDown();
+    },
+
     render: function() {
         return (
-            <div></div>
+            <div className="topbar">
+                <div className="wrap"></div>
+            </div>
         );
     }
 });
