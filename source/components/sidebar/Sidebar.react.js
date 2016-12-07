@@ -34,6 +34,12 @@ var Sidebar = React.createClass({
         });
     },
 
+    handleReturnTop: function() {
+        $('html,body').stop().animate({
+            scrollTop: 0
+        }, 300);
+    },
+
     render: function() {
         return (
             <aside className="sidebar">
@@ -82,7 +88,7 @@ var Sidebar = React.createClass({
                         </a>
                     </div>
                     <div className="sidebar-item">
-                        <a className="sidebar-item-btn sidebar-btn-top" onMouseEnter={this.showTip} onMouseLeave={this.hideTip} href="javascript:;">
+                        <a className="sidebar-item-btn sidebar-btn-top" onMouseEnter={this.showTip} onMouseLeave={this.hideTip} onClick={this.handleReturnTop} href="javascript:;">
                             <span className="sidebar-btn-icon">
                                 <i className="icon">&#xe605;</i>
                             </span>

@@ -3,11 +3,11 @@ var path = require('path');
 
 var config = {
     entry: {
-        topbar: path.resolve(__dirname, 'source/components/topbar/app.js')
+        sidebar: path.resolve(__dirname, 'source/components/sidebar/app.js')
     },
 
     output: {
-        path: path.resolve(__dirname, 'source/components/topbar'),
+        path: path.resolve(__dirname, 'source/components/sidebar'),
         filename: '[name].js'
     },
 
@@ -33,7 +33,9 @@ var config = {
     plugins: [],
 
     resolve: {
-        extensions: ['', '.js', '.json', '.scss'],
+        extensions: [
+            '', '.js', '.json', '.scss'
+        ],
         alias: {
             cookie: path.resolve(__dirname, 'source/lib/cookie/cookie'),
             user: path.resolve(__dirname, 'source/lib/user/user'),

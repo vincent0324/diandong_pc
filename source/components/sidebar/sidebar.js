@@ -21503,6 +21503,12 @@
 	        });
 	    },
 
+	    handleReturnTop: function handleReturnTop() {
+	        $('html,body').stop().animate({
+	            scrollTop: 0
+	        }, 300);
+	    },
+
 	    render: function render() {
 	        return React.createElement(
 	            'aside',
@@ -21618,7 +21624,7 @@
 	                    { className: 'sidebar-item' },
 	                    React.createElement(
 	                        'a',
-	                        { className: 'sidebar-item-btn sidebar-btn-top', onMouseEnter: this.showTip, onMouseLeave: this.hideTip, href: 'javascript:;' },
+	                        { className: 'sidebar-item-btn sidebar-btn-top', onMouseEnter: this.showTip, onMouseLeave: this.hideTip, onClick: this.handleReturnTop, href: 'javascript:;' },
 	                        React.createElement(
 	                            'span',
 	                            { className: 'sidebar-btn-icon' },
