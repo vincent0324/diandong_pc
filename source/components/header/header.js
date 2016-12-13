@@ -49,8 +49,10 @@
 	var React = __webpack_require__(1);
 	var ReactDOM = __webpack_require__(32);
 	var City = __webpack_require__(178);
+	var UserPanel = __webpack_require__(185);
 
-	ReactDOM.render(React.createElement(City, null), document.getElementById('city'));
+	ReactDOM.render(React.createElement(City, null), document.getElementById('city-holder'));
+	ReactDOM.render(React.createElement(UserPanel, null), document.getElementById('user-holder'));
 
 /***/ },
 /* 1 */
@@ -33009,6 +33011,170 @@
 		if(oldSrc)
 			URL.revokeObjectURL(oldSrc);
 	}
+
+
+/***/ },
+/* 185 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(1);
+	var User = __webpack_require__(186);
+	var user = new User();
+
+	__webpack_require__(187);
+
+	var UserPanel = React.createClass({
+	    displayName: 'UserPanel',
+
+
+	    getInitialState: function getInitialState() {
+	        return { userId: null, userName: null, userAvatar: null, redirectUrl: null };
+	    },
+
+	    componentWillMount: function componentWillMount() {
+	        var currentRedirectUrl = 'http://passport.diandong.com/ark/login?redirect=' + location.href;
+
+	        this.setState({ redirectUrl: currentRedirectUrl });
+
+	        if (user.id !== '') {
+	            this.setState({ userId: user.id, userName: user.name, userAvatar: user.avatar });
+	        }
+	    },
+
+	    render: function render() {
+
+	        if (this.state.userId) {
+	            return React.createElement(
+	                'div',
+	                { className: 'user-panel' },
+	                React.createElement(
+	                    'div',
+	                    { className: 'user-panel-avatar no-background' },
+	                    React.createElement('img', { src: this.state.userAvatar })
+	                ),
+	                React.createElement(
+	                    'a',
+	                    { href: 'http://passport.diandong.com/ark/baseinfo' },
+	                    this.state.userName
+	                ),
+	                React.createElement(
+	                    'a',
+	                    { href: 'http://passport.diandong.com/ark/logout' },
+	                    '\u9000\u51FA'
+	                )
+	            );
+	        }
+
+	        return React.createElement(
+	            'div',
+	            { className: 'user-panel' },
+	            React.createElement('div', { className: 'user-panel-avatar' }),
+	            React.createElement(
+	                'a',
+	                { href: 'http://passport.diandong.com/ark/login' },
+	                '\u767B\u5F55'
+	            ),
+	            React.createElement(
+	                'a',
+	                { href: 'http://passport.diandong.com/ark/register/' },
+	                '\u6CE8\u518C'
+	            )
+	        );
+	    }
+	});
+
+	module.exports = UserPanel;
+
+/***/ },
+/* 186 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
+
+	!(__WEBPACK_AMD_DEFINE_RESULT__ = function (require, exports, module) {
+
+	    'use strict';
+
+	    var Cookie = __webpack_require__(180);
+
+	    var User = function User() {
+	        this.init();
+	    };
+
+	    User.prototype = {
+
+	        id: '',
+
+	        name: '',
+
+	        nickname: '',
+
+	        avatar: '',
+
+	        init: function init() {
+	            this.getUserInfo();
+	        },
+
+	        getUserInfo: function getUserInfo() {
+	            var userName = Cookie.get('ark_rememberusername') || '';
+	            var userAvatar = Cookie.get('ark_headimg') || '';
+	            var nickname = Cookie.get('ark_nickname') || '';
+	            var userId = Cookie.get('ark_userid') || '';
+
+	            this.setUserInfo(userId, userName, nickname, userAvatar);
+	        },
+
+	        setUserInfo: function setUserInfo(id, name, nickname, avatar) {
+	            this.id = id;
+	            this.name = name;
+	            this.nickname = nickname;
+	            this.avatar = avatar;
+	        }
+	    };
+
+	    module.exports = User;
+	}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+/***/ },
+/* 187 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(188);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(184)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./UserPanel.css", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./UserPanel.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 188 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(183)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".user-panel {\n    height: 26px;\n    line-height: 26px;\n    font-size: 0;\n}\n.user-panel-avatar {\n    width: 26px;\n    height: 26px;\n    display: inline-block;\n    border-radius: 50%;\n    overflow: hidden;\n    vertical-align: top;\n    background-image: url(http://i1.dd-img.com/assets/image/1481621276-f009f6c060d6f8a7-26w-26h.png);\n    background-repeat: no-repeat;\n    background-color: #00a0e9;\n}\n.user-panel-avatar.no-background {\n    background-color: white;\n}\n.user-panel-avatar img {\n    width: 24px;\n    height: 24px;\n    border: 1px solid #a0a0a0;\n    border-radius: 50%;\n    display: block;\n}\n.user-panel a {\n    font-size: 14px;\n    color: #3b3f40;\n    margin: 0 10px;\n    display: inline-block;\n    vertical-align: top;\n    height: 26px;\n}\n.user-panel a:hover {\n    color: #3595e7;\n}\n", ""]);
+
+	// exports
 
 
 /***/ }

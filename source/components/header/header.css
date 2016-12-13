@@ -23,7 +23,9 @@
     width: 166px;
     height: 42px;
     padding-top: 24px;
+    margin-right: 30px;
 }
+
 .slogan em {
     display: block;
     height: 0;
@@ -32,4 +34,25 @@
     overflow: hidden;
     background-image: url(http://i1.dd-img.com/assets/image/1481612691-72cff492a75428cf-166w-42h.png);
     background-repeat: no-repeat;
+}
+
+.city-holder {
+    line-height: 42px;
+    height: 42px;
+    padding-top: 26px;
+}
+
+.city-holder i {
+    margin-right: 3px;
+}
+
+.city-holder a {
+    color: #3595e7;
+}
+
+.city-holder a:hover {
+    color: #197acc;
+}
+.user-holder {
+    padding-top: 27px;
 }

@@ -1,0 +1,37 @@
+.user-panel {
+    height: 26px;
+    line-height: 26px;
+    font-size: 0;
+}
+.user-panel-avatar {
+    width: 26px;
+    height: 26px;
+    display: inline-block;
+    border-radius: 50%;
+    overflow: hidden;
+    vertical-align: top;
+    background-image: url(http://i1.dd-img.com/assets/image/1481621276-f009f6c060d6f8a7-26w-26h.png);
+    background-repeat: no-repeat;
+    background-color: #00a0e9;
+}
+.user-panel-avatar.no-background {
+    background-color: white;
+}
+.user-panel-avatar img {
+    width: 24px;
+    height: 24px;
+    border: 1px solid #a0a0a0;
+    border-radius: 50%;
+    display: block;
+}
+.user-panel a {
+    font-size: 14px;
+    color: #3b3f40;
+    margin: 0 10px;
+    display: inline-block;
+    vertical-align: top;
+    height: 26px;
+}
+.user-panel a:hover {
+    color: #3595e7;
+}

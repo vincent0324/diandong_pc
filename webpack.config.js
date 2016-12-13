@@ -3,11 +3,11 @@ var path = require('path');
 
 var config = {
     entry: {
-        city: path.resolve(__dirname, 'source/components/city/app.js')
+        header: path.resolve(__dirname, 'source/components/header/app.js')
     },
 
     output: {
-        path: path.resolve(__dirname, 'source/components/city'),
+        path: path.resolve(__dirname, 'source/components/header'),
         filename: '[name].js'
     },
 
