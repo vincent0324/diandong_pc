@@ -1,0 +1,35 @@
+.header .wrap {
+    height: 80px;
+}
+
+.logo {
+    width: 130px;
+    height: 42px;
+    padding-top: 24px;
+    margin-right: 16px;
+}
+
+.logo a {
+    display: block;
+    height: 0;
+    padding-top: 42px;
+    font-size: 0;
+    overflow: hidden;
+    background-image: url(http://i1.dd-img.com/assets/image/1481612512-629932ab89f06d1b-130w-42h.png);
+    background-repeat: no-repeat;
+}
+
+.slogan {
+    width: 166px;
+    height: 42px;
+    padding-top: 24px;
+}
+.slogan em {
+    display: block;
+    height: 0;
+    padding-top: 42px;
+    font-size: 0;
+    overflow: hidden;
+    background-image: url(http://i1.dd-img.com/assets/image/1481612691-72cff492a75428cf-166w-42h.png);
+    background-repeat: no-repeat;
+}

@@ -3,11 +3,11 @@ var path = require('path');
 
 var config = {
     entry: {
-        sidebar: path.resolve(__dirname, 'source/components/sidebar/app.js')
+        city: path.resolve(__dirname, 'source/components/city/app.js')
     },
 
     output: {
-        path: path.resolve(__dirname, 'source/components/sidebar'),
+        path: path.resolve(__dirname, 'source/components/city'),
         filename: '[name].js'
     },
 
