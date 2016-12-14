@@ -1,6 +1,8 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 
+require('./suggests.css');
+
 var Suggests = React.createClass({
 
     getListOfSuggestIds: function() {

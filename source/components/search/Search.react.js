@@ -48,6 +48,14 @@ var Search = React.createClass({
         }
     },
 
+    handleFocus: function() {
+        this.setState({focus: true});
+    },
+
+    handleBlur: function() {
+        this.setState({focus: false});
+    },
+
     handleSubmit: function() {
         var searchKeywords;
 
@@ -85,9 +93,11 @@ var Search = React.createClass({
 
     render: function() {
         return (
-            <div className="search-wrapper" id="search-wrapper">
+            <div className={this.state.focus
+                ? "search-wrapper focus"
+                : "search-wrapper"} id="search-wrapper">
                 <div className="search-bar">
-                    <input className="search-input" type="text" value={this.state.keywords} onChange={this.handleKeywordChange} onKeyUp={this.handleKeyUp} placeholder={this.state.searchPlaceholderValue}/>
+                    <input className="search-input" type="text" value={this.state.keywords} onChange={this.handleKeywordChange} onKeyUp={this.handleKeyUp} onFocus={this.handleFocus} onBlur={this.handleBlur} placeholder={this.state.searchPlaceholderValue}/>
                     <a className="search-submit-btn" onClick={this.handleSubmit} href="javascript:;">
                         <i className="icon">&#xe60a;</i>
                     </a>

@@ -11,6 +11,15 @@
     overflow: hidden;
 }
 
+.focus .search-bar {
+    border-color: #3595e7;
+    background-color: white;
+}
+
+.focus .search-submit-btn {
+    color: #3595e7;
+}
+
 .search-submit-btn {
     float: right;
     border-radius: 50%;
@@ -20,7 +29,7 @@
     width: 34px;
     height: 34px;
     margin: 2px 2px 0 0;
-    transition: all 0.4s;
+    transition: background-color 0.4s;
 }
 
 .search-submit-btn:hover {
