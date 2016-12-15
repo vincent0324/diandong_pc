@@ -3,11 +3,11 @@ var path = require('path');
 
 var config = {
     entry: {
-        search: path.resolve(__dirname, 'source/components/search/app.js')
+        header: path.resolve(__dirname, 'source/components/header/app.js')
     },
 
     output: {
-        path: path.resolve(__dirname, 'source/components/search'),
+        path: path.resolve(__dirname, 'source/components/header'),
         filename: '[name].js'
     },
 

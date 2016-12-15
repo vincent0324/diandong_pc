@@ -50,9 +50,11 @@
 	var ReactDOM = __webpack_require__(32);
 	var City = __webpack_require__(178);
 	var UserPanel = __webpack_require__(185);
+	var Search = __webpack_require__(189);
 
 	ReactDOM.render(React.createElement(City, null), document.getElementById('city-holder'));
 	ReactDOM.render(React.createElement(UserPanel, null), document.getElementById('user-holder'));
+	ReactDOM.render(React.createElement(Search, null), document.getElementById('search-holder'));
 
 /***/ },
 /* 1 */
@@ -33173,6 +33175,264 @@
 
 	// module
 	exports.push([module.id, ".user-panel {\n    height: 26px;\n    line-height: 26px;\n    font-size: 0;\n}\n.user-panel-avatar {\n    width: 26px;\n    height: 26px;\n    display: inline-block;\n    border-radius: 50%;\n    overflow: hidden;\n    vertical-align: top;\n    background-image: url(http://i1.dd-img.com/assets/image/1481621276-f009f6c060d6f8a7-26w-26h.png);\n    background-repeat: no-repeat;\n    background-color: #00a0e9;\n}\n.user-panel-avatar.no-background {\n    background-color: white;\n}\n.user-panel-avatar img {\n    width: 24px;\n    height: 24px;\n    border: 1px solid #a0a0a0;\n    border-radius: 50%;\n    display: block;\n}\n.user-panel a {\n    font-size: 14px;\n    color: #3b3f40;\n    margin: 0 10px;\n    display: inline-block;\n    vertical-align: top;\n    height: 26px;\n}\n.user-panel a:hover {\n    color: #3595e7;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 189 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(1);
+	var $ = __webpack_require__(179);
+	var Suggests = __webpack_require__(190);
+
+	__webpack_require__(193);
+
+	var Search = React.createClass({
+	    displayName: 'Search',
+
+
+	    getInitialState: function getInitialState() {
+	        return { searchPlaceholderValue: null, keywords: '', suggests: {}, focus: false };
+	    },
+
+	    handleKeywordChange: function handleKeywordChange(event) {
+	        var currentInputValue = event.target.value;
+
+	        this.setState({ keywords: currentInputValue });
+
+	        this.getSearchSuggestRequest = $.ajax({
+	            url: 'http://car.diandong.com/api/chexi_fuzzysearch',
+	            data: {
+	                keywords: currentInputValue
+	            },
+	            dataType: 'jsonp',
+	            type: 'GET',
+	            success: function (result) {
+	                if (result.state.err) {
+	                    this.setState({ suggests: {} });
+	                } else {
+	                    var resultLength = result.data.length;
+	                    var resultObject = {};
+
+	                    for (var i = 0; i < resultLength; i++) {
+	                        var keyIndex = result.data[i].cxid;
+	                        var keyValue = result.data[i].name;
+
+	                        resultObject[keyIndex] = keyValue;
+	                    }
+
+	                    this.setState({ suggests: resultObject });
+	                }
+	            }.bind(this)
+	        });
+	    },
+
+	    handleKeyUp: function handleKeyUp(event) {
+	        if (event.keyCode === 13) {
+	            this.handleSubmit();
+	        }
+	    },
+
+	    handleFocus: function handleFocus() {
+	        this.setState({ focus: true });
+	    },
+
+	    handleBlur: function handleBlur() {
+	        this.setState({ focus: false });
+	    },
+
+	    handleSubmit: function handleSubmit() {
+	        var searchKeywords;
+
+	        searchKeywords = this.state.keywords ? this.state.keywords : this.state.searchPlaceholderValue;
+
+	        window.open('http://search.diandong.com/zonghe/?words=' + searchKeywords);
+	    },
+
+	    componentWillMount: function componentWillMount() {
+	        this.getSearchPlaceholderRequest = $.ajax({
+	            url: 'http://car.diandong.com/api/getSectionData?sectionid=296',
+	            data: {},
+	            dataType: 'jsonp',
+	            type: 'POST',
+	            success: function (result) {
+	                var searchPlaceholderValue = result.data[0].title || '';
+
+	                this.setState({ searchPlaceholderValue: searchPlaceholderValue });
+	            }.bind(this)
+	        });
+
+	        $(document).on('click', function (e) {
+	            if ($(e.target).attr('id') !== 'search-wrapper') {
+	                this.setState({ suggests: {} });
+	            }
+	        }.bind(this));
+	    },
+
+	    componentWillUnmount: function componentWillUnmount() {
+	        this.getSearchPlaceholderRequest.abort();
+	        this.getSearchSuggestRequest.abort();
+	    },
+
+	    render: function render() {
+	        return React.createElement(
+	            'div',
+	            { className: this.state.focus ? "search-wrapper focus" : "search-wrapper", id: 'search-wrapper' },
+	            React.createElement(
+	                'div',
+	                { className: 'search-bar' },
+	                React.createElement('input', { className: 'search-input', type: 'text', value: this.state.keywords, onChange: this.handleKeywordChange, onKeyUp: this.handleKeyUp, onFocus: this.handleFocus, onBlur: this.handleBlur, placeholder: this.state.searchPlaceholderValue }),
+	                React.createElement(
+	                    'a',
+	                    { className: 'search-submit-btn', onClick: this.handleSubmit, href: 'javascript:;' },
+	                    React.createElement(
+	                        'i',
+	                        { className: 'icon' },
+	                        '\uE60A'
+	                    )
+	                )
+	            ),
+	            React.createElement(Suggests, { suggests: this.state.suggests })
+	        );
+	    }
+	});
+
+	module.exports = Search;
+
+/***/ },
+/* 190 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(1);
+	var ReactDOM = __webpack_require__(32);
+
+	__webpack_require__(191);
+
+	var Suggests = React.createClass({
+	    displayName: 'Suggests',
+
+
+	    getListOfSuggestIds: function getListOfSuggestIds() {
+	        return Object.keys(this.props.suggests);
+	    },
+
+	    getNumberOfSuggests: function getNumberOfSuggests() {
+	        return this.getListOfSuggestIds().length;
+	    },
+
+	    getSuggestElement: function getSuggestElement(suggestId) {
+	        var suggestElementUrl = "http://car.diandong.com/chexi/index/" + suggestId;
+	        var suggestElementName = this.props.suggests[suggestId];
+
+	        // key不能省，会报错
+	        return React.createElement(
+	            'a',
+	            { target: '_blank', href: suggestElementUrl, key: suggestId },
+	            suggestElementName
+	        );
+	    },
+
+	    render: function render() {
+	        var numberOfSuggests = this.getNumberOfSuggests();
+
+	        if (numberOfSuggests > 0) {
+	            var suggestElements = this.getListOfSuggestIds().map(this.getSuggestElement);
+
+	            return React.createElement(
+	                'div',
+	                { className: 'search-suggest-list' },
+	                suggestElements
+	            );
+	        }
+
+	        return null;
+	    }
+	});
+
+	module.exports = Suggests;
+
+/***/ },
+/* 191 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(192);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(184)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./suggests.css", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./suggests.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 192 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(183)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".search-suggest-list {\n    width: 348px;\n    height: 151px;\n    border: 1px solid #e4e4e4;\n    border-radius: 3px;\n    position: absolute;\n    left: 0;\n    top: 42px;\n    overflow: auto;\n}\n\n.search-suggest-list a {\n    display: block;\n    width: 308px;\n    height: 37px;\n    border-bottom: 1px dotted #e4e4e4;\n    line-height: 37px;\n    padding: 0 20px;\n    color: #3b3f40;\n}\n\n.search-suggest-list a:hover {\n    color: #3595e7;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 193 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(194);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(184)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./search.css", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./search.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 194 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(183)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".search-wrapper {\n    position: relative;\n}\n\n.search-bar {\n    width: 346px;\n    height: 38px;\n    border-radius: 38px;\n    border: 1px solid #e4e4e4;\n    background-color: #f4f4f4;\n    overflow: hidden;\n}\n\n.focus .search-bar {\n    border-color: #3595e7;\n    background-color: white;\n}\n\n.focus .search-submit-btn {\n    color: #3595e7;\n}\n\n.search-submit-btn {\n    float: right;\n    border-radius: 50%;\n    line-height: 32px;\n    text-align: center;\n    color: #969fa0;\n    width: 34px;\n    height: 34px;\n    margin: 2px 2px 0 0;\n    transition: background-color 0.4s;\n}\n\n.search-submit-btn:hover {\n    color: white;\n    background-color: #a9d5fa;\n}\n\n.search-submit-btn i {\n    font-size: 16px;\n}\n\n.search-input {\n    float: left;\n    border-width: 0;\n    height: 38px;\n    width: 290px;\n    outline: none;\n    padding-left: 18px;\n    font-size: 14px;\n    color: #3b3f40;\n    background: transparent;\n}\n\n.search-input::placeholder {\n    color: #bfbfbf;\n}\n", ""]);
 
 	// exports
 

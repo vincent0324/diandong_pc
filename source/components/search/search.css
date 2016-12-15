@@ -9,10 +9,11 @@
     border: 1px solid #e4e4e4;
     background-color: #f4f4f4;
     overflow: hidden;
+    transition: all 0.2s;
 }
 
 .focus .search-bar {
-    border-color: #3595e7;
+    border-color: #00a0e9;
     background-color: white;
 }
 
@@ -29,7 +30,6 @@
     width: 34px;
     height: 34px;
     margin: 2px 2px 0 0;
-    transition: background-color 0.4s;
 }
 
 .search-submit-btn:hover {

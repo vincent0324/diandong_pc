@@ -2,7 +2,7 @@ var React = require('react');
 var $ = require('jquery');
 var Suggests = require('./Suggests.react');
 
-// require('./search.css');
+require('./search.css');
 
 var Search = React.createClass({
 

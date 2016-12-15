@@ -56,3 +56,9 @@
 .user-holder {
     padding-top: 27px;
 }
+.search-holder {
+    width: 350px;
+    height: 42px;
+    padding-top: 19px;
+    margin-right: 50px;
+}
