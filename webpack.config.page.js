@@ -43,18 +43,16 @@ var config = {
         // 不变
         new webpack.optimize.CommonsChunkPlugin({name: 'vendor', filename: 'vendor.bundle.js'}),
 
-        // 压缩代码
-        new webpack.optimize.UglifyJsPlugin({
-            output: {
-                comments: false, // remove all comments
-            },
-            compress: {
-                warnings: false
-            }
-        }),
-        //
-        // new webpack.NoErrorsPlugin(), // 允许错误不打断程序
-        //
+        // // 压缩代码
+        // new webpack.optimize.UglifyJsPlugin({
+        //     output: {
+        //         comments: false,
+        //     },
+        //     compress: {
+        //         warnings: false
+        //     }
+        // }),
+        // //
         // 设置成生产环境
         new webpack.DefinePlugin({
             'process.env': {
@@ -71,7 +69,8 @@ var config = {
             cookie: path.resolve(__dirname, 'source/lib/cookie/cookie'),
             user: path.resolve(__dirname, 'source/lib/user/user'),
             area: path.resolve(__dirname, 'source/lib/area/area'),
-            tip: path.resolve(__dirname, 'source/lib/tip/tip')
+            tip: path.resolve(__dirname, 'source/lib/tip/tip'),
+            swiper: path.resolve(__dirname, 'source/lib/swiper/idangerous.swiper.min')
         }
     }
 };

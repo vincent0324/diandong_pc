@@ -1,0 +1,69 @@
+.focus .wrap {
+    height: 350px;
+}
+
+.focus-slide {
+    width: 815px;
+    height: 350px;
+    position: relative;
+}
+
+.focus-container {
+    width: 815px;
+    height: 350px;
+    position: relative;
+    overflow: hidden;
+}
+
+.focus-wrapper {
+    position: relative;
+}
+
+.focus-slide {
+    float: left;
+}
+
+.focus-slide img {
+    width: 815px;
+    height: 350px;
+}
+
+.focus-list {
+    width: 375px;
+    height: 350px;
+    overflow: hidden;
+}
+
+.focus-item {
+    width: 375px;
+    height: 170px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.focus-item img {
+    width: 375px;
+    height: 170px;
+}
+
+.focus-pages {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 40px;
+    line-height: 40px;
+    padding-right: 15px;
+}
+
+.focus-pages .swiper-pagination-switch {
+    width: 7px;
+    height: 7px;
+    display: inline-block;
+    background-color: #8f8f98;
+    margin: 0 5px;
+}
+
+.focus-pages .swiper-active-switch {
+    background-color: #3595e7;
+    box-shadow: 0 0 0 2px #8f8f98;
+}

@@ -1,5 +1,11 @@
+require('es5-shim');
+require('es5-shim/es5-sham');
+require('console-polyfill');
+
 var React = require('react');
 var ReactDOM = require('react-dom');
+
+require('./css/home.css');
 
 
 // header
@@ -14,3 +20,8 @@ ReactDOM.render(<Search />, document.getElementById('search-holder'));
 
 // nav
 require('./components/nav/nav.css');
+
+
+// focus
+var Focus = require('./components/focus/focus');
+var focus = new Focus();
