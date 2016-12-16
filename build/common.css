@@ -263,3 +263,7 @@ body .fn-hide {
     -webkit-text-stroke-width: 0.2px;
     -moz-osx-font-smoothing: grayscale;
 }
+
+ol, ul {
+    list-style: none;
+}

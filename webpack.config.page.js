@@ -22,7 +22,10 @@ var config = {
                 exclude: /node_modules/,
                 loader: 'babel',
                 query: {
-                    presets: ['es2015', 'react']
+                    presets: [
+                        'es2015', 'react'
+                    ],
+                    plugins: ['transform-es3-property-literals', 'transform-es3-member-expression-literals']
                 }
             }, {
                 test: /\.css$/,
@@ -32,7 +35,7 @@ var config = {
                 loader: ExtractTextPlugin.extract('style-loader', 'css-loader!less-loader')
             }, {
                 test: /\.(png|woff|svg|ttf|eot)$/,
-                loader: 'url-loader?limit=10000' // 限制大小小于10k的
+                loader: 'url-loader?limit=10000'
             }
         ]
     },
@@ -43,16 +46,16 @@ var config = {
         // 不变
         new webpack.optimize.CommonsChunkPlugin({name: 'vendor', filename: 'vendor.bundle.js'}),
 
-        // // 压缩代码
-        // new webpack.optimize.UglifyJsPlugin({
-        //     output: {
-        //         comments: false,
-        //     },
-        //     compress: {
-        //         warnings: false
-        //     }
-        // }),
-        // //
+        // 压缩代码
+        new webpack.optimize.UglifyJsPlugin({
+            output: {
+                comments: false
+            },
+            compress: {
+                warnings: false
+            }
+        }),
+
         // 设置成生产环境
         new webpack.DefinePlugin({
             'process.env': {

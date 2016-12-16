@@ -25,3 +25,7 @@ require('./components/nav/nav.css');
 // focus
 var Focus = require('./components/focus/focus');
 var focus = new Focus();
+
+// news
+var News = require('./components/news/news');
+var news = new News();

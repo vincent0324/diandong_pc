@@ -3,12 +3,12 @@ var path = require('path');
 
 var config = {
     entry: {
-        header: path.resolve(__dirname, 'source/components/header/app.js')
+        news: path.resolve(__dirname, 'source/components/news/app.js')
     },
 
     output: {
-        path: path.resolve(__dirname, 'source/components/header'),
-        filename: '[name].js'
+        path: path.resolve(__dirname, 'source/components/news'),
+        filename: '[name].debug.js'
     },
 
     module: {
