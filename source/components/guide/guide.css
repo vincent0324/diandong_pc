@@ -1,0 +1,373 @@
+.guide {
+    background-color: #f6f6f6;
+    padding: 50px 0;
+}
+
+.guide-top {
+    height: 324px;
+}
+
+.guide-header {
+    width: 270px;
+    height: 324px;
+    background-image: url(http://i1.dd-img.com/assets/image/1481914809-58d4f05f32570e1b-270w-324h.jpg);
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.guide-tools {
+    width: 220px;
+    height: 88px;
+    position: absolute;
+    bottom: 15px;
+    left: 25px;
+}
+
+.guide-tools a {
+    float: left;
+    width: 96px;
+    height: 30px;
+    color: #7d83d6;
+    margin: 7px;
+    border-radius: 3px;
+    line-height: 30px;
+    text-align: center;
+    background-color: white;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.guide-tools a:hover {
+    background-color: #7d83d6;
+    color: white;
+    box-shadow: 0 0 0 2px white;
+}
+
+.guide-filter {
+    width: 900px;
+    height: 300px;
+    background-color: white;
+    padding: 24px 0 0 30px;
+}
+
+.guide-filter-item header {
+    background-image: url(http://i1.dd-img.com/assets/image/1481920480-36fa87453ee54f33-57w-48h.png);
+    background-repeat: no-repeat;
+    width: 36px;
+    height: 36px;
+    padding: 6px 15px 6px 6px;
+    font-size: 14px;
+    color: #7d83d6;
+    line-height: 18px;
+    text-align: center;
+    margin-right: 22px;
+}
+
+.guide-filter-brand nav {
+    height: 48px;
+    font-size: 0;
+}
+
+.guide-filter-brand nav a {
+    display: inline-block;
+    width: 46px;
+    height: 46px;
+    margin-right: 28px;
+    border: 1px solid white;
+}
+
+.guide-filter-brand nav a:hover {
+    border-color: #7d83d6;
+}
+
+.guide-filter-brand nav img {
+    width: 46px;
+    height: 46px;
+}
+
+.guide-filter-hot {
+    margin-top: 30px;
+}
+
+.filter-hot-box {
+    width: 810px;
+}
+
+.filter-super-tab {
+    height: 48px;
+}
+
+.filter-super-tab a {
+    width: 260px;
+    height: 48px;
+    float: left;
+    position: relative;
+    margin-right: 7px;
+    overflow: hidden;
+}
+
+.filter-super-tab span {
+    position: absolute;
+    width: 260px;
+    height: 28px;
+    top: 7px;
+    left: 0;
+    background-color: #eee;
+    line-height: 28px;
+    text-align: center;
+    font-size: 14px;
+    color: #7d83d6;
+}
+
+.filter-super-tab i {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    position: absolute;
+    bottom: -4px;
+    left: 115px;
+    color: #7d83d6;
+    display: none;
+}
+
+.filter-super-tab a.current span {
+    background-color: #7d83d6;
+    color: white;
+}
+
+.filter-super-tab a.current i {
+    display: block;
+}
+
+.filter-super-tab a:hover span {
+    background-color: #7d83d6;
+    color: white;
+}
+
+.filter-super-tabcon {
+    width: 810px;
+    height: 174px;
+}
+
+.filter-sub-tab {
+    height: 32px;
+    line-height: 32px;
+    font-size: 0;
+}
+
+.filter-sub-tab a {
+    display: inline-block;
+    width: 112px;
+    height: 32px;
+    text-align: center;
+    font-size: 14px;
+    color: #595959;
+    margin-right: 90px;
+}
+
+.filter-sub-tab a:hover {
+    color: #7d83d6;
+}
+
+.filter-sub-tab a.current {
+    color: #7d83d6;
+    text-decoration: underline;
+}
+
+.filter-sub-tabcon {
+    height: 132px;
+    width: 810px;
+    overflow: hidden;
+}
+
+.filter-model-list {
+    height: 132px;
+    width: 855px;
+}
+
+.filter-model-item {
+    float: left;
+    width: 111px;
+    height: 132px;
+    overflow: hidden;
+    margin-right: 60px;
+    color: #3b3f40;
+    font-size: 14px;
+    text-align: center;
+}
+
+.filter-model-item img {
+    width: 111px;
+    height: 74px;
+    display: block;
+}
+
+.filter-model-title {
+    height: 28px;
+    line-height: 28px;
+}
+
+.filter-model-price {
+    height: 30px;
+    line-height: 30px;
+    color: #e74816;
+}
+
+.guide-news {
+    background-color: white;
+    margin-top: 40px;
+    height: 410px;
+}
+
+.guide-news-column {
+    width: 370px;
+    height: 400px;
+    float: left;
+    margin: 0 15px;
+    padding-top: 10px;
+}
+
+.news-column-header {
+    height: 30px;
+    line-height: 30px;
+}
+
+.news-column-header::before {
+    content: '';
+    float: left;
+    width: 4px;
+    height: 20px;
+    background-image: url(http://i1.dd-img.com/assets/image/1481927987-c4fb4b4acb0ac009-4w-20h.png);
+    background-repeat: no-repeat;
+    margin: 5px 9px 0 0;
+}
+
+.news-column-header h3 {
+    font-size: 20px;
+    color: #343d40;
+    float: left;
+    margin-right: 28px;
+}
+
+.news-column-more {
+    font-size: 14px;
+    color: #7d83d6;
+    float: left;
+}
+
+.guide-news-photo {
+    width: 370px;
+    height: 170px;
+    position: relative;
+    overflow: hidden;
+}
+
+.guide-news-photo img {
+    width: 370px;
+    height: 170px;
+    transition: all 0.3s;
+}
+
+.guide-news-cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 370px;
+    height: 170px;
+    background-color: rgba(0, 0, 0, 0.3);
+    transition: all 0.3s;
+}
+
+.guide-news-photo:hover .guide-news-cover {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.guide-news-photo:hover img {
+    transform: scale(1.05);
+}
+
+.news-column-content {
+    padding-top: 19px;
+}
+
+.guide-news-type {
+    position: absolute;
+    width: 274px;
+    height: 30px;
+    background-image: url(http://i1.dd-img.com/assets/image/1481929716-5aad85d8b88b96b1-274w-90h.png);
+    background-repeat: no-repeat;
+    top: 88px;
+    left: 48px;
+}
+
+.guide-news-test .guide-news-type {
+    background-position: 0 0;
+}
+
+.guide-news-video .guide-news-type {
+    background-position: 0 -30px;
+}
+
+.guide-news-model .guide-news-type {
+    background-position: 0 -60px;
+}
+
+.guide-news-title {
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    position: absolute;
+    top: 58px;
+    left: 0;
+    font-size: 18px;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+}
+
+.guide-news-list {
+    margin-top: 16px;
+}
+
+.guide-news-list li {
+    height: 22px;
+    padding: 7px 0;
+}
+
+.guide-news-ico {
+    float: left;
+    width: 58px;
+    height: 20px;
+    border: 1px solid #e7e7e7;
+    line-height: 20px;
+    text-align: center;
+    color: #b5b5b5;
+    font-size: 12px;
+    margin-right: 8px;
+}
+
+.guide-news-ico:hover {
+    border-color: #7d83d6;
+    color: #7d83d6;
+}
+
+.guide-news-text {
+    float: left;
+    width: 302px;
+    height: 22px;
+    line-height: 22px;
+    font-size: 16px;
+    color: #3b3f40;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.guide-news-text:hover {
+    color: #7d83d6;
+}
+
+.guide-news-model .guide-news-text {
+    width: 370px;
+}
