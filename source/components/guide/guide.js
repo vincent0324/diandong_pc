@@ -3,7 +3,7 @@ define(function(require, exports, module) {
     var $ = require('jquery');
     var Swiper = require('swiper');
 
-    // require('./guide.css');
+    require('./guide.css');
 
     var Guide = function() {
         this.init();

@@ -1,0 +1,141 @@
+.mall {
+    padding: 50px 0;
+}
+
+.mall-top {
+    height: 324px;
+}
+
+.mall-header {
+    width: 270px;
+    height: 324px;
+    background-image: url(http://i1.dd-img.com/assets/image/1481971514-073cca4920937fc0-270w-324h.jpg);
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.mall-header-text {
+    width: 220px;
+    height: 88px;
+    position: absolute;
+    bottom: 15px;
+    left: 25px;
+}
+
+.mall-header-text span {
+    float: left;
+    width: 96px;
+    height: 30px;
+    color: white;
+    margin: 7px;
+    border-radius: 3px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.event-display {
+    width: 910px;
+    height: 324px;
+}
+
+.event-list {
+    width: 204px;
+    height: 324px;
+    position: relative;
+    background-color: #f0f0f0;
+    padding: 0 16px;
+}
+
+.event-box {
+    width: 674px;
+    height: 324px;
+}
+
+.event-container {
+    width: 204px;
+    height: 282px;
+    position: relative;
+    overflow: hidden;
+}
+
+.event-wrapper {
+    position: relative;
+}
+
+.event-slide-item {
+    background-color: #ddd;
+    width: 204px;
+    height: 89px;
+}
+
+.event-slide-item.current {
+    box-shadow: 0 0
+}
+
+.event-slide-item img {
+    width: 204px;
+    height: 89px;
+}
+
+.event-slide-item.current {
+    box-shadow: inset 0 0 0 3px #d70000;
+}
+
+.event-list-holder {
+    width: 204px;
+    height: 278px;
+    overflow: hidden;
+}
+
+.event-ctrl {
+    display: block;
+    width: 204px;
+    height: 23px;
+    line-height: 23px;
+    text-align: center;
+    color: #959595;
+}
+
+.event-ctrl i {
+    font-size: 22px;
+}
+
+.event-ctrl:hover {
+    color: #d34545;
+}
+
+.event-box-item {
+    width: 674px;
+    height: 324px;
+    position: relative;
+}
+
+.event-box-item img {
+    width: 674px;
+    height: 324px;
+}
+
+.event-countdown {
+    width: 654px;
+    height: 32px;
+    padding: 14px 0 14px 20px;
+    line-height: 32px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-size: 18px;
+    color: white;
+}
+
+.event-countdown span {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    background-color: white;
+    text-align: center;
+    border-radius: 3px;
+    color: #f15c2d;
+    margin: 0 8px;
+}

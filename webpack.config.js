@@ -3,11 +3,11 @@ var path = require('path');
 
 var config = {
     entry: {
-        guide: path.resolve(__dirname, 'source/components/guide/app.js')
+        mall: path.resolve(__dirname, 'source/components/mall/app.js')
     },
 
     output: {
-        path: path.resolve(__dirname, 'source/components/guide'),
+        path: path.resolve(__dirname, 'source/components/mall'),
         filename: '[name].debug.js'
     },
 
@@ -41,7 +41,8 @@ var config = {
             user: path.resolve(__dirname, 'source/lib/user/user'),
             area: path.resolve(__dirname, 'source/lib/area/area'),
             tip: path.resolve(__dirname, 'source/lib/tip/tip'),
-            swiper: path.resolve(__dirname, 'source/lib/swiper/idangerous.swiper.min')
+            swiper: path.resolve(__dirname, 'source/lib/swiper/idangerous.swiper.min'),
+            countdown: path.resolve(__dirname, 'source/lib/countdown/countdown')
         }
     }
 };
