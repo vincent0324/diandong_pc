@@ -1,6 +1,7 @@
 define(function(require, exports, module) {
 
     var $ = require('jquery');
+    var Swiper = require('swiper');
 
     // require('./guide.css');
 
@@ -10,6 +11,7 @@ define(function(require, exports, module) {
 
     Guide.prototype = {
         init: function() {
+            this.guideSwiper();
             this.bindEvent();
         },
         bindEvent: function() {
@@ -28,6 +30,28 @@ define(function(require, exports, module) {
 
                 $(this).addClass('current').siblings('a').removeClass('current');
                 tabContent.addClass('fn-hide').eq(index).removeClass('fn-hide');
+            });
+        },
+        guideSwiper: function() {
+            var guideSwiper = new Swiper('.guide-photo-container', {
+                loop: true,
+                grabCursor: true,
+                // autoplay: 5000,
+                autoplayDisableOnInteraction: false,
+                wrapperClass: 'guide-photo-wrapper',
+                slideClass: 'guide-photo-slide',
+                pagination: '.guide-photo-pages',
+                paginationClickable: true
+            });
+
+            $('.guide-photo-prev').on('click', function(e) {
+                e.preventDefault();
+                guideSwiper.swipePrev();
+            });
+
+            $('.guide-photo-next').on('click', function(e) {
+                e.preventDefault();
+                guideSwiper.swipeNext();
             });
         }
     };

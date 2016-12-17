@@ -371,3 +371,227 @@
 .guide-news-model .guide-news-text {
     width: 370px;
 }
+
+.guide-photo {
+    width: 1170px;
+    padding: 10px 15px 0;
+    margin-top: 40px;
+    background-color: white;
+}
+
+.guide-photo-content {
+    width: 1170px;
+    margin-top: 19px;
+    position: relative;
+}
+
+.guide-photo-header {
+    height: 30px;
+    line-height: 30px;
+}
+
+.guide-photo-header::before {
+    content: '';
+    float: left;
+    width: 4px;
+    height: 20px;
+    background-image: url(http://i1.dd-img.com/assets/image/1481927987-c4fb4b4acb0ac009-4w-20h.png);
+    background-repeat: no-repeat;
+    margin: 5px 9px 0 0;
+}
+
+.guide-photo-header h3 {
+    font-size: 20px;
+    color: #343d40;
+    float: left;
+    margin-right: 28px;
+}
+
+.guide-photo-more {
+    font-size: 14px;
+    color: #7d83d6;
+    float: left;
+}
+
+.guide-photo-container {
+    width: 1170px;
+    height: 297px;
+    position: relative;
+    overflow: hidden;
+}
+
+.guide-photo-wrapper {
+    position: relative;
+}
+
+.guide-photo-slide {
+    float: left;
+}
+
+.guide-photo-group {
+    width: 1170px;
+    height: 297px;
+    position: relative;
+}
+
+.guide-photo-item {
+    position: absolute;
+    background-color: #eee;
+    overflow: hidden;
+}
+
+.guide-photo-item-1 {
+    top: 0;
+    left: 0;
+    width: 445px;
+    height: 297px;
+}
+
+.guide-photo-item-1 img {
+    width: 445px;
+    height: 297px;
+}
+
+.guide-photo-item-4 img {
+    width: 270px;
+    height: 297px;
+}
+
+.guide-photo-item-2 {
+    top: 0;
+    left: 452px;
+    width: 217px;
+    height: 145px;
+}
+
+.guide-photo-item-3 {
+    top: 152px;
+    left: 452px;
+    width: 217px;
+    height: 145px;
+}
+
+.guide-photo-item-2 img, .guide-photo-item-3 img, .guide-photo-item-5 img, .guide-photo-item-6 img {
+    width: 217px;
+    height: 145px;
+}
+
+.guide-photo-item-4 {
+    top: 0;
+    right: 224px;
+    width: 270px;
+    height: 297px;
+}
+
+.guide-photo-item-5 {
+    top: 0;
+    right: 0;
+    width: 217px;
+    height: 145px;
+}
+
+.guide-photo-item-6 {
+    top: 152px;
+    right: 0;
+    width: 217px;
+    height: 145px;
+}
+
+.guide-photo-cover {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.guide-photo-cover-title {
+    width: 109px;
+    height: 39px;
+    background-image: url(http://i1.dd-img.com/assets/image/1481934459-c3cfe315044afb43-109w-46h.png);
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    padding-top: 7px;
+    text-align: center;
+    line-height: 39px;
+    font-size: 22px;
+    color: white;
+}
+
+.guide-photo-item-1 .guide-photo-cover-title, .guide-photo-item-4 .guide-photo-cover-title {
+    margin-top: 90px;
+}
+
+.guide-photo-item-2 .guide-photo-cover-title, .guide-photo-item-3 .guide-photo-cover-title, .guide-photo-item-5 .guide-photo-cover-title, .guide-photo-item-6 .guide-photo-cover-title {
+    margin-top: 30px;
+}
+
+.guide-photo-cover-text {
+    margin: 0 auto;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+}
+
+.guide-photo-item-1 .guide-photo-cover-text, .guide-photo-item-4 .guide-photo-cover-text {
+    height: 58px;
+    line-height: 58px;
+    font-size: 30px;
+}
+
+.guide-photo-item-2 .guide-photo-cover-text, .guide-photo-item-3 .guide-photo-cover-text, .guide-photo-item-5 .guide-photo-cover-text, .guide-photo-item-6 .guide-photo-cover-text {
+    height: 38px;
+    line-height: 38px;
+    font-size: 20px;
+}
+
+.guide-photo-pages {
+    height: 8px;
+    font-size: 0;
+    padding: 17px 0;
+    text-align: center;
+}
+
+.guide-photo-pages .swiper-pagination-switch {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: #dcdcdc;
+    margin: 0 5px;
+}
+
+.guide-photo-pages .swiper-active-switch {
+    background-color: #7d83d6;
+}
+
+.guide-photo-ctrl {
+    width: 28px;
+    height: 74px;
+    position: absolute;
+    top: 111px;
+    background-color: rgba(0, 0, 0, 0.3);
+    text-align: center;
+    color: white;
+}
+
+.guide-photo-ctrl:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.guide-photo-prev {
+    left: -15px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.guide-photo-next {
+    right: -15px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.guide-photo-ctrl i {
+    line-height: 74px;
+    font-size: 26px;
+}
