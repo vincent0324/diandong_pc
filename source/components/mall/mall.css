@@ -139,3 +139,28 @@
     color: #f15c2d;
     margin: 0 8px;
 }
+
+.mall-list {
+    overflow: hidden;
+}
+
+.mall-container {
+    width: 1232px;
+    height: 280px;
+    position: relative;
+    overflow: hidden;
+}
+
+.mall-wrapper {
+    position: relative;
+}
+
+.mall-slide {
+    float: left;
+}
+
+.mall-model-item {
+    position: relative;
+    width: 276px;
+    height: 280px;
+}

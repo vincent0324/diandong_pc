@@ -47,6 +47,32 @@
 
     <div id="application">
 
+        <div id="filter-holder" class="filter-holder">
+            <div id="filter" class="filter">
+                <div class="wrap">
+                    <div id="filter-box" class="filter-box fn-left">
+                        <nav class="filter-box-tab">
+                            <a href="javascript:;" class="current">热门车型</a>
+                            <a href="javascript:;"></a>
+                            <a href="javascript:;"></a>
+                        </nav>
+                        <div class="filter-box-tabcon">
+                            <a href="" class="filter-box-item" target="_blank">
+                                <img src="">
+                                <!-- 87 * 58 -->
+                                <p></p>
+                                <i></i>
+                            </a>
+                        </div>
+                        <div class="filter-box-tabcon fn-hide"></div>
+                        <div class="filter-box-tabcon fn-hide"></div>
+                    </div>
+
+                    <div id="filter-select-holder" class="filter-select-holder fn-right"></div>
+                </div>
+            </div>
+        </div>
+
         <div id="focus" class="focus">
             <div class="wrap">
                 <div class="focus-slide fn-left">
@@ -86,6 +112,10 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div id="service-holder" class="service-holder">
+            <div id="service" class="service"></div>
         </div>
 
         <div id="news-holder" class="news-holder">
@@ -262,17 +292,618 @@
                             </div>
                         </div>
                     </div>
-                    <div class="news-tab-content fn-hide"><!-- 新车 --></div>
-                    <div class="news-tab-content fn-hide"><!-- 行业 --></div>
-                    <div class="news-tab-content fn-hide"><!-- 技术 --></div>
-                    <div class="news-tab-content fn-hide"><!-- 政策 --></div>
+                    <div class="news-tab-content fn-hide">
+                        <!-- 新车 -->
+                    </div>
+                    <div class="news-tab-content fn-hide">
+                        <!-- 行业 -->
+                    </div>
+                    <div class="news-tab-content fn-hide">
+                        <!-- 技术 -->
+                    </div>
+                    <div class="news-tab-content fn-hide">
+                        <!-- 政策 -->
+                    </div>
 
                     <a href="" target="_blank" class="more-news-button">查看更多新能源资讯</a>
                 </div>
             </div>
         </div>
 
+        <div id="guide-holder" class="guide-holder">
+            <div id="guide" class="guide">
+                <div class="guide-top wrap">
+                    <header class="guide-header fn-left">
+                        <div class="guide-tools">
+                            <a href="">购车计算器</a>
+                            <a href="">补贴查询</a>
+                            <a href="">摇号查询</a>
+                            <a href="">免费询价</a>
+                        </div>
+                    </header>
+                    <div class="guide-filter fn-right">
+                        <div class="guide-filter-brand guide-filter-item clearfix">
+                            <header class="fn-left">热门品牌</header>
+                            <nav class="fn-left">
+                                <a href="" target="_blank"><img src="" alt=""></a>
+                                <a href="" target="_blank"><img src="" alt=""></a>
+                                <a href="" target="_blank"><img src="" alt=""></a>
+                                <a href="" target="_blank"><img src="" alt=""></a>
+                                <a href="" target="_blank"><img src="" alt=""></a>
+                                <a href="" target="_blank"><img src="" alt=""></a>
+                                <a href="" target="_blank"><img src="" alt=""></a>
+                                <a href="" target="_blank"><img src="" alt=""></a>
+                            </nav>
+                        </div>
+                        <div class="guide-filter-hot guide-filter-item clearfix">
+                            <header class="fn-left">热门条件</header>
+                            <div class="filter-hot-box fn-left">
+                                <nav class="filter-super-tab">
+                                    <a href="javascript:;" class="current">
+                                        <i class="icon">&#xe60d;</i>
+                                        <span>价格</span>
+                                    </a>
+                                    <a href="javascript:;">
+                                        <i class="icon">&#xe60d;</i>
+                                        <span>续航</span>
+                                    </a>
+                                    <a href="javascript:;">
+                                        <i class="icon">&#xe60d;</i>
+                                        <span>类型</span>
+                                    </a>
+                                </nav>
+                                <div class="filter-super-tabcon">
+                                    <nav class="filter-sub-tab">
+                                        <a href="javascript:;" class="current">10万以下</a>
+                                        <a href="javascript:;">10-20万</a>
+                                        <a href="javascript:;">20-30万</a>
+                                        <a href="javascript:;">30万以上</a>
+                                    </nav>
+                                    <div class="filter-sub-tabcon">
+                                        <div class="filter-model-list">
+                                            <a href="" class="filter-model-item" target="_blank">
+                                                <img src="">
+                                                <p class="filter-model-title">比亚迪 e6</p>
+                                                <p class="filter-model-price">￥12.89-23.3万</p>
+                                            </a>
+                                            <a href="" class="filter-model-item" target="_blank">
+                                                <img src="">
+                                                <p class="filter-model-title">比亚迪 e6</p>
+                                                <p class="filter-model-price">￥12.89-23.3万</p>
+                                            </a>
+                                            <a href="" class="filter-model-item" target="_blank">
+                                                <img src="">
+                                                <p class="filter-model-title">比亚迪 e6</p>
+                                                <p class="filter-model-price">￥12.89-23.3万</p>
+                                            </a>
+                                            <a href="" class="filter-model-item" target="_blank">
+                                                <img src="">
+                                                <p class="filter-model-title">比亚迪 e6</p>
+                                                <p class="filter-model-price">￥12.89-23.3万</p>
+                                            </a>
+                                            <a href="" class="filter-model-item" target="_blank">
+                                                <img src="">
+                                                <p class="filter-model-title">比亚迪 e6</p>
+                                                <p class="filter-model-price">￥12.89-23.3万</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="filter-sub-tabcon fn-hide">
+                                        <div class="filter-model-list">
+                                            <a href="" class="filter-model-item" target="_blank">
+                                                <img src="">
+                                                <p class="filter-model-title">比亚迪 e3</p>
+                                                <p class="filter-model-price">￥12.89-23.3万</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="filter-sub-tabcon fn-hide">
+                                        <div class="filter-model-list">
+                                            <a href="" class="filter-model-item" target="_blank">
+                                                <img src="">
+                                                <p class="filter-model-title">比亚迪 e4</p>
+                                                <p class="filter-model-price">￥12.89-23.3万</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="filter-sub-tabcon fn-hide">
+                                        <div class="filter-model-list">
+                                            <a href="" class="filter-model-item" target="_blank">
+                                                <img src="">
+                                                <p class="filter-model-title">比亚迪 e66</p>
+                                                <p class="filter-model-price">￥12.89-23.3万</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="filter-super-tabcon fn-hide"></div>
+                                <div class="filter-super-tabcon fn-hide"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="guide-news wrap">
+                    <div class="guide-news-column guide-news-test">
+                        <header class="news-column-header">
+                            <h3>车型评测</h3>
+                            <a href="" class="news-column-more" target="_blank">more ></a>
+                        </header>
+                        <div class="news-column-content">
+                            <div class="guide-news-photo">
+                                <a href="" target="_blank">
+                                    <img src="http://i2.dd-img.com/upload/2016/1202/1480652132644.jpg">
+                                    <div class="guide-news-cover">
+                                        <div class="guide-news-title">韩国双龙推Tivolis电动版 推行旗</div>
+                                        <div class="guide-news-type"></div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="guide-news-list">
+                                <ul>
+                                    <li>
+                                        <a href="" class="guide-news-ico" target="_blank">单车评测</a>
+                                        <a href="" class="guide-news-text" target="_blank">韩国双龙推Tivolis电动版 推行旗下车型电动化</a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="guide-news-ico" target="_blank">单车评测</a>
+                                        <a href="" class="guide-news-text" target="_blank">韩国双龙推Tivolis电动版 推行旗下车型电动化</a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="guide-news-ico" target="_blank">单车评测</a>
+                                        <a href="" class="guide-news-text" target="_blank">韩国双龙推Tivolis电动版 推行旗下车型电动化</a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="guide-news-ico" target="_blank">单车评测</a>
+                                        <a href="" class="guide-news-text" target="_blank">韩国双龙推Tivolis电动版 推行旗下车型电动化</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="guide-news-column guide-news-video">
+                        <header class="news-column-header">
+                            <h3>视频评测</h3>
+                            <a href="" class="news-column-more" target="_blank">more ></a>
+                        </header>
+                        <div class="news-column-content">
+                            <div class="guide-news-photo">
+                                <a href="" target="_blank">
+                                    <img src="http://i2.dd-img.com/upload/2016/1202/1480652132644.jpg">
+                                    <div class="guide-news-cover">
+                                        <div class="guide-news-title">韩国双龙推Tivolis电动版 推行旗</div>
+                                        <div class="guide-news-type"></div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="guide-news-list">
+                                <ul>
+                                    <li>
+                                        <a href="" class="guide-news-ico" target="_blank">单车评测</a>
+                                        <a href="" class="guide-news-text" target="_blank">韩国双龙推Tivolis电动版 推行旗下车型电动化</a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="guide-news-ico" target="_blank">单车评测</a>
+                                        <a href="" class="guide-news-text" target="_blank">韩国双龙推Tivolis电动版 推行旗下车型电动化</a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="guide-news-ico" target="_blank">单车评测</a>
+                                        <a href="" class="guide-news-text" target="_blank">韩国双龙推Tivolis电动版 推行旗下车型电动化</a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="guide-news-ico" target="_blank">单车评测</a>
+                                        <a href="" class="guide-news-text" target="_blank">韩国双龙推Tivolis电动版 推行旗下车型电动化</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="guide-news-column guide-news-model">
+                        <header class="news-column-header">
+                            <h3>车型导购</h3>
+                            <a href="" class="news-column-more" target="_blank">more ></a>
+                        </header>
+                        <div class="news-column-content">
+                            <div class="guide-news-photo">
+                                <a href="" target="_blank">
+                                    <img src="http://i2.dd-img.com/upload/2016/1202/1480652132644.jpg">
+                                    <div class="guide-news-cover">
+                                        <div class="guide-news-title">韩国双龙推Tivolis电动版 推行旗</div>
+                                        <div class="guide-news-type"></div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="guide-news-list">
+                                <ul>
+                                    <li>
+                                        <a href="" class="guide-news-text" target="_blank">韩国双龙推Tivolis电动版 推行旗下车型电动化</a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="guide-news-text" target="_blank">韩国双龙推Tivolis电动版 推行旗下车型电动化推行旗下车型电动化</a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="guide-news-text" target="_blank">韩国双龙推Tivolis电动版 推行旗下车型电动化</a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="guide-news-text" target="_blank">韩国双龙推Tivolis电动版 推行旗下车型电动化</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="guide-photo wrap">
+                    <header class="guide-photo-header">
+                        <h3>高清大图</h3>
+                        <a href="" class="guide-photo-more" target="_blank">more ></a>
+                    </header>
+                    <div class="guide-photo-content">
+                        <div class="guide-photo-container">
+                            <div class="guide-photo-wrapper">
+                                <div class="guide-photo-slide">
+                                    <div class="guide-photo-group">
+                                        <div class="guide-photo-item guide-photo-item-1">
+                                            <a href="" target="_blank">
+                                                <img src="http://i2.dd-img.com/upload/2016/1019/1476848713130.jpg">
+                                                <div class="guide-photo-cover">
+                                                    <div class="guide-photo-cover-title">官方大片</div>
+                                                    <div class="guide-photo-cover-text">比亚迪 秦EV</div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="guide-photo-item guide-photo-item-2">
+                                            <a href="" target="_blank">
+                                                <img src="http://i2.dd-img.com/upload/2016/1019/1476848713130.jpg">
+                                                <div class="guide-photo-cover">
+                                                    <div class="guide-photo-cover-title">官方大片</div>
+                                                    <div class="guide-photo-cover-text">比亚迪 秦EV</div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="guide-photo-item guide-photo-item-3">
+                                            <a href="" target="_blank">
+                                                <img src="http://i2.dd-img.com/upload/2016/1019/1476848713130.jpg">
+                                                <div class="guide-photo-cover">
+                                                    <div class="guide-photo-cover-title">官方大片</div>
+                                                    <div class="guide-photo-cover-text">比亚迪 秦EV</div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="guide-photo-item guide-photo-item-4">
+                                            <a href="" target="_blank">
+                                                <img src="http://i2.dd-img.com/upload/2016/1019/1476848713130.jpg">
+                                                <div class="guide-photo-cover">
+                                                    <div class="guide-photo-cover-title">官方大片</div>
+                                                    <div class="guide-photo-cover-text">比亚迪 秦EV</div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="guide-photo-item guide-photo-item-5">
+                                            <a href="" target="_blank">
+                                                <img src="http://i2.dd-img.com/upload/2016/1019/1476848713130.jpg">
+                                                <div class="guide-photo-cover">
+                                                    <div class="guide-photo-cover-title">官方大片</div>
+                                                    <div class="guide-photo-cover-text">比亚迪 秦EV</div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="guide-photo-item guide-photo-item-6">
+                                            <a href="" target="_blank">
+                                                <img src="http://i2.dd-img.com/upload/2016/1019/1476848713130.jpg">
+                                                <div class="guide-photo-cover">
+                                                    <div class="guide-photo-cover-title">官方大片</div>
+                                                    <div class="guide-photo-cover-text">比亚迪 秦EV</div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="guide-photo-slide">
+                                    <div class="guide-photo-group">
+                                        <div class="guide-photo-item guide-photo-item-1"></div>
+                                        <div class="guide-photo-item guide-photo-item-2"></div>
+                                        <div class="guide-photo-item guide-photo-item-3"></div>
+                                        <div class="guide-photo-item guide-photo-item-4"></div>
+                                        <div class="guide-photo-item guide-photo-item-5"></div>
+                                        <div class="guide-photo-item guide-photo-item-6"></div>
+                                    </div>
+                                </div>
+                                <div class="guide-photo-slide">
+                                    <div class="guide-photo-group">
+                                        <div class="guide-photo-item guide-photo-item-1"></div>
+                                        <div class="guide-photo-item guide-photo-item-2"></div>
+                                        <div class="guide-photo-item guide-photo-item-3"></div>
+                                        <div class="guide-photo-item guide-photo-item-4"></div>
+                                        <div class="guide-photo-item guide-photo-item-5"></div>
+                                        <div class="guide-photo-item guide-photo-item-6"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="guide-photo-pages"></div>
+
+                        <a href="javascript:;" class="guide-photo-ctrl guide-photo-prev"><i class="icon">&#xe602;</i></a>
+
+                        <a href="javascript:;" class="guide-photo-ctrl guide-photo-next"><i class="icon">&#xe603;</i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="mall-holder" class="mall-holder">
+            <div id="mall" class="mall">
+
+                <div class="mall-top wrap">
+                    <header class="mall-header fn-left">
+                        <div class="mall-header-text">
+                            <span>底价承诺</span>
+                            <span>正品新车</span>
+                            <span>多车试驾</span>
+                            <span>购车管家</span>
+                        </div>
+                    </header>
+                    <div class="event-display fn-right">
+                        <div class="event-box fn-left">
+                            <div class="event-box-item">
+                                <a href="" target="_blank"><img src=""></a>
+                                <div class="event-countdown" data-endtime="1483181999000">距结束 <span></span>天<span></span>时<span></span>分<span></span>秒</div>
+                            </div>
+                            <div class="event-box-item fn-hide"></div>
+                            <div class="event-box-item fn-hide"></div>
+                            <div class="event-box-item fn-hide"></div>
+                        </div>
+                        <aside class="event-list fn-right">
+                            <a href="javascript:;" class="event-ctrl event-ctrl-prev"><i class="icon">&#xe605;</i></a>
+                            <div class="event-list-holder">
+                                <div class="event-container">
+                                    <div class="event-wrapper">
+                                        <div class="event-slide">
+                                            <div class="event-slide-item current"><img src=""></div>
+                                        </div>
+                                        <div class="event-slide">
+                                            <div class="event-slide-item"><img src=""></div>
+                                        </div>
+                                        <div class="event-slide">
+                                            <div class="event-slide-item"><img src=""></div>
+                                        </div>
+                                        <div class="event-slide">
+                                            <div class="event-slide-item"><img src=""></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="javascript:;" class="event-ctrl event-ctrl-next"><i class="icon">&#xe606;</i></a>
+                        </aside>
+                    </div>
+                </div>
+
+                <div class="mall-list wrap">
+                    <div class="mall-container">
+                        <div class="mall-wrapper">
+                            <div class="mall-slide">
+                                <div class="mall-model-item mall-item-special">
+                                    <header class="mall-item-header"></header>
+                                    <div class="mall-item-content">
+                                        <div class="mall-item-pic">
+                                            <a href="" target="_blank"><img src=""></a>
+                                        </div>
+                                        <div class="mall-item-info">
+                                            <a href="" class="fn-left" target="_blank">比亚迪e6</a>
+                                            <span class="fn-right">￥23.23万</span>
+                                        </div>
+                                        <div class="mall-item-intro">综合优惠22222元，支持零首付购车，送三年保险</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mall-slide">
+                                <div class="mall-model-item mall-item-group">
+                                    <header class="mall-item-header"></header>
+                                    <div class="mall-item-content">
+                                        <div class="mall-item-pic">
+                                            <a href="" target="_blank"><img src=""></a>
+                                        </div>
+                                        <div class="mall-item-info">
+                                            <a href="" class="fn-left" target="_blank">比亚迪e6</a>
+                                            <span class="fn-right">￥23.23万</span>
+                                        </div>
+                                        <div class="mall-item-intro">综合优惠22222元，支持零首付购车，送三年保险</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mall-slide"></div>
+                            <div class="mall-slide"></div>
+                            <div class="mall-slide"></div>
+                        </div>
+                    </div>
+
+                    <a href="javascript:;" class="mall-swiper-ctrl mall-swiper-prev"><i class="icon">&#xe602;</i></a>
+                    <a href="javascript:;" class="mall-swiper-ctrl mall-swiper-next"><i class="icon">&#xe603;</i></a>
+                </div>
+
+                <div class="mall-local wrap">
+                    <header class="mall-local-header">
+                        <h3 class="fn-left"><span class="mall-local-city">北京</span>新能源购车</h3>
+                        <div id="mall-city-btn"></div>
+                    </header>
+                    <div class="mall-local-content">
+                        <div class="mall-local-item clearfix">
+                            <div class="local-item-pic fn-left">
+                                <a href="" target="_blank">
+                                    <img src="">
+                                    <p>那些系能源汽车过得如何？</p>
+                                </a>
+                            </div>
+                            <div class="local-item-news fn-left">
+                                <ul>
+                                    <li>
+                                        <span>团购</span>
+                                        <a href="" target="_blank">将渠道刘希成为旗舰机跑车</a>
+                                    </li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                </ul>
+                            </div>
+                            <div class="local-item-photo fn-right">
+                                <ul>
+                                    <li>
+                                        <a href="" target="_blank">
+                                            <img src="">
+                                            <p>钢炮党兴奋了</p>
+                                        </a>
+                                    </li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="mall-local-item clearfix"></div>
+                        <div class="mall-local-item clearfix"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div id="social-holder" class="social-holder">
+            <div id="social" class="social">
+
+                <div class="social-top wrap">
+                    <header class="social-header fn-left">
+                        <div class="social-header-text">
+                            <p>知识的岛屿越大，</p>
+                            <p>无知的海岸线越长</p>
+                        </div>
+                    </header>
+                    <div class="social-focus fn-right">
+                        <div class="social-swiper fn-left">
+                            <div class="social-container">
+                                <div class="social-wrapper">
+                                    <div class="social-slide">
+                                        <div class="social-focus-item">
+                                            <a href="" target="_blank">
+                                                <img src="">
+                                                <p>那些新能源车新式礼门，你们现在过得好么</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="social-slide"></div>
+                                    <div class="social-slide"></div>
+                                </div>
+                            </div>
+                            <div class="social-pages"></div>
+                        </div>
+
+                        <div class="social-focus-news fn-right">
+                            <div class="social-top-line">
+                                <a href="" target="_blank">教程：大牛相符备胎的七个回合</a>
+                            </div>
+                            <ul>
+                                <li>
+                                    <span>充电</span>
+                                    <a href="" target="_blank">将取代刘希成期间及跑车</a>
+                                </li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="social-friend wrap">
+                    <header class="social-sub-header">
+                        <h4>邦友活动</h4>
+                    </header>
+                    <div class="social-friend-content">
+                        <div class="friend-container">
+                            <div class="friend-wrapper">
+                                <div class="friend-slide">
+                                    <div class="friend-item">
+                                        <a href="" target="_blank" class="friend-item-pic"><img src=""></a>
+                                        <a href="" target="_blank" class="friend-item-logo"><img src=""></a>
+                                    </div>
+                                </div>
+                                <div class="friend-slide"></div>
+                                <div class="friend-slide"></div>
+                            </div>
+                        </div>
+
+                        <a href="javascript:;" class="friend-ctrl friend-ctrl-prev"><i class="icon">&#xe602;</i></a>
+                        <a href="javascript:;" class="friend-ctrl friend-ctrl-next"><i class="icon">&#xe603;</i></a>
+                    </div>
+                </div>
+
+                <div class="social-bbs wrap">
+                    <header class="social-sub-header">
+                        <h4>热论板块</h4>
+                    </header>
+                    <div class="social-bbs-content">
+                        <div class="bbs-list clearfix">
+                            <a href="" target="_blank">腾势论坛</a>
+                            <a href="" target="_blank">腾势论坛</a>
+                            <a href="" target="_blank">腾势论坛</a>
+                            <a href="" target="_blank">腾势论坛</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
     </div>
+
+    <div id="feature-holder" class="feature-holder"></div>
+
+    <div id="link-holder" class="link-holder">
+        <div id="link" class="link">
+            <div class="wrap clearfix">
+                <div id="link-brands" class="link-brands fn-left">
+                    <header class="link-header">
+                        <h4>热门品牌</h4>
+                    </header>
+                    <div class="link-content clearfix">
+                        <a href="" target="_blank"><img src="">
+                            <!--44*44-->
+                        </a>
+                        <a href="" target="_blank"><img src=""></a>
+                        <a href="" target="_blank"><img src=""></a>
+                    </div>
+                </div>
+                <div id="link-friend" class="link-friend fn-left">
+                    <header class="link-header">
+                        <h4>合作伙伴</h4></header>
+                    <div class="link-content clearfix">
+                        <a href="" target="_blank"><img src="">
+                            <!--80*35-->
+                        </a>
+                    </div>
+                </div>
+                <div id="link-tab" class="link-tab fn-right">
+                    <header class="link-header link-tab-btn">
+                        <h4 class="current">友情链接</h4>
+                        <h4>行业网站</h4>
+                    </header>
+                    <div class="link-content link-tab-content clearfix">
+                        <a href="" target="_blank">车云网</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer id="footer" class="footer"></footer>
+
+
+    <div id="side-nav-holder" class="side-nav-holder"></div>
 
     <script src="/diandong.com/build/home.js"></script>
 

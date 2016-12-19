@@ -11,6 +11,7 @@ define(function(require, exports, module) {
     Mall.prototype = {
         init: function() {
             this.initEventSwiper();
+            this.initMallSwiper();
             this.setCountdown();
             this.bindEvent();
         },
@@ -27,21 +28,43 @@ define(function(require, exports, module) {
             var eventSwiper = new Swiper('.event-container', {
                 wrapperClass: 'event-wrapper',
                 slideClass: 'event-slide',
-                slidesPerView: 3,
+                slidesPerView: 4,
                 // autoplay: 3000,
-                speed: 1000,
-                // loop: true,
-                mode: 'vertical'
+                // speed: 1000,
+                loop: true
             });
 
-            $('.event-ctrl-prev').on('click', function(e) {
+            $('.mall-swiper-prev').on('click', function(e) {
                 e.preventDefault();
                 eventSwiper.swipePrev();
             });
 
-            $('.event-ctrl-next').on('click', function(e) {
+            $('.mall-swiper-next').on('click', function(e) {
                 e.preventDefault();
                 eventSwiper.swipeNext();
+            });
+        },
+
+        initMallSwiper: function() {
+            var mallSwiper = new Swiper('.mall-container', {
+                wrapperClass: 'mall-wrapper',
+                slideClass: 'mall-slide',
+                slidesPerView: 4,
+                paginationClickable: true,
+                // autoplay: 3000,
+                // speed: 1000,
+                loop: true
+                // mode: 'vertical'
+            });
+
+            $('.mall-ctrl-prev').on('click', function(e) {
+                e.preventDefault();
+                mallSwiper.swipePrev();
+            });
+
+            $('.mall-ctrl-next').on('click', function(e) {
+                e.preventDefault();
+                mallSwiper.swipeNext();
             });
         },
         setCountdown: function() {
