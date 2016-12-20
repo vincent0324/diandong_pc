@@ -142,6 +142,8 @@
 
 .mall-list {
     overflow: hidden;
+    margin-top: 40px;
+    position: relative;
 }
 
 .mall-container {
@@ -163,4 +165,258 @@
     position: relative;
     width: 276px;
     height: 280px;
+}
+
+.mall-item-header {
+    width: 276px;
+    height: 36px;
+    position: relative;
+    background-color: #e5e5e5;
+    border-radius: 36px;
+    overflow: hidden;
+    line-height: 36px;
+}
+
+.mall-item-header em {
+    width: 72px;
+    height: 40px;
+    border-radius: 36px;
+    background-color: white;
+    left: 3px;
+    top: -2px;
+    position: absolute;
+}
+
+.mall-item-header i {
+    width: 72px;
+    height: 36px;
+    border-radius: 36px;
+    background-color: #e74816;
+    left: 0;
+    top: 0;
+    position: absolute;
+    font-size: 18px;
+    color: white;
+    text-align: center;
+    font-style: normal;
+}
+
+.mall-item-group .mall-item-header i {
+    background-color: #df314d;
+}
+
+.mall-item-countdown {
+    padding-left: 84px;
+    font-size: 14px;
+}
+
+.mall-item-countdown span {
+    color: #f15c2d;
+}
+
+.mall-item-pic {
+    width: 276px;
+    height: 120px;
+}
+
+.mall-item-pic img {
+    width: 276px;
+    height: 120px;
+}
+
+.mall-item-content {
+    margin-top: 17px;
+}
+
+.mall-item-info {
+    height: 40px;
+    border-bottom: 1px dashed #e7e7e7;
+    line-height: 40px;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.mall-item-info a {
+    color: #3b3f40;
+}
+
+.mall-item-info span {
+    color: #e74816;
+}
+
+.mall-item-intro {
+    height: 36px;
+    line-height: 18px;
+    padding: 10px;
+    overflow: hidden;
+    color: #e74816;
+    font-size: 14px;
+}
+
+.mall-swiper-ctrl {
+    width: 28px;
+    height: 74px;
+    position: absolute;
+    top: 78px;
+    background-color: rgba(0, 0, 0, 0.3);
+    text-align: center;
+    color: white;
+}
+
+.mall-swiper-ctrl:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.mall-swiper-prev {
+    left: 0;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.mall-swiper-next {
+    right: 0;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.mall-swiper-ctrl i {
+    line-height: 74px;
+    font-size: 26px;
+}
+
+.mall-local {
+    margin-top: 25px;
+}
+
+.mall-local-header {
+    height: 30px;
+    line-height: 30px;
+}
+
+.mall-local-header::before {
+    content: '';
+    float: left;
+    width: 4px;
+    height: 20px;
+    margin: 5px 9px 0 0;
+    background-color: #f15c2d;
+}
+
+.mall-local-header h3 {
+    font-size: 20px;
+    color: #343d40;
+    margin-right: 20px;
+}
+
+#mall-city-btn i {
+    font-size: 14px;
+}
+
+#mall-city-btn a {
+    color: #f15c2d;
+}
+
+.mall-local-content {
+    margin-top: 20px;
+}
+
+.local-item-pic {
+    width: 270px;
+    height: 180px;
+    position: relative;
+    margin-right: 15px;
+}
+
+.local-item-pic img {
+    width: 270px;
+    height: 180px;
+}
+
+.local-item-pic p {
+    height: 36px;
+    width: 250px;
+    padding: 24px 10px 0;
+    line-height: 36px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, .6));
+    font-size: 16px;
+    color: white;
+}
+
+.local-item-news {
+    width: 360px;
+}
+
+.local-item-news li {
+    height: 22px;
+    padding-bottom: 12px;
+}
+
+.local-item-news li span {
+    float: left;
+    width: 42px;
+    height: 20px;
+    border: 1px solid #e7e7e7;
+    text-align: center;
+    line-height: 20px;
+    color: #b5b5b5;
+    font-size: 12px;
+    margin-right: 12px;
+}
+
+.local-item-news li a {
+    height: 22px;
+    line-height: 22px;
+    float: left;
+    width: 304px;
+    color: #3b3f40;
+    font-size: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.local-item-news li a:hover {
+    color: #f15c2d;
+}
+
+.local-item-photo {
+    width: 480px;
+    height: 180px;
+    overflow: hidden;
+    padding-left: 30px;
+    border-left: 1px solid #e5e5e5;
+}
+
+.local-item-photo li {
+    width: 240px;
+    height: 75px;
+    float: left;
+    margin-bottom: 28px;
+}
+
+.local-item-photo li img {
+    float: left;
+    width: 114px;
+    height: 76px;
+    margin-right: 10px;
+}
+
+.local-item-photo li p {
+    float: left;
+    width: 100px;
+    height: 76px;
+    overflow: hidden;
+    line-height: 22px;
+    font-size: 14px;
+}
+
+.local-item-photo li a {
+    color: #3b3f40;
+}
+
+.local-item-photo li a:hover {
+    color: #f15c2d;
 }

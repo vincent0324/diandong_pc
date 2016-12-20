@@ -4,7 +4,7 @@ define(function(require, exports, module) {
 
     var Cookie, area;
 
-    Cookie = require('Cookie');
+    Cookie = require('cookie');
 
     area = {
         id: '',

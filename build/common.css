@@ -3,13 +3,23 @@
 html {
     font-family: "PingFang SC", Helvetica, Arial, "Microsoft YaHei", sans-serif;
     line-height: 1.15;
+    color: #434343;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
-    font-size: 14px;
 }
 
 body {
-    margin: 0
+    margin: 0;
+    font-size: 12px;
+}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    margin: 0;
+    padding: 0;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -108,7 +118,8 @@ audio:not([controls]) {
 }
 
 img {
-    border-style: none
+    border-style: none;
+    border: 0;
 }
 
 svg:not(:root) {
@@ -156,6 +167,11 @@ legend {
     max-width: 100%;
     padding: 0;
     white-space: normal
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
 progress {
@@ -206,13 +222,8 @@ canvas {
     display: none
 }
 
-article, aside, blockquote, body, button, code, dd, details, div, dl, dt, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, hr, input, legend, li, menu, nav, ol, p, pre, section, td, textarea, th, ul {
-    margin: 0;
-    padding: 0
-}
-
 a {
-    text-decoration: none
+    text-decoration: none;
 }
 
 .clearfix:after {
@@ -221,11 +232,11 @@ a {
     font-size: 0;
     content: " ";
     clear: both;
-    height: 0
+    height: 0;
 }
 
 .clearfix {
-    zoom: 1
+    zoom: 1;
 }
 
 body .fn-hide {
