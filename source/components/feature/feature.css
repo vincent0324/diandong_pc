@@ -1,0 +1,53 @@
+.feature {
+    height: 66px;
+    padding: 26px 0;
+    border-top: 1px solid #dcdcdc;
+}
+
+.feature-list li {
+    height: 66px;
+    float: left;
+    width: 300px;
+}
+
+.feature-list i {
+    width: 66px;
+    height: 66px;
+    background-image: url(http://i1.dd-img.com/assets/image/1476686969-1bc9ee21a2ef6ad5-66w-264h.png);
+    background-repeat: no-repeat;
+    float: left;
+    margin-right: 13px;
+}
+
+.feature-base-price i {
+    background-position: 0 0;
+}
+
+.feature-new i {
+    background-position: 0 -66px;
+}
+
+.feature-special i {
+    background-position: 0 -132px;
+}
+
+.feature-manager i {
+    background-position: 0 -198px;
+}
+
+.feature-text {
+    float: left;
+    line-height: 24px;
+    padding-top: 9px;
+    height: 60px;
+}
+
+.feature-text dt {
+    font-size: 18px;
+    color: #282c30;
+}
+
+.feature-text dd {
+    font-size: 14px;
+    color: #b9b9b9;
+}
