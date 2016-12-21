@@ -3,12 +3,12 @@ var path = require('path');
 
 var config = {
     entry: {
-        mall: path.resolve(__dirname, 'source/components/mall/app.js')
+        service: path.resolve(__dirname, 'source/components/service/app.js')
     },
 
     output: {
-        path: path.resolve(__dirname, 'source/components/mall'),
-        filename: '[name].debug.js'
+        path: path.resolve(__dirname, 'source/components/service'),
+        filename: '[name].js'
     },
 
     module: {

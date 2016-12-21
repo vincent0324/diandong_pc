@@ -5,6 +5,8 @@ define(function(require, exports, module) {
     var Swiper = require('swiper');
     var Countdown = require('countdown');
 
+    require('./mall.css');
+
     var Mall = function() {
         this.init();
     };

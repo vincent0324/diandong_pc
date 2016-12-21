@@ -1,0 +1,96 @@
+.service {
+    height: 70px;
+    position: relative;
+}
+
+.service a {
+    position: absolute;
+    width: 275px;
+    top: 0;
+    border-radius: 3px;
+    height: 48px;
+    padding: 11px 0 11px 13px;
+    font-size: 0;
+    line-height: 48px;
+}
+
+.service a:hover {
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.service-item-helper {
+    left: 0;
+}
+
+.service-item-product {
+    left: 304px;
+}
+
+.service-item-test {
+    right: 304px;
+}
+
+.service-item-mall {
+    right: 0;
+}
+
+.service i {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    vertical-align: middle;
+    ;
+    background-image: url(http://i1.dd-img.com/assets/image/1482303361-2f12717d2a927ca1-48w-192h.png);
+    background-repeat: no-repeat;
+}
+
+.service em {
+    display: inline-block;
+    width: 40px;
+    height: 48px;
+    vertical-align: middle;
+    font-style: normal;
+    font-size: 24px;
+    text-align: center;
+}
+
+.service-item-helper em {
+    color: #28d1b3;
+}
+
+.service-item-product em {
+    color: #6770e7;
+}
+
+.service-item-test em {
+    color: #b261df;
+}
+
+.service-item-mall em {
+    color: #e74816;
+}
+
+.service-item-helper i {
+    background-position: 0 0;
+}
+
+.service-item-product i {
+    background-position: 0 -48px;
+}
+
+.service-item-test i {
+    background-position: 0 -96px;
+}
+
+.service-item-mall i {
+    background-position: 0 -144px;
+}
+
+.service span {
+    display: inline-block;
+    font-size: 16px;
+    color: #a0a0a0;
+    height: 48px;
+    vertical-align: top;
+}
