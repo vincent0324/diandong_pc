@@ -81,3 +81,7 @@ var link = new Link();
 // footer
 var Footer = require('./components/footer/Footer');
 var footer = new Footer();
+
+// sidebar
+var Sidebar = require('./components/sidebar/Sidebar.react');
+ReactDOM.render(<Sidebar />, document.getElementById('sidebar'));
