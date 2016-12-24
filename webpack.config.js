@@ -3,11 +3,11 @@ var path = require('path');
 
 var config = {
     entry: {
-        focus: path.resolve(__dirname, 'source/components/focus/app.js')
+        filter: path.resolve(__dirname, 'source/components/filter/app.js')
     },
 
     output: {
-        path: path.resolve(__dirname, 'source/components/focus'),
+        path: path.resolve(__dirname, 'source/components/filter'),
         filename: '[name].debug.js'
     },
 
