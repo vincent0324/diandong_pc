@@ -1,5 +1,7 @@
 define(function(require, exports, module) {
 
+    require('./link.css');
+
     var $ = require('jquery');
 
     var Link = function() {

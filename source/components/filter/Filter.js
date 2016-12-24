@@ -1,5 +1,7 @@
 define(function(require, exports, module) {
 
+    require('./filter.css');
+
     var $ = require('jquery');
 
     var Filter = function() {

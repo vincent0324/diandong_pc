@@ -73,6 +73,7 @@ var config = {
             user: path.resolve(__dirname, 'source/lib/user/user'),
             area: path.resolve(__dirname, 'source/lib/area/area'),
             tip: path.resolve(__dirname, 'source/lib/tip/tip'),
+            countdown: path.resolve(__dirname, 'source/lib/countdown/countdown'),
             swiper: path.resolve(__dirname, 'source/lib/swiper/idangerous.swiper.min')
         }
     }

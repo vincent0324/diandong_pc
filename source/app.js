@@ -22,10 +22,62 @@ ReactDOM.render(<Search />, document.getElementById('search-holder'));
 require('./components/nav/nav.css');
 
 
+// filter
+var Filter = require('./components/filter/Filter');
+var filter = new Filter();
+
+var FilterSelect = require('./components/filter/FilterSelect.react');
+
+ReactDOM.render(<FilterSelect/>, document.getElementById('filter-select-holder'));
+
+
 // focus
 var Focus = require('./components/focus/focus');
 var focus = new Focus();
 
+
+// service
+var Service = require('./components/service/Service.react');
+
+ReactDOM.render(<Service/>, document.getElementById('service-holder'));
+
+
 // news
 var News = require('./components/news/news');
 var news = new News();
+
+
+// guide
+var Guide = require('./components/guide/guide');
+var guide = new Guide();
+
+
+
+// mall
+ReactDOM.render(<City/>, document.getElementById('mall-city-btn'));
+
+var Mall = require('./components/mall/Mall');
+var mall = new Mall();
+
+
+// social
+var Social = require('./components/social/Social');
+var social = new Social();
+
+
+
+// feature
+var Feature = require('./components/feature/Feature.react');
+
+ReactDOM.render(<Feature/>, document.getElementById('feature-holder'));
+
+
+// link
+var Link = require('./components/link/Link');
+var link = new Link();
+
+
+
+// footer
+var Footer = require('./components/footer/Footer');
+var footer = new Footer();
