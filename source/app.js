@@ -5,6 +5,7 @@ require('console-polyfill');
 var React = require('react');
 var ReactDOM = require('react-dom');
 
+require('./css/common.css');
 require('./css/home.css');
 
 
