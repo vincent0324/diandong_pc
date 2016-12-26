@@ -2,7 +2,7 @@ define(function(require, exports, module) {
 
     var $ = require('jquery');
     var mask = require('mask');
-    
+
     require('./dialog.css');
 
     var dialog = {
@@ -33,9 +33,7 @@ define(function(require, exports, module) {
             var dialog = this.elements.dialog;
 
             this.hide();
-            options.hasMask && mask.show({
-                className: 'j-close-dialog'
-            });
+            options.hasMask && mask.show({className: 'j-close-dialog'});
             options.title && this.elements.title.html(options.title).appendTo(dialog);
             options.hasCloseBtn && this.elements.closeBtn.appendTo(dialog);
             options.className && this.elements.dialog.addClass(options.className);
@@ -43,8 +41,12 @@ define(function(require, exports, module) {
             dialog.appendTo(document.body);
         },
         show: function(content, options) {
-            var cnt = content ? content : '';
-            var opt = options ? $.extend({}, this.options, options) : this.options;
+            var cnt = content
+                ? content
+                : '';
+            var opt = options
+                ? $.extend({}, this.options, options)
+                : this.options;
 
             this.render(cnt, opt);
             opt.width && this.elements.dialog.css('width', opt.width);

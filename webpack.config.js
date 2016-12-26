@@ -3,11 +3,11 @@ var path = require('path');
 
 var config = {
     entry: {
-        filter: path.resolve(__dirname, 'source/components/filter/app.js')
+        temp: path.resolve(__dirname, 'source/components/temp/app.js')
     },
 
     output: {
-        path: path.resolve(__dirname, 'source/components/filter'),
+        path: path.resolve(__dirname, 'source/components/temp'),
         filename: '[name].debug.js'
     },
 
@@ -45,7 +45,11 @@ var config = {
             countdown: path.resolve(__dirname, 'source/lib/countdown/countdown'),
             carselect: path.resolve(__dirname, 'source/lib/carselect/carselect'),
             location: path.resolve(__dirname, 'source/lib/location/location'),
-            cityselect: path.resolve(__dirname, 'source/lib/cityselect/cityselect')
+            cityselect: path.resolve(__dirname, 'source/lib/cityselect/cityselect'),
+            mask: path.resolve(__dirname, 'source/lib/mask/mask'),
+            dialog: path.resolve(__dirname, 'source/lib/dialog/dialog'),
+            testdrive: path.resolve(__dirname, 'source/lib/testdrive/testdrive'),
+            pikaday: path.resolve(__dirname, 'source/lib/pikaday/pikaday')
         }
     }
 };

@@ -2,7 +2,16 @@ var React = require('react');
 
 require('./FilterSelect.css');
 
+var testdrive = require('testdrive');
+
 var FilterSelect = React.createClass({
+
+    componentDidMount: function() {
+
+
+
+        testdrive.show(0,0,0,0);
+    },
 
     render: function() {
         return (

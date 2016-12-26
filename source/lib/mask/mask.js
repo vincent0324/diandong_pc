@@ -16,7 +16,9 @@ define(function(require, exports, module) {
             this.element.appendTo(document.body);
         },
         show: function(options) {
-            var opt = options ? $.extend({}, this.options, options) : this.options;
+            var opt = options
+                ? $.extend({}, this.options, options)
+                : this.options;
 
             this.render(opt.className);
             this.element.show();
