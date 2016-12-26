@@ -1,11 +1,13 @@
 var webpack = require('webpack');
 var path = require('path');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var Modernizr = path.resolve(__dirname, 'source/lib/modernizr/modernizr');
 
 var config = {
+    
     entry: {
         vendor: [
-            'jquery', 'react', 'react-dom'
+            'jquery', 'react', 'react-dom', Modernizr
         ],
         home: path.resolve(__dirname, 'source/app.js')
     },
