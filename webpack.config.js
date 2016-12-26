@@ -3,11 +3,11 @@ var path = require('path');
 
 var config = {
     entry: {
-        footer: path.resolve(__dirname, 'source/components/footer/app.js')
+        filter: path.resolve(__dirname, 'source/components/filter/app.js')
     },
 
     output: {
-        path: path.resolve(__dirname, 'source/components/footer'),
+        path: path.resolve(__dirname, 'source/components/filter'),
         filename: '[name].debug.js'
     },
 
@@ -42,7 +42,10 @@ var config = {
             area: path.resolve(__dirname, 'source/lib/area/area'),
             tip: path.resolve(__dirname, 'source/lib/tip/tip'),
             swiper: path.resolve(__dirname, 'source/lib/swiper/idangerous.swiper.min'),
-            countdown: path.resolve(__dirname, 'source/lib/countdown/countdown')
+            countdown: path.resolve(__dirname, 'source/lib/countdown/countdown'),
+            carselect: path.resolve(__dirname, 'source/lib/carselect/carselect'),
+            location: path.resolve(__dirname, 'source/lib/location/location'),
+            cityselect: path.resolve(__dirname, 'source/lib/cityselect/cityselect')
         }
     }
 };

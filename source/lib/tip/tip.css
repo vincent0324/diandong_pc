@@ -31,7 +31,6 @@
         transform: scale3d(1, 1, 1);
     }
 }
-
 @keyframes tip-bounceIn {
     0%, 20%, 40%, 60%, 80%, 100% {
         -webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
@@ -65,14 +64,12 @@
         transform: scale3d(1, 1, 1);
     }
 }
-
 .tip-bounceIn {
     -webkit-animation-name: tip-bounceIn;
     animation-name: tip-bounceIn;
     -webkit-animation-duration: .75s;
     animation-duration: .75s;
 }
-
 .widget-tip {
     text-align: center;
     z-index: 800;
@@ -86,7 +83,6 @@
     left: 0;
     margin: auto;
 }
-
 .widget-tip-inner {
     display: inline-block;
     text-align: center;
@@ -97,11 +93,9 @@
     border-color: rgba(0, 0, 0, 0.1);
     font-size: 0;
 }
-
 .widget-tip.animated {
     display: block;
 }
-
 .widget-tip-ico {
     width: 100px;
     height: 100px;
@@ -113,7 +107,6 @@
     display: inline-block;
     vertical-align: bottom;
 }
-
 .widget-tip-content {
     height: 100px;
     line-height: 100px;

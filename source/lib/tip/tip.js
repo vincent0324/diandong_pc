@@ -1,7 +1,5 @@
 define(function(require, exports, module) {
 
-    'use strict';
-
     var $ = require('jquery');
 
     require('./tip.css');
@@ -15,24 +13,19 @@ define(function(require, exports, module) {
     };
 
     function handle(text, time, type) {
+        var tipHtml, duration;
 
         $('.widget-tip').remove();
 
         clearTimeout(timeId);
 
-        var duration = time
-            ? time
-            : 1500;
+        duration = time ? time : 1500;
 
-        var tipHtml = [
+        tipHtml = [
             '<div class="widget-tip tip-bounceIn">',
             '<div class="widget-tip-inner">',
-            '<i class="icon widget-tip-ico">',
-            icoConfig[type],
-            '</i>',
-            '<span class="widget-tip-content">',
-            text,
-            '</span>',
+            '<i class="icon widget-tip-ico">' + icoConfig[type] + '</i>',
+            '<span class="widget-tip-content">' + text + '</span>',
             '</div>',
             '</div>'
         ].join('');

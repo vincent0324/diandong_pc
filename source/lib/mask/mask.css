@@ -1,0 +1,12 @@
+.widget-mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 200;
+    /*background-color: black;*/
+    background-color: rgba(0,0,0,0.75);
+    display: none;
+    /*opacity: 0.5;*/
+}

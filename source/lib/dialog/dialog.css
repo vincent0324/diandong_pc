@@ -1,0 +1,48 @@
+.widget-dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    background-color: white;
+    z-index: 500;
+    width: 700px;
+    height: 350px;
+}
+.widget-dialog-title {
+    height: 47px;
+    position: relative;
+    line-height: 47px;
+    font-size: 16px;
+    padding-left: 15px;
+    color: #ced8e2;
+    border-bottom: 3px solid #3595e6;
+    background-color: #282c30;
+}
+.widget-dialog-close-btn {
+    position: absolute;
+    width: 47px;
+    height: 47px;
+    top: 0;
+    right: 0;
+    font-size: 40px;
+    text-align: center;
+    background-color: #3595e6;
+    color: white;
+}
+.widget-dialog-close-btn i {
+    display: block;
+    font-size: 24px;
+    line-height: 47px;
+}
+.widget-dialog-close-btn:hover {
+    background-color: #197acc;
+}
+.widget-dialog-close-btn:hover i {
+    color: white;
+}
+.widget-dialog-content {
+    position: relative;
+    padding: 15px;
+}
