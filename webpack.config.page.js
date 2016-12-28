@@ -4,7 +4,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var Modernizr = path.resolve(__dirname, 'source/lib/modernizr/modernizr');
 
 var config = {
-    
+
     entry: {
         vendor: [
             'jquery', 'react', 'react-dom', Modernizr
@@ -76,7 +76,8 @@ var config = {
             area: path.resolve(__dirname, 'source/lib/area/area'),
             tip: path.resolve(__dirname, 'source/lib/tip/tip'),
             countdown: path.resolve(__dirname, 'source/lib/countdown/countdown'),
-            swiper: path.resolve(__dirname, 'source/lib/swiper/idangerous.swiper.min')
+            swiper: path.resolve(__dirname, 'source/lib/swiper/idangerous.swiper.min'),
+            swiper3: path.resolve(__dirname, 'source/lib/swiper3/swiper-3.4.1.min')
         }
     }
 };

@@ -8,7 +8,7 @@ define(function(require, exports, module) {
 
     F.prototype = {
         init: function() {
-            testdrive.show(0,0,0,0);
+            testdrive.show(0, 0, 0, 0);
         }
     }
 

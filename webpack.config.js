@@ -3,11 +3,11 @@ var path = require('path');
 
 var config = {
     entry: {
-        filter: path.resolve(__dirname, 'source/components/filter/app.js')
+        news: path.resolve(__dirname, 'source/components/news/app.js')
     },
 
     output: {
-        path: path.resolve(__dirname, 'source/components/filter'),
+        path: path.resolve(__dirname, 'source/components/news'),
         filename: '[name].debug.js'
     },
 
@@ -42,14 +42,8 @@ var config = {
             area: path.resolve(__dirname, 'source/lib/area/area'),
             tip: path.resolve(__dirname, 'source/lib/tip/tip'),
             swiper: path.resolve(__dirname, 'source/lib/swiper/idangerous.swiper.min'),
-            countdown: path.resolve(__dirname, 'source/lib/countdown/countdown'),
-            carselect: path.resolve(__dirname, 'source/lib/carselect/carselect'),
-            location: path.resolve(__dirname, 'source/lib/location/location'),
-            cityselect: path.resolve(__dirname, 'source/lib/cityselect/cityselect'),
-            mask: path.resolve(__dirname, 'source/lib/mask/mask'),
-            dialog: path.resolve(__dirname, 'source/lib/dialog/dialog'),
-            testdrive: path.resolve(__dirname, 'source/lib/testdrive/testdrive'),
-            pikaday: path.resolve(__dirname, 'source/lib/pikaday/pikaday')
+            swiper3: path.resolve(__dirname, 'source/lib/swiper3/swiper-3.4.1.min'),
+            countdown: path.resolve(__dirname, 'source/lib/countdown/countdown')
         }
     }
 };

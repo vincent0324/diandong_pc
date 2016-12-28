@@ -23,9 +23,21 @@
     float: left;
 }
 
+.focus-slide a {
+    display: block;
+    width: 815px;
+    height: 350px;
+}
+
+.focus-slide a:hover img {
+    transform: scale(1.05);
+}
+
 .focus-slide img {
     width: 815px;
     height: 350px;
+    display: block;
+    transition: transform 0.2s;
 }
 
 .focus-list {
@@ -44,6 +56,11 @@
 .focus-item img {
     width: 375px;
     height: 170px;
+    transition: all 0.2s;
+}
+
+.focus-item:hover img {
+    transform: scale(1.05);
 }
 
 .focus-pages {
@@ -66,4 +83,36 @@
 .focus-pages .swiper-active-switch {
     background-color: #3595e7;
     box-shadow: 0 0 0 2px #8f8f98;
+}
+
+.focus-ctrl {
+    position: absolute;
+    width: 28px;
+    height: 74px;
+    background-color: rgba(0, 0, 0, 0.3);
+    text-align: center;
+    color: white;
+    top: 138px;
+    display: none;
+}
+
+.focus-ctrl i {
+    line-height: 74px;
+    font-size: 26px;
+}
+
+.focus-ctrl-prev {
+    left: 0;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.focus-ctrl-next {
+    right: 0;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.focus-swiper:hover .focus-ctrl {
+    display: block;
 }
