@@ -1,8 +1,116 @@
 .filter-select {
-    width: 375px;
+    width: 374px;
     height: 92px;
 }
 
 .filter-select-bar {
     height: 36px;
+}
+
+.filter-brand-list {
+    width: 132px;
+    height: 36px;
+    position: relative;
+}
+
+.filter-select-button {
+    width: 100%;
+    position: absolute;
+    display: block;
+    height: 100%;
+    padding: 0 8px;
+    color: #a0a0a0;
+    box-sizing: border-box;
+    border: 1px solid #bfbfbf;
+    border-radius: 3px;
+    line-height: 34px;
+}
+
+.filter-select-button.focus {
+    border-color: #00a0e9;
+}
+
+.filter-select-button span {
+    float: left;
+    font-size: 14px;
+}
+
+.filter-select-button i {
+    float: right;
+    font-size: 12px;
+}
+
+.filter-series-list {
+    width: 229px;
+    height: 36px;
+    position: relative;
+}
+
+.filter-series-list span {
+    float: left;
+    font-size: 14px;
+}
+
+.filter-series-list i {
+    float: right;
+    font-size: 12px;
+}
+
+.filter-tool-button {
+    float: left;
+    width: 114px;
+    height: 34px;
+    text-align: center;
+    line-height: 34px;
+    color: #00a0e9;
+    border-radius: 3px;
+    font-size: 14px;
+    border: 1px solid #00a0e9;
+    margin-right: 13px;
+    border: 1px solid #bfbfbf;
+}
+
+.filter-select-tool {
+    margin-top: 20px;
+}
+
+.filter-tool-test {
+    margin-right: 0;
+}
+
+.filter-tool-button:hover {
+    background-color: #00a0e9;
+    color: white;
+}
+
+.brand-list-holder {
+    width: 130px;
+    /*height: 341px;*/
+    border: 1px solid #bfbfbf;
+    position: absolute;
+    top: 36px;
+    left: 0;
+    border-radius: 3px;
+    background-color: white;
+    padding: 7px 0;
+}
+
+.brand-list-key {
+    width: 32px;
+    float: left;
+    border-right: 1px solid #bfbfbf;
+}
+
+.brand-list-key a {
+    display: block;
+    height: 18px;
+    width: 32px;
+    text-align: center;
+    line-height: 18px;
+    font-size: 14px;
+    color: #3b3f40;
+}
+
+.brand-list-key a:hover {
+    color: #00a0e9;
 }

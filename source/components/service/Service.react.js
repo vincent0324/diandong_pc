@@ -17,12 +17,12 @@ var Service = React.createClass({
                     <em>找</em>
                     <span>最全新能源车型库</span>
                 </a>
-                <a className="service-item-test" target="_blank" href="">
+                <a className="service-item-test" target="_blank" href="http://www.diandong.com/tiyandian/">
                     <i></i>
                     <em>试</em>
                     <span>多品牌试驾，一次试个够</span>
                 </a>
-                <a className="service-item-mall" target="_blank" href="">
+                <a className="service-item-mall" target="_blank" href="http://www.diandong.com/mall/">
                     <i></i>
                     <em>购</em>
                     <span>电动车特惠，24H不打烊</span>
