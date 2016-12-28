@@ -23,10 +23,10 @@ require('./components/nav/nav.css');
 // filter
 var Filter = require('./components/filter/Filter');
 var filter = new Filter();
-
-var FilterSelect = require('./components/filter/FilterSelect.react');
-
-ReactDOM.render(<FilterSelect/>, document.getElementById('filter-select-holder'));
+//
+// var FilterSelect = require('./components/filter/FilterSelect.react');
+//
+// ReactDOM.render(<FilterSelect/>, document.getElementById('filter-select-holder'));
 
 
 // focus

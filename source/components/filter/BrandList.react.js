@@ -5,7 +5,7 @@ var BrandHolder = require('./BrandHolder.react');
 var BrandList = React.createClass({
 
     getInitialState: function() {
-        return {brands: null, hasKeyBox: this.props.hasKeyBox};
+        return {brands: null};
     },
 
     componentWillMount: function() {
@@ -26,7 +26,7 @@ var BrandList = React.createClass({
 
     render: function() {
         return (
-            <div className="filter-brand-list fn-left">
+            <div className="filter-brand-list fn-left" id="filter-brand-list">
                 <a className={this.props.hasKeyBox
                     ? "filter-select-button focus"
                     : 'filter-select-button'} href="javascript:;" onClick={this.props.handleClick}>

@@ -99,6 +99,8 @@
     width: 32px;
     float: left;
     border-right: 1px solid #bfbfbf;
+    height: 341px;
+    overflow-y: auto;
 }
 
 .brand-list-key a {
@@ -112,5 +114,32 @@
 }
 
 .brand-list-key a:hover {
+    color: #00a0e9;
+}
+
+.brand-list-box {
+    width: 77px;
+    line-height: 34px;
+    font-size: 14px;
+    border-bottom: 1px solid #bfbfbf;
+}
+
+.brand-list-value {
+    width: 77px;
+    padding: 0 10px;
+    float: right;
+    height: 341px;
+    overflow: auto;
+}
+
+.brand-list-element {
+    display: block;
+    height: 34px;
+    width: 77px;
+    overflow: hidden;
+    color: #3b3f40;
+}
+
+.brand-list-element:hover {
     color: #00a0e9;
 }

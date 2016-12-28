@@ -1,4 +1,5 @@
 var React = require('react');
+var $ = require('jquery');
 var BrandList = require('./BrandList.react');
 var SeriesList = require('./SeriesList.react');
 
@@ -14,6 +15,14 @@ var FilterSelect = React.createClass({
         this.setState({
             hasKeyBox: !this.state.hasKeyBox
         });
+    },
+
+    componentWillMount: function() {
+        $(document).on('click', function(e) {
+            if ($(e.target).attr('id') !== 'filter-brand-list') {
+                this.setState({hasKeyBox: false});
+            }
+        }.bind(this));
     },
 
     render: function() {

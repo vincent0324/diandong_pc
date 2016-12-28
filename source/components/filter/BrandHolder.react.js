@@ -1,10 +1,7 @@
 var React = require('react');
+var $ = require('jquery');
 
 var BrandHolder = React.createClass({
-
-    getInitialState: function() {
-        return {keyBox: this.props.hasKeyBox}
-    },
 
     getBrandKeys: function() {
         var keyArray = [];
@@ -28,8 +25,36 @@ var BrandHolder = React.createClass({
         );
     },
 
-    render: function() {
+    componentDidMount: function() {
+        var context = this;
 
+        this.getBrandListRequest = $.ajax({
+            url: 'http://car.diandong.com/api/get_pinpai_list',
+            data: {},
+            dataType: 'jsonp',
+            type: 'GET',
+            success: function(result) {
+                var brands = result.data;
+                var brandElementHtml = '';
+
+                for (var j in brands) {
+                    brandElementHtml += '<div class="brand-list-box">';
+                    for (var k = 0; k < brands[j].length; k++) {
+                        brandElementHtml += '<a class="brand-list-element" href="javascript:;" data-brand="' + brands[j][k].ppid + '">' + brands[j][k].name + '</a>'
+                    }
+                    brandElementHtml += '</div>';
+                }
+
+                $('.brand-list-value').html(brandElementHtml);
+            }.bind(this)
+        });
+
+        $(document).on('click', '.brand-list-element', function() {
+            context.setState({key: $(this).html()});
+        });
+    },
+
+    render: function() {
         var keyHtml = this.getBrandKeys().map(this.getBrandElement);
 
         return (
@@ -40,7 +65,6 @@ var BrandHolder = React.createClass({
                 <div className="brand-list-value"></div>
             </div>
         );
-
     }
 });
 
