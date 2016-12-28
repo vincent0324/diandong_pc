@@ -15,6 +15,14 @@
     position: relative;
 }
 
+.social-header a {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
 .social-header-text {
     height: 52px;
     line-height: 26px;
@@ -130,7 +138,7 @@
     padding: 7px 0;
 }
 
-.social-focus-news li span {
+.social-news-ico {
     width: 42px;
     height: 20px;
     float: left;
@@ -142,7 +150,12 @@
     margin-right: 11px;
 }
 
-.social-focus-news li a {
+.social-news-ico:hover {
+    color: #b77ed7;
+    border-color: #b77ed7;
+}
+
+.social-news-text {
     float: left;
     width: 320px;
     line-height: 22px;
@@ -153,7 +166,7 @@
     color: #3b3f40;
 }
 
-.social-focus-news li a:hover {
+.social-news-text:hover {
     color: #b77ed7;
 }
 

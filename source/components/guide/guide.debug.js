@@ -60,7 +60,7 @@
 	    var $ = __webpack_require__(2);
 	    var Swiper = __webpack_require__(3);
 
-	    // require('./guide.css');
+	    __webpack_require__(4);
 
 	    var Guide = function Guide() {
 	        this.init();
@@ -73,7 +73,7 @@
 	        },
 	        bindEvent: function bindEvent() {
 
-	            $('.filter-sub-tab a').on('click', function () {
+	            $('.filter-sub-tab a').on('mouseenter', function () {
 	                var index = $(this).parent('.filter-sub-tab').find('a').index(this);
 	                var tabContent = $(this).parents('.filter-sub-tab').siblings('.filter-sub-tabcon');
 
@@ -11788,6 +11788,354 @@
 	  "use strict";
 	  return Swiper;
 	});
+
+/***/ },
+/* 4 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(5);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(7)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./guide.css", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./guide.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 5 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(6)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".guide {\n    background-color: #f6f6f6;\n    padding: 50px 0;\n}\n\n.guide-top {\n    height: 324px;\n}\n\n.guide-header {\n    width: 270px;\n    height: 324px;\n    background-image: url(http://i1.dd-img.com/assets/image/1481914809-58d4f05f32570e1b-270w-324h.jpg);\n    background-repeat: no-repeat;\n    position: relative;\n}\n\n.guide-header-link {\n    display: block;\n    position: absolute;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n}\n\n.guide-tools {\n    width: 220px;\n    height: 88px;\n    position: absolute;\n    bottom: 15px;\n    left: 25px;\n}\n\n.guide-tools a {\n    float: left;\n    width: 96px;\n    height: 30px;\n    color: #7d83d6;\n    margin: 7px;\n    border-radius: 3px;\n    line-height: 30px;\n    text-align: center;\n    background-color: white;\n    font-size: 14px;\n    transition: all 0.2s;\n}\n\n.guide-tools a:hover {\n    background-color: #7d83d6;\n    color: white;\n    box-shadow: 0 0 0 2px white;\n}\n\n.guide-filter {\n    width: 900px;\n    height: 300px;\n    background-color: white;\n    padding: 24px 0 0 30px;\n}\n\n.guide-filter-item header {\n    background-image: url(http://i1.dd-img.com/assets/image/1481920480-36fa87453ee54f33-57w-48h.png);\n    background-repeat: no-repeat;\n    width: 36px;\n    height: 36px;\n    padding: 6px 15px 6px 6px;\n    font-size: 14px;\n    color: #7d83d6;\n    line-height: 18px;\n    text-align: center;\n    margin-right: 22px;\n}\n\n.guide-filter-brand nav {\n    height: 48px;\n    font-size: 0;\n}\n\n.guide-filter-brand nav a {\n    display: inline-block;\n    width: 46px;\n    height: 46px;\n    margin-right: 28px;\n    border: 1px solid white;\n}\n\n.guide-filter-brand nav a:hover {\n    border-color: #7d83d6;\n}\n\n.guide-filter-brand nav img {\n    width: 46px;\n    height: 46px;\n}\n\n.guide-filter-hot {\n    margin-top: 30px;\n}\n\n.filter-hot-box {\n    width: 810px;\n}\n\n.filter-super-tab {\n    height: 48px;\n}\n\n.filter-super-tab a {\n    width: 260px;\n    height: 48px;\n    float: left;\n    position: relative;\n    margin-right: 7px;\n    overflow: hidden;\n}\n\n.filter-super-tab span {\n    position: absolute;\n    width: 260px;\n    height: 28px;\n    top: 7px;\n    left: 0;\n    background-color: #eee;\n    line-height: 28px;\n    text-align: center;\n    font-size: 14px;\n    color: #7d83d6;\n}\n\n.filter-super-tab i {\n    width: 30px;\n    height: 30px;\n    line-height: 30px;\n    text-align: center;\n    position: absolute;\n    bottom: -4px;\n    left: 115px;\n    color: #7d83d6;\n    display: none;\n}\n\n.filter-super-tab a.current span {\n    background-color: #7d83d6;\n    color: white;\n}\n\n.filter-super-tab a.current i {\n    display: block;\n}\n\n.filter-super-tab a:hover span {\n    background-color: #7d83d6;\n    color: white;\n}\n\n.filter-super-tabcon {\n    width: 810px;\n    height: 174px;\n}\n\n.filter-sub-tab {\n    height: 32px;\n    line-height: 32px;\n    font-size: 0;\n}\n\n.filter-sub-tab a {\n    display: inline-block;\n    width: 112px;\n    height: 32px;\n    text-align: center;\n    font-size: 14px;\n    color: #595959;\n    margin-right: 90px;\n}\n\n.filter-sub-tab a:hover {\n    color: #7d83d6;\n}\n\n.filter-sub-tab a.current {\n    color: #7d83d6;\n    text-decoration: underline;\n}\n\n.filter-sub-tabcon {\n    height: 132px;\n    width: 810px;\n    overflow: hidden;\n}\n\n.filter-model-list {\n    height: 132px;\n    width: 855px;\n}\n\n.filter-model-item {\n    float: left;\n    width: 111px;\n    height: 132px;\n    overflow: hidden;\n    margin-right: 60px;\n    color: #3b3f40;\n    font-size: 14px;\n    text-align: center;\n}\n\n.filter-model-item img {\n    width: 111px;\n    height: 74px;\n    display: block;\n}\n\n.filter-model-title {\n    height: 28px;\n    line-height: 28px;\n    overflow: hidden;\n}\n\n.filter-model-price {\n    height: 30px;\n    line-height: 30px;\n    color: #e74816;\n}\n\n.guide-news {\n    background-color: white;\n    margin-top: 40px;\n    height: 410px;\n}\n\n.guide-news-column {\n    width: 370px;\n    height: 400px;\n    float: left;\n    margin: 0 15px;\n    padding-top: 10px;\n}\n\n.news-column-header {\n    height: 30px;\n    line-height: 30px;\n}\n\n.news-column-header::before {\n    content: '';\n    float: left;\n    width: 4px;\n    height: 20px;\n    background-image: url(http://i1.dd-img.com/assets/image/1481927987-c4fb4b4acb0ac009-4w-20h.png);\n    background-repeat: no-repeat;\n    margin: 5px 9px 0 0;\n}\n\n.news-column-header h3 {\n    font-size: 20px;\n    color: #343d40;\n    float: left;\n    margin-right: 28px;\n}\n\n.news-column-more {\n    font-size: 14px;\n    color: #7d83d6;\n    float: left;\n}\n\n.guide-news-photo {\n    width: 370px;\n    height: 170px;\n    position: relative;\n    overflow: hidden;\n}\n\n.guide-news-photo img {\n    width: 370px;\n    height: 170px;\n    transition: all 0.3s;\n}\n\n.guide-news-cover {\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 370px;\n    height: 170px;\n    background-color: rgba(0, 0, 0, 0.3);\n    transition: all 0.3s;\n}\n\n.guide-news-photo:hover .guide-news-cover {\n    background-color: rgba(0, 0, 0, 0);\n}\n\n.guide-news-photo:hover img {\n    transform: scale(1.05);\n}\n\n.news-column-content {\n    padding-top: 19px;\n}\n\n.guide-news-type {\n    position: absolute;\n    width: 274px;\n    height: 30px;\n    background-image: url(http://i1.dd-img.com/assets/image/1481929716-5aad85d8b88b96b1-274w-90h.png);\n    background-repeat: no-repeat;\n    top: 88px;\n    left: 48px;\n}\n\n.guide-news-test .guide-news-type {\n    background-position: 0 0;\n}\n\n.guide-news-video .guide-news-type {\n    background-position: 0 -30px;\n}\n\n.guide-news-model .guide-news-type {\n    background-position: 0 -60px;\n}\n\n.guide-news-title {\n    width: 100%;\n    height: 30px;\n    line-height: 30px;\n    position: absolute;\n    top: 58px;\n    left: 0;\n    font-size: 18px;\n    color: white;\n    text-align: center;\n    overflow: hidden;\n}\n\n.guide-news-list {\n    margin-top: 16px;\n}\n\n.guide-news-list li {\n    height: 22px;\n    padding: 7px 0;\n}\n\n.guide-news-ico {\n    float: left;\n    width: 58px;\n    height: 20px;\n    border: 1px solid #e7e7e7;\n    line-height: 20px;\n    text-align: center;\n    color: #b5b5b5;\n    font-size: 12px;\n    margin-right: 8px;\n}\n\n.guide-news-ico:hover {\n    border-color: #7d83d6;\n    color: #7d83d6;\n}\n\n.guide-news-text {\n    float: left;\n    width: 302px;\n    height: 22px;\n    line-height: 22px;\n    font-size: 16px;\n    color: #3b3f40;\n    overflow: hidden;\n    text-overflow: ellipsis;\n    white-space: nowrap;\n}\n\n.guide-news-text:hover {\n    color: #7d83d6;\n}\n\n.guide-news-model .guide-news-text {\n    width: 370px;\n}\n\n.guide-photo {\n    width: 1170px;\n    padding: 10px 15px 0;\n    margin-top: 40px;\n    background-color: white;\n}\n\n.guide-photo-content {\n    width: 1170px;\n    margin-top: 19px;\n    position: relative;\n}\n\n.guide-photo-header {\n    height: 30px;\n    line-height: 30px;\n}\n\n.guide-photo-header::before {\n    content: '';\n    float: left;\n    width: 4px;\n    height: 20px;\n    background-image: url(http://i1.dd-img.com/assets/image/1481927987-c4fb4b4acb0ac009-4w-20h.png);\n    background-repeat: no-repeat;\n    margin: 5px 9px 0 0;\n}\n\n.guide-photo-header h3 {\n    font-size: 20px;\n    color: #343d40;\n    float: left;\n    margin-right: 28px;\n}\n\n.guide-photo-more {\n    font-size: 14px;\n    color: #7d83d6;\n    float: left;\n}\n\n.guide-photo-container {\n    width: 1170px;\n    height: 297px;\n    position: relative;\n    overflow: hidden;\n}\n\n.guide-photo-wrapper {\n    position: relative;\n}\n\n.guide-photo-slide {\n    float: left;\n}\n\n.guide-photo-group {\n    width: 1170px;\n    height: 297px;\n    position: relative;\n}\n\n.guide-photo-item {\n    position: absolute;\n    background-color: #eee;\n    overflow: hidden;\n}\n\n.guide-photo-item-1 {\n    top: 0;\n    left: 0;\n    width: 445px;\n    height: 297px;\n}\n\n.guide-photo-item-1 img {\n    width: 445px;\n    height: 297px;\n}\n\n.guide-photo-item-4 img {\n    width: 270px;\n    height: 297px;\n}\n\n.guide-photo-item-2 {\n    top: 0;\n    left: 452px;\n    width: 217px;\n    height: 145px;\n}\n\n.guide-photo-item-3 {\n    top: 152px;\n    left: 452px;\n    width: 217px;\n    height: 145px;\n}\n\n.guide-photo-item-2 img, .guide-photo-item-3 img, .guide-photo-item-5 img, .guide-photo-item-6 img {\n    width: 217px;\n    height: 145px;\n}\n\n.guide-photo-item-4 {\n    top: 0;\n    right: 224px;\n    width: 270px;\n    height: 297px;\n}\n\n.guide-photo-item-5 {\n    top: 0;\n    right: 0;\n    width: 217px;\n    height: 145px;\n}\n\n.guide-photo-item-6 {\n    top: 152px;\n    right: 0;\n    width: 217px;\n    height: 145px;\n}\n\n.guide-photo-cover {\n    position: absolute;\n    top: 0;\n    right: 0;\n    bottom: 0;\n    left: 0;\n    background-color: rgba(0, 0, 0, 0.3);\n}\n\n.guide-photo-cover-title {\n    width: 109px;\n    height: 39px;\n    background-image: url(http://i1.dd-img.com/assets/image/1481934459-c3cfe315044afb43-109w-46h.png);\n    background-repeat: no-repeat;\n    margin: 0 auto;\n    padding-top: 7px;\n    text-align: center;\n    line-height: 39px;\n    font-size: 22px;\n    color: white;\n}\n\n.guide-photo-item-1 .guide-photo-cover-title, .guide-photo-item-4 .guide-photo-cover-title {\n    margin-top: 90px;\n}\n\n.guide-photo-item-2 .guide-photo-cover-title, .guide-photo-item-3 .guide-photo-cover-title, .guide-photo-item-5 .guide-photo-cover-title, .guide-photo-item-6 .guide-photo-cover-title {\n    margin-top: 30px;\n}\n\n.guide-photo-cover-text {\n    margin: 0 auto;\n    color: white;\n    text-align: center;\n    overflow: hidden;\n}\n\n.guide-photo-item-1 .guide-photo-cover-text, .guide-photo-item-4 .guide-photo-cover-text {\n    height: 58px;\n    line-height: 58px;\n    font-size: 30px;\n}\n\n.guide-photo-item-2 .guide-photo-cover-text, .guide-photo-item-3 .guide-photo-cover-text, .guide-photo-item-5 .guide-photo-cover-text, .guide-photo-item-6 .guide-photo-cover-text {\n    height: 38px;\n    line-height: 38px;\n    font-size: 20px;\n}\n\n.guide-photo-pages {\n    height: 8px;\n    font-size: 0;\n    padding: 17px 0;\n    text-align: center;\n}\n\n.guide-photo-pages .swiper-pagination-switch {\n    display: inline-block;\n    width: 8px;\n    height: 8px;\n    background-color: #dcdcdc;\n    margin: 0 5px;\n}\n\n.guide-photo-pages .swiper-active-switch {\n    background-color: #7d83d6;\n}\n\n.guide-photo-ctrl {\n    width: 28px;\n    height: 74px;\n    position: absolute;\n    top: 111px;\n    background-color: rgba(0, 0, 0, 0.3);\n    text-align: center;\n    color: white;\n}\n\n.guide-photo-ctrl:hover {\n    background-color: rgba(0, 0, 0, 0.5);\n}\n\n.guide-photo-prev {\n    left: -15px;\n    border-top-right-radius: 3px;\n    border-bottom-right-radius: 3px;\n}\n\n.guide-photo-next {\n    right: -15px;\n    border-top-left-radius: 3px;\n    border-bottom-left-radius: 3px;\n}\n\n.guide-photo-ctrl i {\n    line-height: 74px;\n    font-size: 26px;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 6 */
+/***/ function(module, exports) {
+
+	/*
+		MIT License http://www.opensource.org/licenses/mit-license.php
+		Author Tobias Koppers @sokra
+	*/
+	// css base code, injected by the css-loader
+	module.exports = function() {
+		var list = [];
+
+		// return the list of modules as css string
+		list.toString = function toString() {
+			var result = [];
+			for(var i = 0; i < this.length; i++) {
+				var item = this[i];
+				if(item[2]) {
+					result.push("@media " + item[2] + "{" + item[1] + "}");
+				} else {
+					result.push(item[1]);
+				}
+			}
+			return result.join("");
+		};
+
+		// import a list of modules into the list
+		list.i = function(modules, mediaQuery) {
+			if(typeof modules === "string")
+				modules = [[null, modules, ""]];
+			var alreadyImportedModules = {};
+			for(var i = 0; i < this.length; i++) {
+				var id = this[i][0];
+				if(typeof id === "number")
+					alreadyImportedModules[id] = true;
+			}
+			for(i = 0; i < modules.length; i++) {
+				var item = modules[i];
+				// skip already imported module
+				// this implementation is not 100% perfect for weird media query combinations
+				//  when a module is imported multiple times with different media queries.
+				//  I hope this will never occur (Hey this way we have smaller bundles)
+				if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+					if(mediaQuery && !item[2]) {
+						item[2] = mediaQuery;
+					} else if(mediaQuery) {
+						item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+					}
+					list.push(item);
+				}
+			}
+		};
+		return list;
+	};
+
+
+/***/ },
+/* 7 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/*
+		MIT License http://www.opensource.org/licenses/mit-license.php
+		Author Tobias Koppers @sokra
+	*/
+	var stylesInDom = {},
+		memoize = function(fn) {
+			var memo;
+			return function () {
+				if (typeof memo === "undefined") memo = fn.apply(this, arguments);
+				return memo;
+			};
+		},
+		isOldIE = memoize(function() {
+			return /msie [6-9]\b/.test(window.navigator.userAgent.toLowerCase());
+		}),
+		getHeadElement = memoize(function () {
+			return document.head || document.getElementsByTagName("head")[0];
+		}),
+		singletonElement = null,
+		singletonCounter = 0,
+		styleElementsInsertedAtTop = [];
+
+	module.exports = function(list, options) {
+		if(false) {
+			if(typeof document !== "object") throw new Error("The style-loader cannot be used in a non-browser environment");
+		}
+
+		options = options || {};
+		// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
+		// tags it will allow on a page
+		if (typeof options.singleton === "undefined") options.singleton = isOldIE();
+
+		// By default, add <style> tags to the bottom of <head>.
+		if (typeof options.insertAt === "undefined") options.insertAt = "bottom";
+
+		var styles = listToStyles(list);
+		addStylesToDom(styles, options);
+
+		return function update(newList) {
+			var mayRemove = [];
+			for(var i = 0; i < styles.length; i++) {
+				var item = styles[i];
+				var domStyle = stylesInDom[item.id];
+				domStyle.refs--;
+				mayRemove.push(domStyle);
+			}
+			if(newList) {
+				var newStyles = listToStyles(newList);
+				addStylesToDom(newStyles, options);
+			}
+			for(var i = 0; i < mayRemove.length; i++) {
+				var domStyle = mayRemove[i];
+				if(domStyle.refs === 0) {
+					for(var j = 0; j < domStyle.parts.length; j++)
+						domStyle.parts[j]();
+					delete stylesInDom[domStyle.id];
+				}
+			}
+		};
+	}
+
+	function addStylesToDom(styles, options) {
+		for(var i = 0; i < styles.length; i++) {
+			var item = styles[i];
+			var domStyle = stylesInDom[item.id];
+			if(domStyle) {
+				domStyle.refs++;
+				for(var j = 0; j < domStyle.parts.length; j++) {
+					domStyle.parts[j](item.parts[j]);
+				}
+				for(; j < item.parts.length; j++) {
+					domStyle.parts.push(addStyle(item.parts[j], options));
+				}
+			} else {
+				var parts = [];
+				for(var j = 0; j < item.parts.length; j++) {
+					parts.push(addStyle(item.parts[j], options));
+				}
+				stylesInDom[item.id] = {id: item.id, refs: 1, parts: parts};
+			}
+		}
+	}
+
+	function listToStyles(list) {
+		var styles = [];
+		var newStyles = {};
+		for(var i = 0; i < list.length; i++) {
+			var item = list[i];
+			var id = item[0];
+			var css = item[1];
+			var media = item[2];
+			var sourceMap = item[3];
+			var part = {css: css, media: media, sourceMap: sourceMap};
+			if(!newStyles[id])
+				styles.push(newStyles[id] = {id: id, parts: [part]});
+			else
+				newStyles[id].parts.push(part);
+		}
+		return styles;
+	}
+
+	function insertStyleElement(options, styleElement) {
+		var head = getHeadElement();
+		var lastStyleElementInsertedAtTop = styleElementsInsertedAtTop[styleElementsInsertedAtTop.length - 1];
+		if (options.insertAt === "top") {
+			if(!lastStyleElementInsertedAtTop) {
+				head.insertBefore(styleElement, head.firstChild);
+			} else if(lastStyleElementInsertedAtTop.nextSibling) {
+				head.insertBefore(styleElement, lastStyleElementInsertedAtTop.nextSibling);
+			} else {
+				head.appendChild(styleElement);
+			}
+			styleElementsInsertedAtTop.push(styleElement);
+		} else if (options.insertAt === "bottom") {
+			head.appendChild(styleElement);
+		} else {
+			throw new Error("Invalid value for parameter 'insertAt'. Must be 'top' or 'bottom'.");
+		}
+	}
+
+	function removeStyleElement(styleElement) {
+		styleElement.parentNode.removeChild(styleElement);
+		var idx = styleElementsInsertedAtTop.indexOf(styleElement);
+		if(idx >= 0) {
+			styleElementsInsertedAtTop.splice(idx, 1);
+		}
+	}
+
+	function createStyleElement(options) {
+		var styleElement = document.createElement("style");
+		styleElement.type = "text/css";
+		insertStyleElement(options, styleElement);
+		return styleElement;
+	}
+
+	function createLinkElement(options) {
+		var linkElement = document.createElement("link");
+		linkElement.rel = "stylesheet";
+		insertStyleElement(options, linkElement);
+		return linkElement;
+	}
+
+	function addStyle(obj, options) {
+		var styleElement, update, remove;
+
+		if (options.singleton) {
+			var styleIndex = singletonCounter++;
+			styleElement = singletonElement || (singletonElement = createStyleElement(options));
+			update = applyToSingletonTag.bind(null, styleElement, styleIndex, false);
+			remove = applyToSingletonTag.bind(null, styleElement, styleIndex, true);
+		} else if(obj.sourceMap &&
+			typeof URL === "function" &&
+			typeof URL.createObjectURL === "function" &&
+			typeof URL.revokeObjectURL === "function" &&
+			typeof Blob === "function" &&
+			typeof btoa === "function") {
+			styleElement = createLinkElement(options);
+			update = updateLink.bind(null, styleElement);
+			remove = function() {
+				removeStyleElement(styleElement);
+				if(styleElement.href)
+					URL.revokeObjectURL(styleElement.href);
+			};
+		} else {
+			styleElement = createStyleElement(options);
+			update = applyToTag.bind(null, styleElement);
+			remove = function() {
+				removeStyleElement(styleElement);
+			};
+		}
+
+		update(obj);
+
+		return function updateStyle(newObj) {
+			if(newObj) {
+				if(newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap)
+					return;
+				update(obj = newObj);
+			} else {
+				remove();
+			}
+		};
+	}
+
+	var replaceText = (function () {
+		var textStore = [];
+
+		return function (index, replacement) {
+			textStore[index] = replacement;
+			return textStore.filter(Boolean).join('\n');
+		};
+	})();
+
+	function applyToSingletonTag(styleElement, index, remove, obj) {
+		var css = remove ? "" : obj.css;
+
+		if (styleElement.styleSheet) {
+			styleElement.styleSheet.cssText = replaceText(index, css);
+		} else {
+			var cssNode = document.createTextNode(css);
+			var childNodes = styleElement.childNodes;
+			if (childNodes[index]) styleElement.removeChild(childNodes[index]);
+			if (childNodes.length) {
+				styleElement.insertBefore(cssNode, childNodes[index]);
+			} else {
+				styleElement.appendChild(cssNode);
+			}
+		}
+	}
+
+	function applyToTag(styleElement, obj) {
+		var css = obj.css;
+		var media = obj.media;
+
+		if(media) {
+			styleElement.setAttribute("media", media)
+		}
+
+		if(styleElement.styleSheet) {
+			styleElement.styleSheet.cssText = css;
+		} else {
+			while(styleElement.firstChild) {
+				styleElement.removeChild(styleElement.firstChild);
+			}
+			styleElement.appendChild(document.createTextNode(css));
+		}
+	}
+
+	function updateLink(linkElement, obj) {
+		var css = obj.css;
+		var sourceMap = obj.sourceMap;
+
+		if(sourceMap) {
+			// http://stackoverflow.com/a/26603875
+			css += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + " */";
+		}
+
+		var blob = new Blob([css], { type: "text/css" });
+
+		var oldSrc = linkElement.href;
+
+		linkElement.href = URL.createObjectURL(blob);
+
+		if(oldSrc)
+			URL.revokeObjectURL(oldSrc);
+	}
+
 
 /***/ }
 /******/ ]);

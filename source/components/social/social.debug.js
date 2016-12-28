@@ -60,6 +60,8 @@
 	    var $ = __webpack_require__(2);
 	    var Swiper = __webpack_require__(3);
 
+	    __webpack_require__(4);
+
 	    var Social = function Social() {
 	        this.init();
 	    };
@@ -11781,6 +11783,354 @@
 	  "use strict";
 	  return Swiper;
 	});
+
+/***/ },
+/* 4 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(5);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(7)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./social.css", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./social.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 5 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(6)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".social {\n    background-color: #f6f6f6;\n    padding: 50px 0;\n}\n\n.social-top {\n    height: 324px;\n}\n\n.social-header {\n    width: 270px;\n    height: 324px;\n    background-image: url(http://i1.dd-img.com/assets/image/1482217056-c75ce48500b16580-270w-324h.jpg);\n    background-repeat: no-repeat;\n    position: relative;\n}\n\n.social-header a {\n    position: absolute;\n    top: 0;\n    right: 0;\n    bottom: 0;\n    left: 0;\n}\n\n.social-header-text {\n    height: 52px;\n    line-height: 26px;\n    position: absolute;\n    width: 100%;\n    left: 0;\n    bottom: 43px;\n    text-align: center;\n    color: white;\n    font-size: 18px;\n}\n\n.social-focus {\n    width: 928px;\n    height: 324px;\n    background-color: white;\n}\n\n.social-swiper {\n    width: 480px;\n    height: 294px;\n    padding: 15px 15px 15px 20px;\n    position: relative;\n}\n\n.social-container {\n    width: 480px;\n    height: 294px;\n    position: relative;\n    overflow: hidden;\n}\n\n.social-wrapper {\n    position: relative;\n}\n\n.social-slide {\n    float: left;\n}\n\n.social-focus-item {\n    width: 480px;\n    height: 294px;\n    position: relative;\n}\n\n.social-focus-item img {\n    width: 480px;\n    height: 294px;\n}\n\n.social-focus-item p {\n    position: absolute;\n    width: 460px;\n    height: 50px;\n    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, .6));\n    left: 0;\n    bottom: 0;\n    padding: 40px 10px 0;\n    line-height: 50px;\n    color: white;\n    font-size: 18px;\n    overflow: hidden;\n}\n\n.social-pages {\n    position: absolute;\n    right: 15px;\n    bottom: 15px;\n    height: 10px;\n    text-align: right;\n    padding: 20px 10px;\n    font-size: 0;\n    width: 100px;\n}\n\n.social-pages span {\n    display: inline-block;\n    width: 10px;\n    height: 10px;\n    margin: 0 4px;\n    background-color: #afafb0;\n}\n\n.social-pages span.swiper-active-switch {\n    background-color: #b77ed7;\n}\n\n.social-focus-news {\n    width: 375px;\n    padding-right: 10px;\n}\n\n.social-top-line {\n    line-height: 34px;\n    padding: 11px 0;\n    border-bottom: 1px dotted #d2d2d2;\n    max-height: 68px;\n    overflow: hidden;\n    font-size: 22px;\n}\n\n.social-top-line a {\n    color: #3b3f40;\n}\n\n.social-top-line a:hover {\n    color: #b77ed7;\n}\n\n.social-focus-news li {\n    height: 22px;\n    padding: 7px 0;\n}\n\n.social-news-ico {\n    width: 42px;\n    height: 20px;\n    float: left;\n    line-height: 20px;\n    text-align: center;\n    border: 1px solid #ddd;\n    color: #ddd;\n    font-size: 12px;\n    margin-right: 11px;\n}\n\n.social-news-ico:hover {\n    color: #b77ed7;\n    border-color: #b77ed7;\n}\n\n.social-news-text {\n    float: left;\n    width: 320px;\n    line-height: 22px;\n    font-size: 16px;\n    overflow: hidden;\n    text-overflow: ellipsis;\n    white-space: nowrap;\n    color: #3b3f40;\n}\n\n.social-news-text:hover {\n    color: #b77ed7;\n}\n\n.social-friend {\n    background-color: white;\n    margin-top: 40px;\n    padding-top: 12px;\n}\n\n.social-sub-header {\n    height: 30px;\n    line-height: 30px;\n}\n\n.social-sub-header::before {\n    content: '';\n    float: left;\n    width: 4px;\n    height: 20px;\n    margin: 5px 9px 0 0;\n    background-color: #b77ed7;\n}\n\n.social-sub-header h4 {\n    font-size: 20px;\n    color: #343d40;\n    float: left;\n}\n\n.social-bbs {\n    background-color: white;\n    margin-top: 40px;\n    padding-top: 12px;\n}\n\n.social-friend-content {\n    position: relative;\n    width: 1140px;\n    padding: 0 30px 26px;\n}\n\n.friend-container {\n    width: 1140px;\n    height: 191px;\n    position: relative;\n    overflow: hidden;\n}\n\n.friend-wrapper {\n    position: relative;\n}\n\n.friend-slide {\n    float: left;\n}\n\n.friend-item {\n    width: 356px;\n    height: 153px;\n    position: relative;\n    margin: 0 auto;\n    padding-top: 38px;\n}\n\n.friend-ctrl {\n    width: 28px;\n    height: 74px;\n    position: absolute;\n    top: 78px;\n    background-color: rgba(0, 0, 0, 0.3);\n    text-align: center;\n    color: white;\n}\n\n.friend-ctrl:hover {\n    background-color: rgba(0, 0, 0, 0.5);\n}\n\n.friend-ctrl-prev {\n    left: 0;\n    border-top-right-radius: 3px;\n    border-bottom-right-radius: 3px;\n}\n\n.friend-ctrl-next {\n    right: 0;\n    border-top-left-radius: 3px;\n    border-bottom-left-radius: 3px;\n}\n\n.friend-ctrl i {\n    line-height: 74px;\n    font-size: 26px;\n}\n\n.friend-item-pic {\n    width: 356px;\n    height: 153px;\n}\n\n.friend-item-pic img {\n    width: 356px;\n    height: 153px;\n}\n\n.friend-item-logo {\n    width: 70px;\n    height: 70px;\n    border: 3px solid #efefef;\n    border-radius: 50%;\n    position: absolute;\n    top: 0;\n    left: 140px;\n    overflow: hidden;\n    background-color: white;\n}\n\n.friend-item-logo img {\n    width: 70px;\n    height: 70px;\n}\n\n.bbs-list a {\n    float: left;\n    height: 28px;\n    border-radius: 28px;\n    border: 1px solid #eee;\n    background-color: #eee;\n    line-height: 28px;\n    font-size: 14px;\n    color: #343d40;\n    padding: 0 20px;\n    margin: 0 20px 20px 0;\n}\n\n.bbs-list {\n    margin-top: 20px;\n    padding: 0 0 10px 20px;\n}\n\n.bbs-list a:hover {\n    background-color: white;\n    border-color: #b77ed7;\n    color: #b77ed7;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 6 */
+/***/ function(module, exports) {
+
+	/*
+		MIT License http://www.opensource.org/licenses/mit-license.php
+		Author Tobias Koppers @sokra
+	*/
+	// css base code, injected by the css-loader
+	module.exports = function() {
+		var list = [];
+
+		// return the list of modules as css string
+		list.toString = function toString() {
+			var result = [];
+			for(var i = 0; i < this.length; i++) {
+				var item = this[i];
+				if(item[2]) {
+					result.push("@media " + item[2] + "{" + item[1] + "}");
+				} else {
+					result.push(item[1]);
+				}
+			}
+			return result.join("");
+		};
+
+		// import a list of modules into the list
+		list.i = function(modules, mediaQuery) {
+			if(typeof modules === "string")
+				modules = [[null, modules, ""]];
+			var alreadyImportedModules = {};
+			for(var i = 0; i < this.length; i++) {
+				var id = this[i][0];
+				if(typeof id === "number")
+					alreadyImportedModules[id] = true;
+			}
+			for(i = 0; i < modules.length; i++) {
+				var item = modules[i];
+				// skip already imported module
+				// this implementation is not 100% perfect for weird media query combinations
+				//  when a module is imported multiple times with different media queries.
+				//  I hope this will never occur (Hey this way we have smaller bundles)
+				if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+					if(mediaQuery && !item[2]) {
+						item[2] = mediaQuery;
+					} else if(mediaQuery) {
+						item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+					}
+					list.push(item);
+				}
+			}
+		};
+		return list;
+	};
+
+
+/***/ },
+/* 7 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/*
+		MIT License http://www.opensource.org/licenses/mit-license.php
+		Author Tobias Koppers @sokra
+	*/
+	var stylesInDom = {},
+		memoize = function(fn) {
+			var memo;
+			return function () {
+				if (typeof memo === "undefined") memo = fn.apply(this, arguments);
+				return memo;
+			};
+		},
+		isOldIE = memoize(function() {
+			return /msie [6-9]\b/.test(window.navigator.userAgent.toLowerCase());
+		}),
+		getHeadElement = memoize(function () {
+			return document.head || document.getElementsByTagName("head")[0];
+		}),
+		singletonElement = null,
+		singletonCounter = 0,
+		styleElementsInsertedAtTop = [];
+
+	module.exports = function(list, options) {
+		if(false) {
+			if(typeof document !== "object") throw new Error("The style-loader cannot be used in a non-browser environment");
+		}
+
+		options = options || {};
+		// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
+		// tags it will allow on a page
+		if (typeof options.singleton === "undefined") options.singleton = isOldIE();
+
+		// By default, add <style> tags to the bottom of <head>.
+		if (typeof options.insertAt === "undefined") options.insertAt = "bottom";
+
+		var styles = listToStyles(list);
+		addStylesToDom(styles, options);
+
+		return function update(newList) {
+			var mayRemove = [];
+			for(var i = 0; i < styles.length; i++) {
+				var item = styles[i];
+				var domStyle = stylesInDom[item.id];
+				domStyle.refs--;
+				mayRemove.push(domStyle);
+			}
+			if(newList) {
+				var newStyles = listToStyles(newList);
+				addStylesToDom(newStyles, options);
+			}
+			for(var i = 0; i < mayRemove.length; i++) {
+				var domStyle = mayRemove[i];
+				if(domStyle.refs === 0) {
+					for(var j = 0; j < domStyle.parts.length; j++)
+						domStyle.parts[j]();
+					delete stylesInDom[domStyle.id];
+				}
+			}
+		};
+	}
+
+	function addStylesToDom(styles, options) {
+		for(var i = 0; i < styles.length; i++) {
+			var item = styles[i];
+			var domStyle = stylesInDom[item.id];
+			if(domStyle) {
+				domStyle.refs++;
+				for(var j = 0; j < domStyle.parts.length; j++) {
+					domStyle.parts[j](item.parts[j]);
+				}
+				for(; j < item.parts.length; j++) {
+					domStyle.parts.push(addStyle(item.parts[j], options));
+				}
+			} else {
+				var parts = [];
+				for(var j = 0; j < item.parts.length; j++) {
+					parts.push(addStyle(item.parts[j], options));
+				}
+				stylesInDom[item.id] = {id: item.id, refs: 1, parts: parts};
+			}
+		}
+	}
+
+	function listToStyles(list) {
+		var styles = [];
+		var newStyles = {};
+		for(var i = 0; i < list.length; i++) {
+			var item = list[i];
+			var id = item[0];
+			var css = item[1];
+			var media = item[2];
+			var sourceMap = item[3];
+			var part = {css: css, media: media, sourceMap: sourceMap};
+			if(!newStyles[id])
+				styles.push(newStyles[id] = {id: id, parts: [part]});
+			else
+				newStyles[id].parts.push(part);
+		}
+		return styles;
+	}
+
+	function insertStyleElement(options, styleElement) {
+		var head = getHeadElement();
+		var lastStyleElementInsertedAtTop = styleElementsInsertedAtTop[styleElementsInsertedAtTop.length - 1];
+		if (options.insertAt === "top") {
+			if(!lastStyleElementInsertedAtTop) {
+				head.insertBefore(styleElement, head.firstChild);
+			} else if(lastStyleElementInsertedAtTop.nextSibling) {
+				head.insertBefore(styleElement, lastStyleElementInsertedAtTop.nextSibling);
+			} else {
+				head.appendChild(styleElement);
+			}
+			styleElementsInsertedAtTop.push(styleElement);
+		} else if (options.insertAt === "bottom") {
+			head.appendChild(styleElement);
+		} else {
+			throw new Error("Invalid value for parameter 'insertAt'. Must be 'top' or 'bottom'.");
+		}
+	}
+
+	function removeStyleElement(styleElement) {
+		styleElement.parentNode.removeChild(styleElement);
+		var idx = styleElementsInsertedAtTop.indexOf(styleElement);
+		if(idx >= 0) {
+			styleElementsInsertedAtTop.splice(idx, 1);
+		}
+	}
+
+	function createStyleElement(options) {
+		var styleElement = document.createElement("style");
+		styleElement.type = "text/css";
+		insertStyleElement(options, styleElement);
+		return styleElement;
+	}
+
+	function createLinkElement(options) {
+		var linkElement = document.createElement("link");
+		linkElement.rel = "stylesheet";
+		insertStyleElement(options, linkElement);
+		return linkElement;
+	}
+
+	function addStyle(obj, options) {
+		var styleElement, update, remove;
+
+		if (options.singleton) {
+			var styleIndex = singletonCounter++;
+			styleElement = singletonElement || (singletonElement = createStyleElement(options));
+			update = applyToSingletonTag.bind(null, styleElement, styleIndex, false);
+			remove = applyToSingletonTag.bind(null, styleElement, styleIndex, true);
+		} else if(obj.sourceMap &&
+			typeof URL === "function" &&
+			typeof URL.createObjectURL === "function" &&
+			typeof URL.revokeObjectURL === "function" &&
+			typeof Blob === "function" &&
+			typeof btoa === "function") {
+			styleElement = createLinkElement(options);
+			update = updateLink.bind(null, styleElement);
+			remove = function() {
+				removeStyleElement(styleElement);
+				if(styleElement.href)
+					URL.revokeObjectURL(styleElement.href);
+			};
+		} else {
+			styleElement = createStyleElement(options);
+			update = applyToTag.bind(null, styleElement);
+			remove = function() {
+				removeStyleElement(styleElement);
+			};
+		}
+
+		update(obj);
+
+		return function updateStyle(newObj) {
+			if(newObj) {
+				if(newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap)
+					return;
+				update(obj = newObj);
+			} else {
+				remove();
+			}
+		};
+	}
+
+	var replaceText = (function () {
+		var textStore = [];
+
+		return function (index, replacement) {
+			textStore[index] = replacement;
+			return textStore.filter(Boolean).join('\n');
+		};
+	})();
+
+	function applyToSingletonTag(styleElement, index, remove, obj) {
+		var css = remove ? "" : obj.css;
+
+		if (styleElement.styleSheet) {
+			styleElement.styleSheet.cssText = replaceText(index, css);
+		} else {
+			var cssNode = document.createTextNode(css);
+			var childNodes = styleElement.childNodes;
+			if (childNodes[index]) styleElement.removeChild(childNodes[index]);
+			if (childNodes.length) {
+				styleElement.insertBefore(cssNode, childNodes[index]);
+			} else {
+				styleElement.appendChild(cssNode);
+			}
+		}
+	}
+
+	function applyToTag(styleElement, obj) {
+		var css = obj.css;
+		var media = obj.media;
+
+		if(media) {
+			styleElement.setAttribute("media", media)
+		}
+
+		if(styleElement.styleSheet) {
+			styleElement.styleSheet.cssText = css;
+		} else {
+			while(styleElement.firstChild) {
+				styleElement.removeChild(styleElement.firstChild);
+			}
+			styleElement.appendChild(document.createTextNode(css));
+		}
+	}
+
+	function updateLink(linkElement, obj) {
+		var css = obj.css;
+		var sourceMap = obj.sourceMap;
+
+		if(sourceMap) {
+			// http://stackoverflow.com/a/26603875
+			css += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + " */";
+		}
+
+		var blob = new Blob([css], { type: "text/css" });
+
+		var oldSrc = linkElement.href;
+
+		linkElement.href = URL.createObjectURL(blob);
+
+		if(oldSrc)
+			URL.revokeObjectURL(oldSrc);
+	}
+
 
 /***/ }
 /******/ ]);

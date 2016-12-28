@@ -16,7 +16,7 @@ define(function(require, exports, module) {
         },
         bindEvent: function() {
 
-            $('.filter-sub-tab a').on('click', function() {
+            $('.filter-sub-tab a').on('mouseenter', function() {
                 var index = $(this).parent('.filter-sub-tab').find('a').index(this);
                 var tabContent = $(this).parents('.filter-sub-tab').siblings('.filter-sub-tabcon');
 

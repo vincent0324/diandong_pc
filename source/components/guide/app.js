@@ -1,2 +1,2 @@
-var Guide = require('./guide');
+var Guide = require('./Guide');
 var guide = new Guide();
