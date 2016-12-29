@@ -23,6 +23,8 @@ require('./components/nav/nav.css');
 // filter
 var Filter = require('./components/filter/Filter');
 var filter = new Filter();
+
+require('./components/filter/FilterSelect.css'); // 以后删掉
 //
 // var FilterSelect = require('./components/filter/FilterSelect.react');
 //

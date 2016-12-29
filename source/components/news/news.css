@@ -340,8 +340,7 @@
 }
 
 .news-item-focus:hover .news-focus-cover {
-    opacity: 0;
-    transform: scale(2);
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 .news-item:hover img {

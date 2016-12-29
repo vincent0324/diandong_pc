@@ -290,7 +290,7 @@
 }
 
 .guide-news-photo:hover .guide-news-cover {
-    background-color: rgba(0, 0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 .guide-news-photo:hover img {

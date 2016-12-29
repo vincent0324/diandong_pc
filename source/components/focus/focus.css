@@ -37,7 +37,7 @@
     width: 815px;
     height: 350px;
     display: block;
-    transition: transform 0.2s;
+    transition: transform 0.5s;
 }
 
 .focus-list {
