@@ -1,0 +1,51 @@
+.vernier {
+    width: 60px;
+    position: fixed;
+    height: 300px;
+    top: 50%;
+    margin-top: -300px;
+    left: 50%;
+    margin-left: -700px;
+    transition: all 0.2s;
+}
+
+.vernier a {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+    display: block;
+    background-image: url(http://i1.dd-img.com/assets/image/1482992603-68c857d12710c9e2-120w-240h.png);
+    background-repeat: no-repeat;
+}
+
+.vernier-news {
+    background-position: 0 0;
+}
+
+.vernier-news:hover, .vernier-news.current {
+    background-position: -60px 0;
+}
+
+.vernier-guide {
+    background-position: 0 -60px;
+}
+
+.vernier-guide:hover, .vernier-guide.current {
+    background-position: -60px -60px;
+}
+
+.vernier-mall {
+    background-position: 0 -120px;
+}
+
+.vernier-mall:hover, .vernier-mall.current {
+    background-position: -60px -120px;
+}
+
+.vernier-social {
+    background-position: 0 -180px;
+}
+
+.vernier-social:hover, .vernier-social.current {
+    background-position: -60px -180px;
+}

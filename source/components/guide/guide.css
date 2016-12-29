@@ -206,6 +206,10 @@
     text-align: center;
 }
 
+.filter-model-item:hover .filter-model-title {
+    color: #7d83d6;
+}
+
 .filter-model-item img {
     width: 111px;
     height: 74px;
@@ -514,6 +518,12 @@
     bottom: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.3);
+    transition: all 0.3s;
+}
+
+.guide-photo-item:hover .guide-photo-cover {
+    transform: scale(2);
+    opacity: 0;
 }
 
 .guide-photo-cover-title {

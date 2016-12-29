@@ -72,26 +72,102 @@
 	        },
 
 	        initFocusSlide: function initFocusSlide() {
-	            var focusSwiper = new Swiper('.focus-container', {
-	                loop: true,
-	                autoplay: 5000,
-	                paginationClickable: true,
-	                // effect: 'fade',
-	                // autoplayDisableOnInteraction: false,
-	                wrapperClass: 'focus-wrapper',
-	                slideClass: 'focus-slide',
-	                pagination: '.focus-pages'
+	            focus2.init();
+	        }
+	    };
+
+	    var focus2 = {
+	        elements: {
+	            focusPage: $('.focus-pages span'),
+	            focusSlideItem: $('.focus-display-item'),
+	            focusPrev: $('.focus-ctrl-prev'),
+	            focusNext: $('.focus-ctrl-next'),
+	            focusDisplayBox: $('.focus-display'),
+	            focusImg: $('.focus-display-item img')
+	        },
+	        focusLength: 0,
+	        focusIndex: 0,
+	        focusTime: null,
+	        init: function init() {
+	            this.initSlide();
+	            this.bindEvent();
+	        },
+	        bindEvent: function bindEvent() {
+	            var context = this;
+
+	            $(document).on('click', '.focus-pages span', function (e) {
+	                var index = $('.focus-pages span').index(this);
+
+	                context.focusIndex = index;
+	                context.selectPage(index);
+	                context.selectItem(index);
 	            });
 
-	            $('.focus-ctrl-prev').on('click', function (e) {
-	                e.preventDefault();
-	                focusSwiper.swipePrev();
+	            this.elements.focusNext.on('click', function () {
+	                context.slideNext();
 	            });
 
-	            $('.focus-ctrl-next').on('click', function (e) {
-	                e.preventDefault();
-	                focusSwiper.swipeNext();
+	            this.elements.focusPrev.on('click', function () {
+	                context.slidePrev();
 	            });
+
+	            this.elements.focusDisplayBox.on('mouseover', function () {
+	                clearInterval(context.focusTime);
+	            }).on('mouseout', function () {
+	                context.focusTime = setInterval(function () {
+	                    context.slideNext();
+	                }, 6000);
+	            });
+	        },
+	        initSlide: function initSlide() {
+	            var context = this;
+
+	            this.getFocusNum();
+	            this.focusTime = setInterval(function () {
+	                context.slideNext();
+	            }, 6000);
+	        },
+	        getFocusNum: function getFocusNum() {
+	            var length = this.elements.focusSlideItem.length;
+
+	            this.focusLength = length;
+	        },
+	        selectPage: function selectPage(index) {
+	            this.elements.focusPage.removeClass('current');
+	            this.elements.focusPage.eq(index).addClass('current');
+	        },
+	        selectItem: function selectItem(index) {
+	            this.elements.focusSlideItem.hide();
+	            this.elements.focusSlideItem.eq(index).fadeIn(900);
+	        },
+	        slidePrev: function slidePrev() {
+	            var currentIndex = this.focusIndex;
+	            var currentLength = this.focusLength;
+
+	            if (currentIndex === 0) {
+	                this.onSlide(currentLength - 1);
+	                this.focusIndex = currentLength - 1;
+	            } else {
+	                this.onSlide(currentIndex - 1);
+	                this.focusIndex -= 1;
+	            }
+	        },
+	        slideNext: function slideNext() {
+	            var currentIndex = this.focusIndex;
+	            var currentLength = this.focusLength;
+
+	            if (currentIndex === currentLength - 1) {
+	                this.onSlide(0);
+	                this.focusIndex = 0;
+	            } else {
+	                this.onSlide(currentIndex + 1);
+	                this.focusIndex += 1;
+	            }
+	        },
+	        onSlide: function onSlide(index, callback) {
+	            this.selectPage(arguments[0]);
+	            this.selectItem(arguments[0]);
+	            !(arguments.length < 2) && arguments[1]();
 	        }
 	    };
 
@@ -11806,7 +11882,7 @@
 
 
 	// module
-	exports.push([module.id, ".focus .wrap {\n    height: 350px;\n}\n\n.focus-swiper {\n    width: 815px;\n    height: 350px;\n    position: relative;\n}\n\n.focus-container {\n    width: 815px;\n    height: 350px;\n    position: relative;\n    overflow: hidden;\n}\n\n.focus-wrapper {\n    position: relative;\n}\n\n.focus-slide {\n    float: left;\n}\n\n.focus-slide a {\n    display: block;\n    width: 815px;\n    height: 350px;\n}\n\n.focus-slide a:hover img {\n    transform: scale(1.05);\n}\n\n.focus-slide img {\n    width: 815px;\n    height: 350px;\n    display: block;\n    transition: transform 0.2s;\n}\n\n.focus-list {\n    width: 375px;\n    height: 350px;\n    overflow: hidden;\n}\n\n.focus-item {\n    width: 375px;\n    height: 170px;\n    margin-bottom: 10px;\n    overflow: hidden;\n}\n\n.focus-item img {\n    width: 375px;\n    height: 170px;\n    transition: all 0.2s;\n}\n\n.focus-item:hover img {\n    transform: scale(1.05);\n}\n\n.focus-pages {\n    position: absolute;\n    bottom: 0;\n    right: 0;\n    height: 40px;\n    line-height: 40px;\n    padding-right: 15px;\n}\n\n.focus-pages .swiper-pagination-switch {\n    width: 7px;\n    height: 7px;\n    display: inline-block;\n    background-color: #8f8f98;\n    margin: 0 5px;\n}\n\n.focus-pages .swiper-active-switch {\n    background-color: #3595e7;\n    box-shadow: 0 0 0 2px #8f8f98;\n}\n\n.focus-ctrl {\n    position: absolute;\n    width: 28px;\n    height: 74px;\n    background-color: rgba(0, 0, 0, 0.3);\n    text-align: center;\n    color: white;\n    top: 138px;\n    display: none;\n}\n\n.focus-ctrl i {\n    line-height: 74px;\n    font-size: 26px;\n}\n\n.focus-ctrl-prev {\n    left: 0;\n    border-top-right-radius: 3px;\n    border-bottom-right-radius: 3px;\n}\n\n.focus-ctrl-next {\n    right: 0;\n    border-top-left-radius: 3px;\n    border-bottom-left-radius: 3px;\n}\n\n.focus-swiper:hover .focus-ctrl {\n    display: block;\n}\n", ""]);
+	exports.push([module.id, ".focus .wrap {\n    height: 350px;\n}\n\n.focus-swiper {\n    width: 815px;\n    height: 350px;\n    position: relative;\n}\n\n.focus-container {\n    width: 815px;\n    height: 350px;\n    position: relative;\n    overflow: hidden;\n}\n\n.focus-wrapper {\n    position: relative;\n}\n\n.focus-slide {\n    float: left;\n}\n\n.focus-slide a {\n    display: block;\n    width: 815px;\n    height: 350px;\n}\n\n.focus-slide a:hover img {\n    transform: scale(1.05);\n}\n\n.focus-slide img {\n    width: 815px;\n    height: 350px;\n    display: block;\n    transition: transform 0.5s;\n}\n\n.focus-list {\n    width: 375px;\n    height: 350px;\n    overflow: hidden;\n}\n\n.focus-item {\n    width: 375px;\n    height: 170px;\n    margin-bottom: 10px;\n    overflow: hidden;\n}\n\n.focus-item img {\n    width: 375px;\n    height: 170px;\n    transition: all 0.5s;\n}\n\n.focus-item:hover img {\n    transform: scale(1.05);\n}\n\n.focus-pages {\n    position: absolute;\n    bottom: 0;\n    right: 0;\n    height: 40px;\n    line-height: 40px;\n    padding-right: 15px;\n}\n\n.focus-pages .swiper-pagination-switch {\n    width: 7px;\n    height: 7px;\n    display: inline-block;\n    background-color: #8f8f98;\n    margin: 0 5px;\n}\n\n.focus-pages .swiper-active-switch {\n    background-color: #3595e7;\n    box-shadow: 0 0 0 2px #8f8f98;\n}\n\n.focus-ctrl {\n    position: absolute;\n    width: 28px;\n    height: 74px;\n    background-color: rgba(0, 0, 0, 0.3);\n    text-align: center;\n    color: white;\n    top: 138px;\n    display: none;\n}\n\n.focus-ctrl i {\n    line-height: 74px;\n    font-size: 26px;\n}\n\n.focus-ctrl-prev {\n    left: 0;\n    border-top-right-radius: 3px;\n    border-bottom-right-radius: 3px;\n}\n\n.focus-ctrl-next {\n    right: 0;\n    border-top-left-radius: 3px;\n    border-bottom-left-radius: 3px;\n}\n\n.focus-swiper:hover .focus-ctrl {\n    display: block;\n}\n\n.focus-display {\n    width: 815px;\n    height: 350px;\n    position: relative;\n}\n\n.focus-display-item {\n    width: 815px;\n    height: 350px;\n    display: none;\n}\n\n.focus-display-item img {\n    width: 815px;\n    height: 350px;\n}\n\n.focus-pages span {\n    width: 7px;\n    height: 7px;\n    display: inline-block;\n    background-color: #8f8f98;\n    margin: 0 5px;\n}\n\n.focus-pages span.current {\n    background-color: #3595e7;\n    box-shadow: 0 0 0 2px #8f8f98;\n}\n", ""]);
 
 	// exports
 

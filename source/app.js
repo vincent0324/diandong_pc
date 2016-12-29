@@ -85,3 +85,9 @@ var footer = new Footer();
 // sidebar
 var Sidebar = require('./components/sidebar/Sidebar.react');
 ReactDOM.render(<Sidebar />, document.getElementById('sidebar'));
+
+
+// vernier
+var Vernier = require('./components/vernier/Vernier.react');
+
+ReactDOM.render(<Vernier />, document.getElementById('vernier-holder'));
