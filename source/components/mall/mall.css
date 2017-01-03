@@ -59,6 +59,7 @@
 .event-box {
     width: 674px;
     height: 324px;
+    overflow: hidden;
 }
 
 .event-container {
@@ -145,6 +146,7 @@
     background-color: rgba(0, 0, 0, 0.5);
     font-size: 18px;
     color: white;
+    text-align: center;
 }
 
 .event-countdown span {

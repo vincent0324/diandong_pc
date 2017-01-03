@@ -13,6 +13,10 @@ return new Za.prototype.init(a,b,c,d,e)}m.Tween=Za,Za.prototype={constructor:Za,
 
 seajs.config({base:"http://assets.diandong.com/web/"}),seajs.config({alias:{store:"js/util/store/1.3.17/store",swiper:"js/util/swiper/2.7.5/swiper",cookie:"js/util/cookie/cookie"}}),seajs.config({alias:{topbar_v2:"components/topbar_v2/topbar",header_v2:"components/header_v2/header",nav_v2:"components/nav_v2/nav",toolbar:"components/toolbar/toolbar",page_v2:"components/page_v2/page-051b4851e4",area:"components/area/area-911143580f",user:"components/user/user-0a365d7788",mask:"components/mask/mask-590546720e",dialog:"components/dialog/dialog-1443089834812-308db2feae",tip:"components/tip/tip-de5396f697",location:"components/location/location-c6a620f60c",countdown:"components/countdown/countdown-9d3eabf490",countdown_v2:"components/countdown_v2/countdown",testdrive:"components/testdrive/testdrive-6dfb7313a9",saleremind:"components/saleremind/saleremind-1b6e1260f3",carselect:"components/carselect/carselect-0a59031ea6",cityselect:"components/cityselect/cityselect-0dce81bf24",pagination:"components/pagination/pagination-5fdc3110dd",searchindex:"components/searchindex/searchindex",ajaxform:"components/ajaxform/ajaxform",comment:"components/comment/comment-9b6484d7cd",imglazyload:"components/imglazyload/imglazyload",finalprice:"components/finalprice/finalprice",postlist:"components/postlist/postlist",preorder:"components/preorder/preorder"}});
 
-seajs.use(['http://assets.diandong.com/web/js/app/home_v3/filter.m.js'], function(F) {
+// seajs.use(['http://assets.diandong.com/web/js/app/home_v3/filter.m.js'], function(F) {
+//     var f = new F();
+// });
+
+seajs.use(['./filter.m.js'], function(F) {
     var f = new F();
 });

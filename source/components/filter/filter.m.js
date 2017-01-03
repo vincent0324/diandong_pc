@@ -24,17 +24,23 @@ define(function(require, exports, module) {
             var context = this;
 
             // 显示品牌列表
-            $(document).on('click', '#filter-brand-button', function() {
+            $('#filter-brand-button').on('click', function(e) {
+                console.log(e.target, e.currentTarget);
                 $('.filter-select-button').toggleClass('focus');
                 $('.brand-list-holder').toggleClass('fn-hide');
             });
 
             // 点击字母
             $(document).on('click', '.brand-list-key a', function(e) {
-                var key = $(this).data('key');
-                var top = $('.brand-element-' + key).position().top;
 
-                $('.brand-list-value').scrollTop(top);
+                if ($(this).hasClass('current')) {
+                    return;
+                } else {
+                    var key = $(this).data('key');
+                    var top = $('.brand-element-' + key).position().top;
+                    $(this).addClass('current').siblings('a').removeClass('current');
+                    $('.brand-list-value').scrollTop(top);
+                }
             });
 
             // 点击品牌
@@ -90,6 +96,16 @@ define(function(require, exports, module) {
             $(document).on('click', '.filter-tool-test', function() {
                 if (context.series !== '') {
                     testdrive.show(context.brand, context.series, 0, 0);
+                } else {
+                    tip.info('请选择车系');
+                }
+            });
+
+            //
+            // //
+            $(document).on('click', '#filter-series-button', function() {
+                if (context.series !== '') {
+                    $('.series-list-holder').removeClass('fn-hide');
                 } else {
                     tip.info('请选择车系');
                 }
@@ -152,6 +168,9 @@ define(function(require, exports, module) {
 
                     $('.brand-list-key').html(keyHtml);
                     $('.brand-list-value').html(brandHtml);
+
+                    var keyLength = $('.brand-list-key a').length;
+                    $('.brand-list-value').css('height', keyLength * 18);
                 }
             });
         }

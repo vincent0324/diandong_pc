@@ -21475,18 +21475,63 @@
 
 
 	    componentDidMount: function componentDidMount() {
-	        $('.vernier a').on('click', function () {
-	            var vernier = $(this).data('vernier');
-	            var top = $('.' + vernier).offset().top;
+	        var modules = [$('.news-holder'), $('.guide-holder'), $('.mall-holder'), $('.social-holder')];
 
-	            $(document, body).scrollTop(top);
+	        if (modules.length < 0) {
+	            return;
+	        }
+
+	        $(window).on('scroll', function () {
+	            var top = $(document).scrollTop(),
+	                i;
+
+	            if (top >= $(document).height() - $(window).height()) {
+	                i = modules.length - 1;
+	            } else {
+	                for (i = 0; i < modules.length; i++) {
+	                    if (top < modules[i].offset().top - 50) {
+	                        break;
+	                    }
+	                }
+	                i--;
+	                i = i < 0 ? 0 : i;
+	            }
+
+	            $('.vernier a.current').removeClass('current');
+	            $('.vernier a').eq(i).addClass('current');
+	        });
+
+	        $(document).on('click', '.vernier a', function (e) {
+
+	            if ($('.vernier').hasClass('disabled')) {
+	                return;
+	            }
+
+	            var elementClass = $(e.currentTarget).data('vernier');
+	            var elementTop = $('.' + elementClass).offset().top;
+
+	            $('html,body').stop().animate({
+	                "scrollTop": elementTop - 0 + "px"
+	            }, 400);
+	        });
+
+	        $(window).on('scroll', function () {
+	            var top = $(document).scrollTop();
+
+	            if (top > $('.news-holder').offset().top - 0) {
+	                $('.vernier').removeClass('disabled');
+	                $('.vernier').css({ "opacity": "1", "transform": "scale(1)" });
+	            } else {
+	                $('.vernier').addClass('disabled');
+	                $('.vernier').css({ "opacity": "0", "transform": "scale(1.2)" });
+	            }
 	        });
 	    },
 
 	    render: function render() {
 	        return React.createElement(
 	            'div',
-	            { id: 'vernier', className: 'vernier' },
+	            { id: 'vernier', className: 'vernier disabled' },
 	            React.createElement('a', { href: 'javascript:;', className: 'vernier-news', 'data-vernier': 'news-holder' }),
 	            React.createElement('a', { href: 'javascript:;', className: 'vernier-guide', 'data-vernier': 'guide-holder' }),
 	            React.createElement('a', { href: 'javascript:;', className: 'vernier-mall', 'data-vernier': 'mall-holder' }),
@@ -32546,7 +32591,7 @@
 
 
 	// module
-	exports.push([module.id, ".vernier {\n    width: 60px;\n    position: fixed;\n    height: 300px;\n    top: 50%;\n    margin-top: -150px;\n    left: 50%;\n    margin-left: -650px;\n}\n\n.vernier a {\n    width: 60px;\n    height: 60px;\n    margin-bottom: 15px;\n    display: block;\n    background-image: url(http://i1.dd-img.com/assets/image/1482992603-68c857d12710c9e2-120w-240h.png);\n    background-repeat: no-repeat;\n}\n\n.vernier-news {\n    background-position: 0 0;\n}\n\n.vernier-news:hover {\n    background-position: -60px 0;\n}\n\n.vernier-guide {\n    background-position: 0 -60px;\n}\n\n.vernier-guide:hover {\n    background-position: -60px -60px;\n}\n\n.vernier-mall {\n    background-position: 0 -120px;\n}\n\n.vernier-mall:hover {\n    background-position: -60px -120px;\n}\n\n.vernier-social {\n    background-position: 0 -180px;\n}\n\n.vernier-social:hover {\n    background-position: -60px -180px;\n}\n", ""]);
+	exports.push([module.id, ".vernier {\n    width: 60px;\n    position: fixed;\n    height: 300px;\n    top: 50%;\n    margin-top: -300px;\n    left: 50%;\n    margin-left: -700px;\n    transition: all 0.2s;\n    opacity: 0;\n}\n\n.vernier a {\n    width: 60px;\n    height: 60px;\n    margin-bottom: 15px;\n    display: block;\n    background-image: url(http://i1.dd-img.com/assets/image/1482992603-68c857d12710c9e2-120w-240h.png);\n    background-repeat: no-repeat;\n}\n\n.vernier-news {\n    background-position: 0 0;\n}\n\n.vernier-news:hover, .vernier-news.current {\n    background-position: -60px 0;\n}\n\n.vernier-guide {\n    background-position: 0 -60px;\n}\n\n.vernier-guide:hover, .vernier-guide.current {\n    background-position: -60px -60px;\n}\n\n.vernier-mall {\n    background-position: 0 -120px;\n}\n\n.vernier-mall:hover, .vernier-mall.current {\n    background-position: -60px -120px;\n}\n\n.vernier-social {\n    background-position: 0 -180px;\n}\n\n.vernier-social:hover, .vernier-social.current {\n    background-position: -60px -180px;\n}\n", ""]);
 
 	// exports
 

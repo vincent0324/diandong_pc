@@ -7,6 +7,7 @@
     left: 50%;
     margin-left: -700px;
     transition: all 0.2s;
+    opacity: 0;
 }
 
 .vernier a {

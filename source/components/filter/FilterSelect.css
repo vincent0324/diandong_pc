@@ -101,8 +101,8 @@
     width: 32px;
     float: left;
     border-right: 1px solid #bfbfbf;
-    height: 341px;
-    overflow-y: auto;
+    /*height: 341px;*/
+    /*overflow-y: auto;*/
 }
 
 .brand-list-key a {
@@ -130,7 +130,7 @@
     width: 77px;
     padding: 0 10px;
     float: right;
-    height: 341px;
+    /*height: 341px;*/
     overflow: auto;
 }
 

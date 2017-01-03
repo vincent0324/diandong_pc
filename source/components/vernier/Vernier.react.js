@@ -12,6 +12,14 @@ var Vernier = React.createClass({
             return;
         }
 
+        $(window).on('resize', function() {
+            if ($(window).width() < 1400) {
+                $('.vernier').addClass('fn-hide');
+            } else {
+                $('.vernier').removeClass('fn-hide');
+            }
+        });
+
         $(window).on('scroll', function() {
             var top = $(document).scrollTop(),
                 i;
@@ -63,7 +71,7 @@ var Vernier = React.createClass({
 
     render: function() {
         return (
-            <div id="vernier" className="vernier">
+            <div id="vernier" className="vernier disabled">
                 <a href="javascript:;" className="vernier-news" data-vernier="news-holder"></a>
                 <a href="javascript:;" className="vernier-guide" data-vernier="guide-holder"></a>
                 <a href="javascript:;" className="vernier-mall" data-vernier="mall-holder"></a>

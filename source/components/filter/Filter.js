@@ -15,7 +15,7 @@ define(function(require, exports, module) {
         },
 
         bindEvent: function() {
-            $('.filter-tab-list a').on('click', function() {
+            $('.filter-tab-list a').on('mouseenter', function() {
                 var index = $('.filter-tab-list a').index(this);
 
                 $('.filter-tab-list a').removeClass('current').eq(index).addClass('current');

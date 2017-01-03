@@ -197,12 +197,13 @@
 
 .filter-model-item {
     float: left;
-    width: 111px;
+    width: 131px;
     height: 132px;
     overflow: hidden;
-    margin-right: 60px;
+    margin-right: 40px;
     color: #3b3f40;
     font-size: 14px;
+    text-align: center;
     text-align: center;
 }
 
@@ -383,7 +384,18 @@
 }
 
 .guide-news-model .guide-news-text {
-    width: 370px;
+    width: 354px;
+    float: left;
+}
+
+.guide-news-model li::before {
+    content: "";
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    background-color: #7d83d6;
+    float: left;
+    margin: 8px 12px 0 0;
 }
 
 .guide-photo {
