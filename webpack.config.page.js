@@ -1,20 +1,19 @@
 var webpack = require('webpack');
 var path = require('path');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var Modernizr = path.resolve(__dirname, 'source/lib/modernizr/modernizr');
 
 var config = {
 
     entry: {
         vendor: [
-            'jquery', 'react', 'react-dom', Modernizr
+            'jquery', 'react', 'react-dom'
         ],
         home: path.resolve(__dirname, 'source/app.js')
     },
 
     output: {
         path: path.resolve(__dirname, 'build'),
-        filename: '[name].js'
+        filename: '[hash:6].[name].js'
     },
 
     module: {
@@ -43,10 +42,10 @@ var config = {
     },
 
     plugins: [
-        new ExtractTextPlugin('[name].css'),
+        new ExtractTextPlugin('[hash:6].[name].css'),
 
         // 不变
-        new webpack.optimize.CommonsChunkPlugin({name: 'vendor', filename: 'vendor.bundle.js'}),
+        new webpack.optimize.CommonsChunkPlugin({name: 'vendor', filename: '[hash:6].vendor.bundle.js'}),
 
         // 压缩代码
         new webpack.optimize.UglifyJsPlugin({

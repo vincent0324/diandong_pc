@@ -141,6 +141,13 @@
     color: #a0a0a0;
 }
 
+.news-item-tags {
+    width: 160px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
 .news-item-tags a {
     color: #a0a0a0;
 }
@@ -305,6 +312,11 @@
 
 .news-type-new .news-focus-type i {
     background-position: 0 0;
+}
+
+.news-type-guide .news-focus-type i {
+    background-image: url(http://i1.dd-img.com/assets/image/1483584403-8b0d8e8a7ab2d905-36w-36h.png);
+    background-repeat: no-repeat;
 }
 
 .news-type-tech .news-focus-type i {

@@ -1,6 +1,6 @@
 .search-suggest-list {
     width: 348px;
-    height: 151px;
+    max-height: 151px;
     border: 1px solid #e4e4e4;
     border-radius: 3px;
     position: absolute;
@@ -8,6 +8,7 @@
     top: 42px;
     overflow: auto;
     background-color: white;
+    z-index: 10000;
 }
 
 .search-suggest-list a {

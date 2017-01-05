@@ -20,6 +20,14 @@ var Vernier = React.createClass({
             }
         });
 
+        var docWidth = $(window).width();
+
+        if (docWidth < 1400) {
+            $('.vernier').addClass('fn-hide');
+        } else {
+            $('.vernier').removeClass('fn-hide');
+        }
+
         $(window).on('scroll', function() {
             var top = $(document).scrollTop(),
                 i;

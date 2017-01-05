@@ -43,7 +43,7 @@ ReactDOM.render(<Service/>, document.getElementById('service-holder'));
 
 
 // news
-var News = require('./components/news/news');
+var News = require('./components/news/News');
 var news = new News();
 
 

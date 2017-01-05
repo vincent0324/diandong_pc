@@ -25,7 +25,6 @@ define(function(require, exports, module) {
 
             // 显示品牌列表
             $('#filter-brand-button').on('click', function(e) {
-                console.log(e.target, e.currentTarget);
                 $('.filter-select-button').toggleClass('focus');
                 $('.brand-list-holder').toggleClass('fn-hide');
             });
