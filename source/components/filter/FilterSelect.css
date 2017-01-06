@@ -74,6 +74,12 @@
 
 .filter-select-tool {
     margin-top: 20px;
+    overflow: hidden;
+    width: 374px;
+}
+
+.filter-button-list {
+    width: 387px;
 }
 
 .filter-tool-test {
@@ -176,4 +182,20 @@
 
 .series-list-holder a:last-child {
     border-bottom-width: 0;
+}
+
+.open-state {
+    display: none;
+}
+
+.close-state {
+    display: block;
+}
+
+.focus .open-state {
+    display: block;
+}
+
+.focus .close-state {
+    display: none;
 }

@@ -3,11 +3,11 @@ var path = require('path');
 
 var config = {
     entry: {
-        vernier: path.resolve(__dirname, 'source/components/vernier/app.js')
+        mall: path.resolve(__dirname, 'source/components/mall/app.js')
     },
 
     output: {
-        path: path.resolve(__dirname, 'source/components/vernier'),
+        path: path.resolve(__dirname, 'source/components/mall'),
         filename: '[name].debug.js'
     },
 

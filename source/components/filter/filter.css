@@ -101,3 +101,9 @@
     background-color: #00a0e9;
     color: white;
 }
+
+.filter-tool-button.filter-tool-search:hover {
+    background-color: #197acc;
+    color: white;
+    border-color: #197acc;
+}

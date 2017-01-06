@@ -455,3 +455,8 @@
 .local-item-photo li a:hover {
     color: #f15c2d;
 }
+
+.event-ctrl-holder {
+    width: 204px;
+    height: 23px;
+}

@@ -49,13 +49,16 @@ define(function(require, exports, module) {
         },
 
         initEventSwiper: function() {
+            var eventSlides = $('.event-slide');
+
+            if (eventSlides.length <= 3) {
+                $('.event-ctrl').addClass('fn-hide');
+            }
+
             var eventSwiper = new Swiper('.event-container', {
                 wrapperClass: 'event-wrapper',
                 slideClass: 'event-slide',
                 slidesPerView: 3,
-                // autoplay: 3000,
-                // speed: 1000,
-                // loop: true,
                 mode: 'vertical'
             });
 

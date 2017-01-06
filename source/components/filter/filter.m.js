@@ -10,7 +10,6 @@ define(function(require, exports, module) {
     F.prototype = {
 
         brand: '',
-
         series: '',
 
         init: function() {
@@ -25,7 +24,7 @@ define(function(require, exports, module) {
 
             // 显示品牌列表
             $('#filter-brand-button').on('click', function(e) {
-                $('.filter-select-button').toggleClass('focus');
+                $('#filter-brand-button').toggleClass('focus');
                 $('.brand-list-holder').toggleClass('fn-hide');
             });
 
@@ -101,12 +100,12 @@ define(function(require, exports, module) {
             });
 
             //
-            // //
             $(document).on('click', '#filter-series-button', function() {
                 if (context.series !== '') {
-                    $('.series-list-holder').removeClass('fn-hide');
+                    $('.series-list-holder').toggleClass('fn-hide');
+                    $('#filter-series-button').toggleClass('focus');
                 } else {
-                    tip.info('请选择车系');
+                    tip.info('请选择品牌');
                 }
             });
         },
@@ -118,7 +117,8 @@ define(function(require, exports, module) {
                 '<div class="filter-brand-list fn-left" id="filter-brand-list">',
                 '<a id="filter-brand-button" class="filter-select-button" href="javascript:;">',
                 '<span>选择品牌</span>',
-                '<i class="icon">&#xe60d;</i>',
+                '<i class="icon close-state">&#xe60d;</i>',
+                '<i class="icon open-state">&#xe60c;</i>',
                 '</a>',
                 '<div class="brand-list-holder fn-hide">',
                 '<div class="brand-list-key"></div>',
@@ -128,15 +128,18 @@ define(function(require, exports, module) {
                 '<div class="filter-series-list fn-right">',
                 '<a id="filter-series-button" class="filter-select-button" href="javascript:;">',
                 '<span>选择车系</span>',
-                '<i class="icon">&#xe60d;</i>',
+                '<i class="icon close-state">&#xe60d;</i>',
+                '<i class="icon open-state">&#xe60c;</i>',
                 '</a>',
                 '<div class="series-list-holder fn-hide"></div>',
                 '</div>',
                 '</div>',
-                '<div class="filter-select-tool">',
+                '<div class="filter-select-tool clearfix">',
+                '<div class="filter-button-list">',
                 '<a class="filter-tool-button filter-tool-search" href="javascript:;">找车</a>',
                 '<a class="filter-tool-button filter-tool-price" href="http://www.diandong.com/tiyandian/" target="_blank">询价</a>',
                 '<a class="filter-tool-button filter-tool-test" href="javascript:;">试驾</a>',
+                '</div>',
                 '</div>',
                 '</div>'
             ].join('');
