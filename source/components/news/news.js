@@ -21,7 +21,7 @@ define(function(require, exports, module) {
                 $('.news-tab-content').addClass('fn-hide').eq(index).removeClass('fn-hide');
             });
 
-            $('.news-hot-tab a').on('click', function() {
+            $('.news-hot-tab a').on('mouseenter', function() {
                 var index = $('.news-hot-tab a').index(this);
 
                 $('.news-hot-tab a').removeClass('current').eq(index).addClass('current');

@@ -1,7 +1,7 @@
 .news .wrap {
     position: relative;
     background-color: white;
-    padding: 50px 0;
+    padding: 30px 0 50px;
 }
 
 .news-header {
@@ -11,7 +11,7 @@
     background-repeat: no-repeat;
     background-color: #0b394a;
     position: absolute;
-    top: 50px;
+    top: 30px;
     left: 0;
     z-index: 10;
 }
@@ -41,7 +41,7 @@
 
 .news-tab {
     position: absolute;
-    top: 50px;
+    top: 30px;
     left: 310px;
     height: 28px;
     width: 890px;

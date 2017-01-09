@@ -1,0 +1,26 @@
+.push-box-top {
+    overflow: hidden;
+}
+
+.push-box-top .wrap {
+    position: relative;
+}
+
+.push-box-top img {
+    width: 1200px;
+    height: 80px;
+}
+
+.push-box-middle {
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.push-box-middle .wrap {
+    position: relative;
+}
+
+.push-box-middle img {
+    width: 1200px;
+    height: 80px;
+}

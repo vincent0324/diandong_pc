@@ -5,6 +5,11 @@ require('./css/common.css');
 require('./css/home.css');
 
 
+// push
+var Push = require('./components/push/Push');
+var push = new Push();
+
+
 // header
 require('./components/header/header.css');
 

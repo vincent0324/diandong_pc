@@ -3,6 +3,9 @@ define(function(require, exports, module) {
     var testdrive = require('testdrive');
     var tip = require('tip');
 
+    var Push = require('http://assets.diandong.com/web/components/push/push');
+    var push = new Push();
+
     var F = function() {
         this.init();
     };
