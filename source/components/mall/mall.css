@@ -80,6 +80,7 @@
     position: relative;
     box-sizing: border-box;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .event-slide-item img {
@@ -90,7 +91,6 @@
 }
 
 .event-slide-item.current {
-    /*box-shadow: inset 0 0 0 3px #d70000;*/
     border: 2px solid #d70000;
 }
 

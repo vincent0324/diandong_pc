@@ -43,7 +43,6 @@ define(function(require, exports, module) {
                 var index = $('.event-slide-item').index(this);
 
                 $('.event-slide-item').removeClass('current').eq(index).addClass('current');
-                // $('.event-box-item').addClass('fn-hide').eq(index).removeClass('fn-hide');
                 $('.event-box-item').hide().eq(index).fadeIn();
             });
         },

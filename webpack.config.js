@@ -3,11 +3,11 @@ var path = require('path');
 
 var config = {
     entry: {
-        mall: path.resolve(__dirname, 'source/components/mall/app.js')
+        news: path.resolve(__dirname, 'source/components/news/app.js')
     },
 
     output: {
-        path: path.resolve(__dirname, 'source/components/mall'),
+        path: path.resolve(__dirname, 'source/components/news'),
         filename: '[name].debug.js'
     },
 
