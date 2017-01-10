@@ -13,8 +13,8 @@ var config = {
 
     output: {
         path: path.resolve(__dirname, 'build'),
-        filename: '[name].js',
-        // filename: '[hash:6].[name].js'
+        // filename: '[name].js'
+        filename: '[hash:6].[name].js'
     },
 
     module: {
@@ -43,12 +43,12 @@ var config = {
     },
 
     plugins: [
-        new ExtractTextPlugin('[name].css'),
-        // new ExtractTextPlugin('[hash:6].[name].css'),
+        // new ExtractTextPlugin('[name].css'),
+        new ExtractTextPlugin('[hash:6].[name].css'),
 
         // 不变
-        new webpack.optimize.CommonsChunkPlugin({name: 'vendor', filename: 'vendor.bundle.js'}),
-        // new webpack.optimize.CommonsChunkPlugin({name: 'vendor', filename: '[hash:6].vendor.bundle.js'}),
+        // new webpack.optimize.CommonsChunkPlugin({name: 'vendor', filename: 'vendor.bundle.js'}),
+        new webpack.optimize.CommonsChunkPlugin({name: 'vendor', filename: '[hash:6].vendor.bundle.js'}),
 
         // 压缩代码
         new webpack.optimize.UglifyJsPlugin({

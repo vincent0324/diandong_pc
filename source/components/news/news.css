@@ -359,6 +359,12 @@
     background-position: 0 -108px;
 }
 
+.news-type-use .news-focus-type i {
+    background-image: url(http://i1.dd-img.com/assets/image/1484030362-90d6258369a6a488-28w-28h.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 .news-focus-type em {
     width: 40px;
     height: 36px;
