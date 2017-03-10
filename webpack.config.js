@@ -1,7 +1,7 @@
-var webpack = require('webpack');
-var path = require('path');
+const webpack = require('webpack');
+const path = require('path');
 
-var config = {
+const config = {
     entry: {
         news: path.resolve(__dirname, 'source/components/news/app.js')
     },
@@ -12,17 +12,17 @@ var config = {
     },
 
     module: {
-        loaders: [
+        rules: [
             {
                 test: /\.jsx?$/,
                 exclude: /node_modules/,
-                loader: 'babel',
+                loader: 'babel-loader',
                 query: {
                     presets: ['es2015', 'react']
                 }
             }, {
                 test: /\.css$/,
-                loader: 'style!css'
+                use: ['style-loader', 'css-loader']
             }, {
                 test: /\.(png|woff|svg|ttf|eot)$/,
                 loader: 'url-loader?limit=10000' // 限制大小小于10k的
@@ -33,9 +33,6 @@ var config = {
     plugins: [],
 
     resolve: {
-        extensions: [
-            '', '.js', '.json', '.scss'
-        ],
         alias: {
             cookie: path.resolve(__dirname, 'source/lib/cookie/cookie'),
             user: path.resolve(__dirname, 'source/lib/user/user'),
