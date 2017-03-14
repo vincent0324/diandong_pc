@@ -1,5 +1,5 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
-var Vernier = require('./Vernier.react');
+import React from 'react';
+import {render} from 'react-dom';
+import Vernier from './Vernier.react';
 
-ReactDOM.render(<Vernier/>, document.getElementById('vernier-holder'));
+render(<Vernier/>, document.getElementById('vernier-holder'));

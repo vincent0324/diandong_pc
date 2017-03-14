@@ -1,55 +1,52 @@
-define(function(require, exports, module) {
+import $ from 'jquery';
+import Swiper from 'swiper';
 
-    var $ = require('jquery');
-    var Swiper = require('swiper');
+import './social.css';
 
-    require('./social.css');
+class Social {
 
-    var Social = function() {
+    constructor() {
         this.init();
-    };
+    }
 
-    Social.prototype = {
+    init() {
+        this.initSocialSwiper();
+        this.initFriendSwiper();
+    }
 
-        init: function() {
-            this.initSocialSwiper();
-            this.initFriendSwiper();
-        },
+    initSocialSwiper() {
+        var socialSwiper = new Swiper('.social-container', {
+            loop: true,
+            grabCursor: true,
+            autoplay: 5000,
+            autoplayDisableOnInteraction: false,
+            wrapperClass: 'social-wrapper',
+            slideClass: 'social-slide',
+            pagination: '.social-pages',
+            paginationClickable: true
+        });
+    }
 
-        initSocialSwiper: function() {
-            var socialSwiper = new Swiper('.social-container', {
-                loop: true,
-                grabCursor: true,
-                autoplay: 5000,
-                autoplayDisableOnInteraction: false,
-                wrapperClass: 'social-wrapper',
-                slideClass: 'social-slide',
-                pagination: '.social-pages',
-                paginationClickable: true
-            });
-        },
+    initFriendSwiper() {
+        var friendSwiper = new Swiper('.friend-container', {
+            loop: true,
+            grabCursor: true,
+            slidesPerView: 3,
+            autoplayDisableOnInteraction: false,
+            wrapperClass: 'friend-wrapper',
+            slideClass: 'friend-slide'
+        });
 
-        initFriendSwiper: function() {
-            var friendSwiper = new Swiper('.friend-container', {
-                loop: true,
-                grabCursor: true,
-                slidesPerView: 3,
-                autoplayDisableOnInteraction: false,
-                wrapperClass: 'friend-wrapper',
-                slideClass: 'friend-slide'
-            });
+        $('.friend-ctrl-prev').on('click', function(e) {
+            e.preventDefault();
+            friendSwiper.swipePrev();
+        });
 
-            $('.friend-ctrl-prev').on('click', function(e) {
-                e.preventDefault();
-                friendSwiper.swipePrev();
-            });
+        $('.friend-ctrl-next').on('click', function(e) {
+            e.preventDefault();
+            friendSwiper.swipeNext();
+        });
+    }
+};
 
-            $('.friend-ctrl-next').on('click', function(e) {
-                e.preventDefault();
-                friendSwiper.swipeNext();
-            });
-        }
-    };
-
-    module.exports = Social;
-});
+export default Social;

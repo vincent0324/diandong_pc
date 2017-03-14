@@ -1,2 +1,2 @@
-var Focus = require('./Focus');
-var focus = new Focus();
+import Focus from './Focus';
+let focus = new Focus();

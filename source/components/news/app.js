@@ -1,2 +1,2 @@
-var News = require('./News')
-var news = new News();
+import News from './News';
+let news = new News();

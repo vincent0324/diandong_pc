@@ -1,8 +1,7 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
-var City = require('../city/City.react');
+import React from 'react';
+import {render} from 'react-dom';
+import City from '../city/City.react';
+import Mall from './Mall';
 
-ReactDOM.render(<City/>, document.getElementById('mall-city-btn'));
-
-var Mall = require('./Mall');
-var mall = new Mall();
+render(<City/>, document.getElementById('mall-city-btn'));
+let mall = new Mall();

@@ -1,33 +1,36 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
+import React from 'react';
 
-require('./suggests.css');
+import './suggests.css';
 
-var Suggests = React.createClass({
+class Suggests extends React.Component {
 
-    getListOfSuggestIds: function() {
+    constructor(props) {
+        super(props);
+    }
+
+    getListOfSuggestIds() {
         return Object.keys(this.props.suggests);
-    },
+    }
 
-    getNumberOfSuggests: function() {
+    getNumberOfSuggests() {
         return this.getListOfSuggestIds().length;
-    },
+    }
 
-    getSuggestElement: function(suggestId) {
+    getSuggestElement(suggestId) {
         var suggestElementUrl = "http://car.diandong.com/chexi/index/" + suggestId;
-        var suggestElementName = this.props.suggests[suggestId]
+        var suggestElementName = this.props.suggests[suggestId];
 
         // key不能省，会报错
         return (
             <a target="_blank" href={suggestElementUrl} key={suggestId}>{suggestElementName}</a>
         );
-    },
+    }
 
-    render: function() {
+    render() {
         var numberOfSuggests = this.getNumberOfSuggests();
 
         if (numberOfSuggests > 0) {
-            var suggestElements = this.getListOfSuggestIds().map(this.getSuggestElement);
+            var suggestElements = this.getListOfSuggestIds().map(this.getSuggestElement.bind(this));
 
             return (
                 <div className="search-suggest-list">{suggestElements}</div>
@@ -36,6 +39,6 @@ var Suggests = React.createClass({
 
         return null;
     }
-});
+};
 
-module.exports = Suggests;
+export default Suggests;

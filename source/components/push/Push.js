@@ -1,15 +1,14 @@
-define(function(require, exports, module) {
+import './push.css';
 
-    require('./push.css');
+class Push {
 
-    var Push = function() {
+    constructor() {
         this.init();
-    };
+    }
 
-    Push.prototype = {
+    init() {
+        //
+    }
+};
 
-        init: function() {}
-    };
-
-    module.exports = Push;
-});
+export default Push;

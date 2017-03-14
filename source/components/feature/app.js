@@ -1,5 +1,5 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
-var Feature = require('./Feature.react');
+import React from 'react';
+import {render} from 'react-dom';
+import Feature from './Feature.react';
 
-ReactDOM.render(<Feature/>, document.getElementById('feature-holder'));
+render(<Feature/>, document.getElementById('feature-holder'));

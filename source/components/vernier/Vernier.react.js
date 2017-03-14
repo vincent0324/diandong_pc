@@ -1,11 +1,11 @@
-var React = require('react');
-var $ = require('jquery');
+import React from 'react';
+import $ from 'jquery';
 
-require('./vernier.css');
+import './vernier.css';
 
-var Vernier = React.createClass({
+class Vernier extends React.Component {
 
-    componentDidMount: function() {
+    componentDidMount() {
         var modules = [$('.news-holder'), $('.guide-holder'), $('.mall-holder'), $('.social-holder')];
 
         if (modules.length < 0) {
@@ -75,9 +75,9 @@ var Vernier = React.createClass({
                 $('.vernier').css({"opacity": "0", "transform": "scale(1.2)"});
             }
         });
-    },
+    }
 
-    render: function() {
+    render() {
         return (
             <div id="vernier" className="vernier disabled">
                 <a href="javascript:;" className="vernier-news" data-vernier="news-holder"></a>
@@ -87,6 +87,6 @@ var Vernier = React.createClass({
             </div>
         );
     }
-});
+};
 
-module.exports = Vernier;
+export default Vernier;

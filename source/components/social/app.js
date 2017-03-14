@@ -1,2 +1,2 @@
-var Social = require('./Social');
-var social = new Social();
+import Social from './Social';
+let social = new Social();

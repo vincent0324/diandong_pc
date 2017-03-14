@@ -1,5 +1,5 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
-var City = require('./City.react');
+import React from 'react';
+import {render} from 'react-dom';
+import City from './City.react';
 
-ReactDOM.render(<City />, document.getElementById('city'));
+render(<City/>, document.getElementById('city'));

@@ -71,43 +71,61 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-var __WEBPACK_AMD_DEFINE_RESULT__;
 
-!(__WEBPACK_AMD_DEFINE_RESULT__ = function (require, exports, module) {
 
-    var $ = __webpack_require__(3);
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 
-    __webpack_require__(5);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-    var News = function News() {
+var _jquery = __webpack_require__(3);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+__webpack_require__(5);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var News = function () {
+    function News() {
+        _classCallCheck(this, News);
+
         this.init();
-    };
+    }
 
-    News.prototype = {
-        init: function init() {
+    _createClass(News, [{
+        key: 'init',
+        value: function init() {
             this.bindEvent();
-        },
-        bindEvent: function bindEvent() {
-            $('.news-tab a').on('click', function () {
-                var index = $('.news-tab a').index(this);
-                console.log('111');
+        }
+    }, {
+        key: 'bindEvent',
+        value: function bindEvent() {
+            (0, _jquery2.default)('.news-tab a').on('click', function () {
+                var index = (0, _jquery2.default)('.news-tab a').index(this);
 
-                $('.news-tab a').removeClass('current').eq(index).addClass('current');
-                $('.news-tab-content').addClass('fn-hide').eq(index).removeClass('fn-hide');
+                (0, _jquery2.default)('.news-tab a').removeClass('current').eq(index).addClass('current');
+                (0, _jquery2.default)('.news-tab-content').addClass('fn-hide').eq(index).removeClass('fn-hide');
             });
 
-            $('.news-hot-tab a').on('mouseenter', function () {
-                var index = $('.news-hot-tab a').index(this);
+            (0, _jquery2.default)('.news-hot-tab a').on('mouseenter', function () {
+                var index = (0, _jquery2.default)('.news-hot-tab a').index(this);
 
-                $('.news-hot-tab a').removeClass('current').eq(index).addClass('current');
-                $('.news-hot-tab-content').addClass('fn-hide').eq(index).removeClass('fn-hide');
+                (0, _jquery2.default)('.news-hot-tab a').removeClass('current').eq(index).addClass('current');
+                (0, _jquery2.default)('.news-hot-tab-content').addClass('fn-hide').eq(index).removeClass('fn-hide');
             });
         }
-    };
+    }]);
 
-    module.exports = News;
-}.call(exports, __webpack_require__, exports, module),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+    return News;
+}();
+
+;
+
+exports.default = News;
 
 /***/ }),
 /* 1 */
@@ -11479,8 +11497,13 @@ if(false) {
 "use strict";
 
 
-var News = __webpack_require__(0);
-var news = new News();
+var _News = __webpack_require__(0);
+
+var _News2 = _interopRequireDefault(_News);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var news = new _News2.default();
 
 /***/ })
 /******/ ]);

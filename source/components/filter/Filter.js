@@ -1,28 +1,25 @@
-define(function(require, exports, module) {
+import $ from 'jquery';
 
-    require('./filter.css');
+import './filter.css';
 
-    var $ = require('jquery');
+class Filter {
 
-    var Filter = function() {
+    constructor() {
         this.init();
-    };
+    }
 
-    Filter.prototype = {
+    init() {
+        this.bindEvent();
+    }
 
-        init: function() {
-            this.bindEvent();
-        },
+    bindEvent() {
+        $('.filter-tab-list a').on('mouseenter', function() {
+            var index = $('.filter-tab-list a').index(this);
 
-        bindEvent: function() {
-            $('.filter-tab-list a').on('mouseenter', function() {
-                var index = $('.filter-tab-list a').index(this);
+            $('.filter-tab-list a').removeClass('current').eq(index).addClass('current');
+            $('.filter-box-tabcon').addClass('fn-hide').eq(index).removeClass('fn-hide');
+        });
+    }
+};
 
-                $('.filter-tab-list a').removeClass('current').eq(index).addClass('current');
-                $('.filter-box-tabcon').addClass('fn-hide').eq(index).removeClass('fn-hide');
-            });
-        }
-    };
-
-    module.exports = Filter;
-});
+export default Filter;

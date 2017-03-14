@@ -1,16 +1,24 @@
-var React = require('react');
-var $ = require('jquery');
-var Suggests = require('./Suggests.react');
+import React from 'react';
+import $ from 'jquery';
+import Suggests from './Suggests.react';
 
-require('./search.css');
+import './search.css';
 
-var Search = React.createClass({
+class Search extends React.Component {
 
-    getInitialState: function() {
-        return {searchPlaceholderValue: null, keywords: '', suggests: {}, focus: false};
-    },
+    constructor(props) {
 
-    handleKeywordChange: function(event) {
+        super(props);
+
+        this.state = {
+            searchPlaceholderValue: null,
+            keywords: '',
+            suggests: {},
+            focus: false
+        };
+    }
+
+    handleKeywordChange(event) {
         var currentInputValue = event.target.value;
 
         this.setState({keywords: currentInputValue});
@@ -40,23 +48,23 @@ var Search = React.createClass({
                 }
             }.bind(this)
         });
-    },
+    }
 
-    handleKeyUp: function(event) {
+    handleKeyUp(event) {
         if (event.keyCode === 13) {
             this.handleSubmit();
         }
-    },
+    }
 
-    handleFocus: function() {
+    handleFocus() {
         this.setState({focus: true});
-    },
+    }
 
-    handleBlur: function() {
+    handleBlur() {
         this.setState({focus: false});
-    },
+    }
 
-    handleSubmit: function() {
+    handleSubmit() {
         var searchKeywords;
 
         searchKeywords = this.state.keywords
@@ -64,9 +72,10 @@ var Search = React.createClass({
             : this.state.searchPlaceholderValue;
 
         window.open('http://search.diandong.com/zonghe/?words=' + searchKeywords);
-    },
+    }
 
-    componentWillMount: function() {
+    componentWillMount() {
+
         this.getSearchPlaceholderRequest = $.ajax({
             url: 'http://car.diandong.com/api/getSectionData?sectionid=296',
             data: {},
@@ -84,21 +93,21 @@ var Search = React.createClass({
                 this.setState({suggests: {}});
             }
         }.bind(this));
-    },
+    }
 
-    componentWillUnmount: function() {
+    componentWillUnmount() {
         this.getSearchPlaceholderRequest.abort();
         this.getSearchSuggestRequest.abort();
-    },
+    }
 
-    render: function() {
+    render() {
         return (
             <div className={this.state.focus
                 ? "search-wrapper focus"
                 : "search-wrapper"} id="search-wrapper">
                 <div className="search-bar">
-                    <input className="search-input" type="text" value={this.state.keywords} onChange={this.handleKeywordChange} onKeyUp={this.handleKeyUp} onFocus={this.handleFocus} onBlur={this.handleBlur} placeholder={this.state.searchPlaceholderValue}/>
-                    <a className="search-submit-btn" onClick={this.handleSubmit} href="javascript:;">
+                    <input className="search-input" type="text" value={this.state.keywords} onChange={this.handleKeywordChange.bind(this)} onKeyUp={this.handleKeyUp.bind(this)} onFocus={this.handleFocus.bind(this)} onBlur={this.handleBlur.bind(this)} placeholder={this.state.searchPlaceholderValue}/>
+                    <a className="search-submit-btn" onClick={this.handleSubmit.bind(this)} href="javascript:;">
                         <i className="icon">&#xe60a;</i>
                     </a>
                 </div>
@@ -106,6 +115,6 @@ var Search = React.createClass({
             </div>
         );
     }
-});
+};
 
-module.exports = Search;
+export default Search;

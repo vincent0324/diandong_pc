@@ -1,5 +1,5 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
-var Sidebar = require('./Sidebar.react');
+import React from 'react';
+import {render} from 'react-dom';
+import Sidebar from './Sidebar.react';
 
-ReactDOM.render(<Sidebar />, document.getElementById('sidebar'));
+render(<Sidebar/>, document.getElementById('sidebar'));

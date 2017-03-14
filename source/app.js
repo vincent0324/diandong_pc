@@ -1,98 +1,88 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
+import React from 'react';
+import {render} from 'react-dom';
 
-require('./css/common.css');
-require('./css/home.css');
+import './css/common.css';
+import './css/home.css';
 
 
 // push
-var Push = require('./components/push/Push');
-var push = new Push();
+import Push from './components/push/Push';
+let push = new Push();
 
 
 // header
-require('./components/header/header.css');
+import './components/header/header.css';
 
-var City = require('./components/city/City.react');
-var UserPanel = require('./components/header/UserPanel.react');
-var Search = require('./components/search/Search.react');
+import City from './components/city/City.react';
+import UserPanel from './components/header/UserPanel.react';
+import Search from './components/search/Search.react';
 
-ReactDOM.render(<City />, document.getElementById('city-holder'));
-ReactDOM.render(<UserPanel />, document.getElementById('user-holder'));
-ReactDOM.render(<Search />, document.getElementById('search-holder'));
+render(<City />, document.getElementById('city-holder'));
+render(<UserPanel />, document.getElementById('user-holder'));
+render(<Search />, document.getElementById('search-holder'));
 
 // nav
-require('./components/nav/nav.css');
+import './components/nav/nav.css';
 
 
 // filter
-var Filter = require('./components/filter/Filter');
-var filter = new Filter();
+import Filter from './components/filter/Filter';
+let filter = new Filter();
 
-require('./components/filter/FilterSelect.css'); // 以后删掉
-//
-// var FilterSelect = require('./components/filter/FilterSelect.react');
-//
-// ReactDOM.render(<FilterSelect/>, document.getElementById('filter-select-holder'));
+import './components/filter/FilterSelect.css'; // 以后删掉
 
 
 // focus
-var Focus = require('./components/focus/focus');
-var focus = new Focus();
+import Focus from './components/focus/focus';
+let focus = new Focus();
 
 
 // service
-var Service = require('./components/service/Service.react');
-
-ReactDOM.render(<Service/>, document.getElementById('service-holder'));
+import Service from './components/service/Service.react';
+render(<Service/>, document.getElementById('service-holder'));
 
 
 // news
-var News = require('./components/news/News');
-var news = new News();
+import News from './components/news/News';
+let news = new News();
 
 
 // guide
-var Guide = require('./components/guide/guide');
-var guide = new Guide();
-
+import Guide from './components/guide/guide';
+let guide = new Guide();
 
 
 // mall
-ReactDOM.render(<City/>, document.getElementById('mall-city-btn'));
+render(<City/>, document.getElementById('mall-city-btn'));
 
-var Mall = require('./components/mall/Mall');
-var mall = new Mall();
+import Mall from './components/mall/Mall';
+let mall = new Mall();
 
 
 // social
-var Social = require('./components/social/Social');
-var social = new Social();
-
+import Social from './components/social/Social';
+let social = new Social();
 
 
 // feature
-var Feature = require('./components/feature/Feature.react');
-
-ReactDOM.render(<Feature/>, document.getElementById('feature-holder'));
+import Feature from './components/feature/Feature.react';
+render(<Feature/>, document.getElementById('feature-holder'));
 
 
 // link
-var Link = require('./components/link/Link');
-var link = new Link();
+import Link from './components/link/Link';
+let link = new Link();
 
 
 
 // footer
-var Footer = require('./components/footer/Footer');
-var footer = new Footer();
+import './components/footer/footer.css';
 
 // sidebar
-var Sidebar = require('./components/sidebar/Sidebar.react');
-ReactDOM.render(<Sidebar />, document.getElementById('sidebar'));
+import Sidebar from './components/sidebar/Sidebar.react';
+render(<Sidebar />, document.getElementById('sidebar'));
 
 
 // vernier
-var Vernier = require('./components/vernier/Vernier.react');
-
-ReactDOM.render(<Vernier />, document.getElementById('vernier-holder'));
+import Vernier from './components/vernier/Vernier.react';
+render(<Vernier />, document.getElementById('vernier-holder'));

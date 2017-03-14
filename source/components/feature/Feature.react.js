@@ -1,10 +1,14 @@
-var React = require('react');
+import React from 'react';
 
-require('./feature.css');
+import './feature.css';
 
-var Feature = React.createClass({
+class Feature extends React.Component {
 
-    render: function() {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
         return (
             <div id="feature" className="feature">
                 <div className="wrap">
@@ -42,6 +46,6 @@ var Feature = React.createClass({
             </div>
         );
     }
-});
+};
 
-module.exports = Feature;
+export default Feature;

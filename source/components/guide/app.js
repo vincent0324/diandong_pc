@@ -1,2 +1,2 @@
-var Guide = require('./Guide');
-var guide = new Guide();
+import Guide from './Guide';
+let guide = new Guide();

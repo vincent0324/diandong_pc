@@ -1,60 +1,59 @@
-define(function(require, exports, module) {
+import $ from 'jquery';
+import Swiper from 'swiper';
 
-    var $ = require('jquery');
-    var Swiper = require('swiper');
+import './guide.css';
 
-    require('./guide.css');
+class Guide {
 
-    var Guide = function() {
+    constructor() {
         this.init();
-    };
+    }
 
-    Guide.prototype = {
-        init: function() {
-            this.guideSwiper();
-            this.bindEvent();
-        },
-        bindEvent: function() {
+    init() {
+        this.guideSwiper();
+        this.bindEvent();
+    }
 
-            $('.filter-sub-tab a').on('mouseenter', function() {
-                var index = $(this).parent('.filter-sub-tab').find('a').index(this);
-                var tabContent = $(this).parents('.filter-sub-tab').siblings('.filter-sub-tabcon');
+    bindEvent() {
 
-                $(this).addClass('current').siblings('a').removeClass('current');
-                tabContent.addClass('fn-hide').eq(index).removeClass('fn-hide');
-            });
+        $('.filter-sub-tab a').on('mouseenter', function() {
+            let index = $(this).parent('.filter-sub-tab').find('a').index(this);
+            let tabContent = $(this).parents('.filter-sub-tab').siblings('.filter-sub-tabcon');
 
-            $('.filter-super-tab a').on('click', function() {
-                var index = $(this).parent('.filter-super-tab').find('a').index(this);
-                var tabContent = $(this).parents('.filter-super-tab').siblings('.filter-super-tabcon');
+            $(this).addClass('current').siblings('a').removeClass('current');
+            tabContent.addClass('fn-hide').eq(index).removeClass('fn-hide');
+        });
 
-                $(this).addClass('current').siblings('a').removeClass('current');
-                tabContent.addClass('fn-hide').eq(index).removeClass('fn-hide');
-            });
-        },
-        guideSwiper: function() {
-            var guideSwiper = new Swiper('.guide-photo-container', {
-                loop: true,
-                grabCursor: true,
-                // autoplay: 5000,
-                autoplayDisableOnInteraction: false,
-                wrapperClass: 'guide-photo-wrapper',
-                slideClass: 'guide-photo-slide',
-                pagination: '.guide-photo-pages',
-                paginationClickable: true
-            });
+        $('.filter-super-tab a').on('click', function() {
+            let index = $(this).parent('.filter-super-tab').find('a').index(this);
+            let tabContent = $(this).parents('.filter-super-tab').siblings('.filter-super-tabcon');
 
-            $('.guide-photo-prev').on('click', function(e) {
-                e.preventDefault();
-                guideSwiper.swipePrev();
-            });
+            $(this).addClass('current').siblings('a').removeClass('current');
+            tabContent.addClass('fn-hide').eq(index).removeClass('fn-hide');
+        });
+    }
 
-            $('.guide-photo-next').on('click', function(e) {
-                e.preventDefault();
-                guideSwiper.swipeNext();
-            });
-        }
-    };
+    guideSwiper() {
+        let guideSwiper = new Swiper('.guide-photo-container', {
+            loop: true,
+            grabCursor: true,
+            autoplayDisableOnInteraction: false,
+            wrapperClass: 'guide-photo-wrapper',
+            slideClass: 'guide-photo-slide',
+            pagination: '.guide-photo-pages',
+            paginationClickable: true
+        });
 
-    module.exports = Guide;
-});
+        $('.guide-photo-prev').on('click', function(e) {
+            e.preventDefault();
+            guideSwiper.swipePrev();
+        });
+
+        $('.guide-photo-next').on('click', function(e) {
+            e.preventDefault();
+            guideSwiper.swipeNext();
+        });
+    }
+};
+
+export default Guide;

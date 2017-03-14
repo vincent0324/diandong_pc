@@ -1,5 +1,5 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
-var Service = require('./Service.react');
+import React from 'react';
+import {render} from 'react-dom';
+import Service from './Service.react';
 
-ReactDOM.render(<Service/>, document.getElementById('service-holder'));
+render(<Service/>, document.getElementById('service-holder'));

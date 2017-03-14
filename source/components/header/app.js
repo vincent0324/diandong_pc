@@ -1,9 +1,9 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
-var City = require('../city/City.react');
-var UserPanel = require('./UserPanel.react');
-var Search = require('../search/Search.react');
+import React from 'react';
+import {render} from 'react-dom';
+import City from '../city/City.react';
+import UserPanel from './UserPanel.react';
+import Search from '../search/Search.react';
 
-ReactDOM.render(<City />, document.getElementById('city-holder'));
-ReactDOM.render(<UserPanel />, document.getElementById('user-holder'));
-ReactDOM.render(<Search/>, document.getElementById('search-holder'));
+render(<City />, document.getElementById('city-holder'));
+render(<UserPanel />, document.getElementById('user-holder'));
+render(<Search/>, document.getElementById('search-holder'));

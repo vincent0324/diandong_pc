@@ -1,10 +1,13 @@
-var React = require('react');
+import React from 'react';
+import './service.css';
 
-require('./service.css');
+class Service extends React.Component {
 
-var Service = React.createClass({
+    constructor() {
+        super();
+    }
 
-    render: function() {
+    render() {
         return (
             <div id="service" className="service wrap">
                 <a className="service-item-helper" target="_blank" href="http://www.diandong.com/yaohao/">
@@ -30,6 +33,6 @@ var Service = React.createClass({
             </div>
         );
     }
-});
+};
 
-module.exports = Service;
+export default Service;

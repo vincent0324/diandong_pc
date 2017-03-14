@@ -1,15 +1,20 @@
-var React = require('react');
-
 // 为特殊活动预留的组件
-require('./FeatureBox.css');
+import React from 'react';
 
-var FeatureBox = React.createClass({
+// 特殊活动样式表
+import './FeatureBox.css';
 
-    getInitialState: function() {
-        return {hasFeature: false};
-    },
+class FeatureBox extends React.Component {
 
-    render: function() {
+    constructor() {
+        super();
+
+        this.state = {
+            hasFeature: false
+        }
+    }
+
+    render() {
 
         if (this.state.hasFeature) {
             return (
@@ -21,6 +26,6 @@ var FeatureBox = React.createClass({
 
         return null;
     }
-});
+};
 
-module.exports = FeatureBox;
+export default FeatureBox;

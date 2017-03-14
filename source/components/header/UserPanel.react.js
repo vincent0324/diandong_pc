@@ -1,26 +1,34 @@
-var React = require('react');
-var User = require('user');
-var user = new User();
+import React from 'react';
+import User from 'user';
 
-require('./UserPanel.css');
+import './UserPanel.css';
 
-var UserPanel = React.createClass({
+let user = new User();
 
-    getInitialState: function() {
-        return {userId: null, userName: null, userAvatar: null, redirectUrl: null};
-    },
+class UserPanel extends React.Component {
 
-    componentWillMount: function() {
-        var currentRedirectUrl = 'http://passport.diandong.com/ark/login?redirect=' + location.href;
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            userId: null,
+            userName: null,
+            userAvatar: null,
+            redirectUrl: null
+        };
+    }
+
+    componentWillMount() {
+        let currentRedirectUrl = 'http://passport.diandong.com/ark/login?redirect=' + location.href;
 
         this.setState({redirectUrl: currentRedirectUrl});
 
         if (user.id !== '') {
             this.setState({userId: user.id, userName: user.name, userAvatar: user.avatar});
         }
-    },
+    }
 
-    render: function() {
+    render() {
 
         if (this.state.userId) {
             return (
@@ -42,6 +50,6 @@ var UserPanel = React.createClass({
             </div>
         );
     }
-});
+};
 
-module.exports = UserPanel;
+export default UserPanel;

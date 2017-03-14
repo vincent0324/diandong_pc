@@ -1,24 +1,29 @@
-var React = require('react');
-var $ = require('jquery');
-var Tip = require('tip');
+import React from 'react';
+import $ from 'jquery';
+import Tip from 'tip';
 
-var FreeCallBox = React.createClass({
+class FreeCallBox extends React.Component {
 
-    getInitialState: function() {
-        return {showBox: false, defaultPhoneValue: ''};
-    },
+    constructor() {
+        super();
 
-    toggleBox: function() {
+        this.state = {
+            showBox: false,
+            defaultPhoneValue: ''
+        };
+    }
+
+    toggleBox() {
         this.setState({
             showBox: !this.state.showBox
         });
-    },
+    }
 
-    handleChange: function(event) {
+    handleChange(event) {
         this.setState({defaultPhoneValue: event.target.value});
-    },
+    }
 
-    handleSubmit: function() {
+    handleSubmit() {
         if (this.phoneInput.value === '') {
             Tip.info('请输入手机号码或座机号码');
         } else {
@@ -35,28 +40,28 @@ var FreeCallBox = React.createClass({
                 }.bind(this)
             });
         }
-    },
+    }
 
-    componentWillUnmount: function() {
+    componentWillUnmount() {
         this.sendFreeCallRequest.abort();
-    },
+    }
 
-    render: function() {
+    render() {
 
         if (this.state.showBox) {
             return (
                 <div>
-                    <a className="sidebar-item-btn sidebar-btn-tel open" onClick={this.toggleBox}>
+                    <a className="sidebar-item-btn sidebar-btn-tel open" onClick={this.toggleBox.bind(this)}>
                         <span className="sidebar-btn-icon">
                             <i className="icon">&#xe612;</i>
                             <em>免费电话</em>
                         </span>
                     </a>
                     <div className="sidebar-tel-box">
-                        <input type="text" className="tel-box-phone" placeholder="填写手机号，座机加区号" ref={(ref) => this.phoneInput = ref} value={this.state.defaultPhoneValue} onChange={this.handleChange}/>
-                        <a className="tel-box-submit" href="javascript:;" onClick={this.handleSubmit}>免费咨询</a>
+                        <input type="text" className="tel-box-phone" placeholder="填写手机号，座机加区号" ref={(ref) => this.phoneInput = ref} value={this.state.defaultPhoneValue} onChange={this.handleChange.bind(this)}/>
+                        <a className="tel-box-submit" href="javascript:;" onClick={this.handleSubmit.bind(this)}>免费咨询</a>
                         <i className="tel-box-corner"></i>
-                        <a className="tel-box-close" href="javascript:;" onClick={this.toggleBox}>
+                        <a className="tel-box-close" href="javascript:;" onClick={this.toggleBox.bind(this)}>
                             <i className="icon">&#xe601;</i>
                         </a>
                     </div>
@@ -66,7 +71,7 @@ var FreeCallBox = React.createClass({
 
         return (
             <div>
-                <a className="sidebar-item-btn sidebar-btn-tel" onClick={this.toggleBox}>
+                <a className="sidebar-item-btn sidebar-btn-tel" onClick={this.toggleBox.bind(this)}>
                     <span className="sidebar-btn-icon">
                         <i className="icon">&#xe612;</i>
                         <em>免费电话</em>
@@ -75,6 +80,6 @@ var FreeCallBox = React.createClass({
             </div>
         );
     }
-});
+};
 
-module.exports = FreeCallBox;
+export default FreeCallBox;
