@@ -20,7 +20,6 @@ class Suggests extends React.Component {
         var suggestElementUrl = "http://car.diandong.com/chexi/index/" + suggestId;
         var suggestElementName = this.props.suggests[suggestId];
 
-        // key不能省，会报错
         return (
             <a target="_blank" href={suggestElementUrl} key={suggestId}>{suggestElementName}</a>
         );

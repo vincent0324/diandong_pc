@@ -76,7 +76,8 @@ let link = new Link();
 
 
 // footer
-import './components/footer/footer.css';
+import Footer from './components/footer/Footer';
+let footer = new Footer();
 
 // sidebar
 import Sidebar from './components/sidebar/Sidebar.react';

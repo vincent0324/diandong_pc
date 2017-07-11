@@ -34,12 +34,10 @@
 }
 
 .footer-hotline i {
-    width: 49px;
-    height: 49px;
-    background-image: url(http://i1.dd-img.com/assets/image/1459395141-edd8e452d7798352-204w-267h.png);
-    background-repeat: no-repeat;
-    background-position: 0 -167px;
+    width: 54px;
+    height: 54px;
     margin-right: 12px;
+    position: relative;
 }
 
 .footer-hotline-number {
@@ -48,7 +46,6 @@
 }
 
 .footer-hotline-number span {
-    font-size: 24px;
     color: #ff6440;
 }
 
@@ -151,4 +148,14 @@
     background-image: url(http://i1.dd-img.com/assets/image/1459395141-edd8e452d7798352-204w-267h.png);
     background-repeat: no-repeat;
     background-position: 0 -216px;
+}
+
+.code-overlay {
+    width: 164px;
+    height: 175px;
+    position: absolute;
+    bottom: -33px;
+    right: -168px;
+    background-image: url(http://i1.dd-img.com/assets/image/1499414934-b40ffce798f5ed85-164w-175h.png);
+    background-repeat: no-repeat;
 }

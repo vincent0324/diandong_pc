@@ -41,7 +41,7 @@ const config = {
     plugins: [
         new ExtractTextPlugin('[hash:6].[name].css'),
 
-        new webpack.optimize.CommonsChunkPlugin({name: 'vendor', filename: '[hash:6].vendor.bundle.js'}),
+        new webpack.optimize.CommonsChunkPlugin({name: 'vendor', filename: 'vendor.bundle.js'}),
 
         new webpack.optimize.UglifyJsPlugin({
             output: {

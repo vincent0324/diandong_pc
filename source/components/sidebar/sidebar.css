@@ -88,6 +88,20 @@
     padding: 14px 14px 0;
 }
 
+.sidebar-btn-hotline .sidebar-btn-tip {
+    width: 142px;
+    height: 142px;
+    padding: 14px;
+}
+
+.sidebar-hotline-image {
+    width: 142px;
+    height: 142px;
+    display: block;
+    background-image: url(http://i1.dd-img.com/assets/image/1499415554-5e126fcab4a82a9a-142w-142h.jpg);
+    background-repeat: no-repeat;
+}
+
 .sidebar-code-image {
     width: 142px;
     height: 142px;

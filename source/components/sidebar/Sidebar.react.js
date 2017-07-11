@@ -60,9 +60,11 @@ class Sidebar extends React.Component {
                     <div className="sidebar-item">
                         <a className="sidebar-item-btn sidebar-btn-hotline" onMouseEnter={this.showTip.bind(this)} onMouseLeave={this.hideTip.bind(this)} href="javascript:;">
                             <span className="sidebar-btn-icon">
-                                <i className="icon">&#xe634;</i>
+                                <i className="icon">&#xe63e;</i>
                             </span>
-                            <span className="sidebar-btn-tip fn-hide">4000-990-666</span>
+                            <span className="sidebar-btn-tip fn-hide">
+                                <span className="sidebar-hotline-image"></span>
+                            </span>
                         </a>
                     </div>
                     <div className="sidebar-item">
